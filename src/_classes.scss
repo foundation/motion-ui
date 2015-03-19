@@ -1,0 +1,99 @@
+/*
+  Transitions
+*/
+
+// Slide
+.slideInDown    { @include slide($from: top); }
+.slideInLeft    { @include slide($from: right); }
+.slideInUp      { @include slide($from: bottom); }
+.slideInRight   { @include slide($from: left); }
+.slideOutBottom { @include slide($dir: out, $from: bottom); }
+.slideOutRight  { @include slide($dir: out, $from: right); }
+.slideOutUp     { @include slide($dir: out, $from: top); }
+.slideOutLeft   { @include slide($dir: out, $from: left); }
+
+// Fade
+.fadeIn  { @include fade(in, 0, 1); }
+.fadeOut { @include fade(out, 1, 0); }
+
+// Hinge
+.hingeInFromTop      { @include hinge($dir: in, $from: top); }
+.hingeInFromRight    { @include hinge($dir: in, $from: right); }
+.hingeInFromBottom   { @include hinge($dir: in, $from: bottom); }
+.hingeInFromLeft     { @include hinge($dir: in, $from: left); }
+.hingeInFromMiddleX  { @include hinge($dir: in, $from: top,   $axis: center); }
+.hingeInFromMiddleY  { @include hinge($dir: in, $from: right, $axis: center); }
+.hingeOutFromTop     { @include hinge($dir: out, $from: top); }
+.hingeOutFromRight   { @include hinge($dir: out, $from: right); }
+.hingeOutFromBottom  { @include hinge($dir: out, $from: bottom); }
+.hingeOutFromLeft    { @include hinge($dir: out, $from: left); }
+.hingeOutFromMiddleX { @include hinge($dir: out, $from: top,   $axis: center); }
+.hingeOutFromMiddleY { @include hinge($dir: out, $from: right, $axis: center); }
+
+// Scale
+.zoomIn  { @include scale(in,  1.5, 1); }
+.zoomOut { @include scale(out, 0.5, 1); }
+
+// Spin
+.spinIn     { @include spin(in, 0.75turn); }
+.spinOut    { @include spin(out, 0.75turn); }
+.spinInCCW  { @include spin(in, 0.75turn, true); }
+.spinOutCCW { @include spin(out, 0.75turn, true); }
+
+/*
+  Transition modifiers
+*/
+
+// Duration
+.slow { transition-duration: $motion-duration-slow !important; }
+.fast { transition-duration: $motion-duration-fast !important; }
+
+// Easing
+@each $easing in map-keys($motion-timings) {
+  .#{$easing} {
+    transition-timing-function: map-get($motion-timings, $easing) !important;
+  }
+}
+
+// Delay
+.delay       { transition-delay: $motion-delay-short !important; }
+.long-delay  { transition-delay: $motion-delay-long !important; }
+
+/*
+  Animations
+*/
+
+.shake    { @include animation(shake); }
+.spin-cw  { @include animation(spin-cw); }
+.spin-ccw { @include animation(spin-ccw); }
+.wiggle   { @include animation(wiggle); }
+
+/*
+  Animation modifiers
+*/
+
+.shake,
+.spin-cw,
+.spin-ccw,
+.wiggle {
+  // Repeat
+  &.infinite { animation-iteration-count: infinite; }
+
+  // Easing
+  @each $timing in map-keys($motion-timings) {
+    &.#{$timing} {
+      animation-timing-function: map-get($motion-timings, $timing) !important;
+    }
+  }
+
+  // Duration
+  &.slow { animation-duration: $motion-duration-slow !important; }
+  &.fast { animation-duration: $motion-duration-fast !important; }
+
+  // Delay
+  &.delay       { animation-delay: $motion-delay-short !important; }
+  &.long-delay  { animation-delay: $motion-delay-long !important; }
+}
+.stagger { @include stagger($motion-stagger-duration-default); }
+.stort-stagger { @include stagger($motion-stagger-duration-default); }
+.long-stagger { @include stagger($motion-stagger-duration-default); }

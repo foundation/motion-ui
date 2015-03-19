@@ -1,0 +1,32 @@
+@mixin spin(
+  $dir: in,
+  $amount: 0.75turn,
+  $ccw: false,
+  $fade: $motion-spin-and-fade,
+  $duration: $motion-duration-default,
+  $timing: $motion-timing-default,
+  $delay: $motion-delay-default
+) {
+  $amount: turn-to-deg($amount);
+  $start: 0;
+  $end: 0;
+
+  @if $dir == in {
+    $start: if($ccw, $amount, $amount * -1);
+    $end: 0;
+  }
+  @else {
+    $start: 0;
+    $end: if($ccw, $amount * -1, $amount);
+  }
+
+  @include transition-start($dir) {
+    transition-property: transform, opacity;
+    transform: rotate($start);
+    @if $fade { opacity: if($dir == in, 0, 1); }
+  }
+  @include transition-end($dir) {
+    transform: rotate($end);
+    @if $fade { opacity: if($dir == in, 1, 0); }
+  }
+}

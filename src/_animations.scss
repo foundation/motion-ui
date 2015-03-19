@@ -1,0 +1,59 @@
+// SHAKE
+@keyframes shake {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
+    transform: translateX(7%);
+  }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+    transform: translateX(-7%);
+  }
+  100% { transform: translateX(0); }
+}
+
+// SPINNERS
+@keyframes spin-cw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+// WIGGLE
+@keyframes wiggle {
+  40%, 50%, 60% {
+    transform: rotate(7deg);
+  }
+  35%, 45%, 55%, 65% {
+    transform: rotate(-7deg);
+  }
+  0%, 30%, 70%, 100% { transform: rotate(0); }
+}
+
+@mixin animation(
+  $animation,
+  $duration: $motion-duration-default,
+  $timing: $motion-timing-default,
+  $delay: $motion-delay-default,
+  $iterations: null
+) {
+  
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+
+  @if $delay != null {
+    animation-delay: $delay;
+  }
+  @if $iterations != null {
+    animation-iteration-count: $iterations;
+  }
+
+  @if $animation == null {
+    @warn "Please include an animation name";
+  }
+}

@@ -1,0 +1,20 @@
+@mixin scale(
+  $dir: in,
+  $from: 1.5,
+  $to: 1,
+  $fade: $motion-scale-and-fade,
+  $duration: $motion-duration-default,
+  $timing: $motion-timing-default,
+  $delay: $motion-delay-default
+) {
+  @include transition-start($dir) {
+    @include transition-basics($duration, $timing, $delay);
+    transition-property: transform, property;
+    transform: scale($from);
+    @if $fade { opacity: if($dir == in, 0, 1) }
+  }
+  @include transition-end($dir) {
+    transform: scale($to);
+    @if $fade { opacity: if($dir == in, 1, 0) }
+  }
+}

@@ -1,0 +1,75 @@
+// Looks for a timing function in the list of presets
+// If none are found, returns the value as-is.
+@function get-timing($timing) {
+  @if map-has-key($motion-timings, $timing) {
+    @return map-get($motion-timings, $timing);
+  }
+  @else {
+    @return $timing;
+  }
+}
+
+// Applies transition settings common to all mixins
+@mixin transition-basics(
+  $duration: $motion-duration-default,
+  $timing: $motion-timing-default,
+  $delay: $motion-delay-default
+) {
+  transition-duration: $duration;
+  transition-timing-function: get-timing($timing);
+  transition-delay: $delay;
+}
+
+// Wraps content in an enter/leave class, chained to the parent selector
+// Define the initial state of a transition here
+@mixin transition-start($dir) {
+  $sel1: map-get($motion-class, $dir);
+  $sel2: map-get($motion-class-showhide, $dir);
+
+  &.#{$sel1},
+  &.#{$sel2} {
+    @content;
+  }
+}
+
+// Wraps content in an enter/leave active class, chained to the matching
+// enter/leave class, chained to the parent selector
+// Define the end state of a transition here
+@mixin transition-end($dir) {
+  $sel1:  map-get($motion-class, $dir);
+  $sel1A: map-get($motion-class-active, $dir);
+
+  $sel2:  map-get($motion-class-showhide, $dir);
+  $sel2A: map-get($motion-class-showhide-active, $dir);
+
+  &.#{$sel1}.#{$sel1A},
+  &.#{$sel2}.#{$sel2A} {
+    @content;
+  }
+}
+
+@mixin stagger($delay-amount) {
+  transition-delay: $delay-amount;
+  // this is to avoid accidental CSS inheritance
+  transition-duration:0;
+}
+
+/// Strip Unit
+/// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+///
+/// @param {number} $num - Number to strip unit from.
+///
+/// @return The same number, sans unit.
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+/// Turn to Degrees
+/// Converts a turn unit to the equivalent unit in degrees. 1turn is equal to 360 degrees. Not all browsers support turn, so this function allows us to use turns while outputting a value that all browsers understand.
+///
+/// @param {number} $value - Turn value to convert.
+///
+/// @return The same value, but in degrees.
+@function turn-to-deg($value) {
+  @return strip-unit($value) * 360deg;
+}
