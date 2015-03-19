@@ -4,6 +4,7 @@
   "description": "Sass library for creating transitions and animations.",
   "main": "dist/motion-ui.css",
   "scripts": {
+    "start": "gulp",
     "test": "gulp test"
   },
   "repository": {
