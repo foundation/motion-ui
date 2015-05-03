@@ -48,27 +48,24 @@
   }
 }
 
+/// Adds styles for a stagger animation, which can be used with Angular's `ng-repeat`.
+/// @param {Number} $delay-amount - Amount of time in seconds or milliseconds to add between each item's animation.
 @mixin stagger($delay-amount) {
   transition-delay: $delay-amount;
-  // this is to avoid accidental CSS inheritance
+
+  // Prevent accidental CSS inheritance
   transition-duration:0;
 }
 
-/// Strip Unit
 /// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
-///
 /// @param {number} $num - Number to strip unit from.
-///
 /// @return The same number, sans unit.
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
 
-/// Turn to Degrees
 /// Converts a turn unit to the equivalent unit in degrees. 1turn is equal to 360 degrees. Not all browsers support turn, so this function allows us to use turns while outputting a value that all browsers understand.
-///
 /// @param {number} $value - Turn value to convert.
-///
 /// @return The same value, but in degrees.
 @function turn-to-deg($value) {
   @return strip-unit($value) * 360deg;

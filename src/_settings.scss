@@ -1,3 +1,39 @@
+$motion-ui-classes: (
+  append: true,
+  prefix: 'ng-',
+  active: '-active',
+);
+
+$motion-ui-states: (
+  in: 'enter' 'hide-remove',
+  out: 'leave' 'hide-add',
+  move: 'move',
+);
+
+$motion-ui-speeds: (
+  default: 500ms,
+  slow: 750ms,
+  fast: 250ms,
+);
+
+$motion-ui-delays: (
+  default: 0,
+  short: 300ms,
+  long: 700ms,
+);
+
+$motion-ui-easings: (
+  default: linear,
+  linear: linear,
+  ease: ease,
+  easeIn: ease-in,
+  easeOut: ease-out,
+  easeInOut: ease-in-out,
+  bounceIn: cubic-bezier(0.485, 0.155, 0.240, 1.245),
+  bounceOut: cubic-bezier(0.485, 0.155, 0.515, 0.845),
+  bounceInOut: cubic-bezier(0.760, -0.245, 0.240, 1.245),
+);
+
 // Classes to use when triggering in/out animations
 $motion-class: (
   in: "ng-enter",

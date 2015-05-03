@@ -1,6 +1,5 @@
-/*
-  Transitions
-*/
+// Transitions
+// - - - - - - - - - - - - - - -
 
 // Slide
 .slideInDown    { @include slide($from: top); }
@@ -40,9 +39,8 @@
 .spinInCCW  { @include spin(in, 0.75turn, true); }
 .spinOutCCW { @include spin(out, 0.75turn, true); }
 
-/*
-  Transition modifiers
-*/
+// Transition Modifiers
+// - - - - - - - - - - - - - - -
 
 // Duration
 .slow { transition-duration: $motion-duration-slow !important; }
@@ -59,18 +57,16 @@
 .delay       { transition-delay: $motion-delay-short !important; }
 .long-delay  { transition-delay: $motion-delay-long !important; }
 
-/*
-  Animations
-*/
+// Animations
+// - - - - - - - - - - - - - - -
 
 .shake    { @include animation(shake); }
 .spin-cw  { @include animation(spin-cw); }
 .spin-ccw { @include animation(spin-ccw); }
 .wiggle   { @include animation(wiggle); }
 
-/*
-  Animation modifiers
-*/
+// Animation Modifiers
+// - - - - - - - - - - - - - - -
 
 .shake,
 .spin-cw,
@@ -94,6 +90,10 @@
   &.delay       { animation-delay: $motion-delay-short !important; }
   &.long-delay  { animation-delay: $motion-delay-long !important; }
 }
+
+// ngAnimte Staggers
+// - - - - - - - - - - - - - - -
+
 .stagger { @include stagger($motion-stagger-duration-default); }
 .stort-stagger { @include stagger($motion-stagger-duration-default); }
 .long-stagger { @include stagger($motion-stagger-duration-default); }
