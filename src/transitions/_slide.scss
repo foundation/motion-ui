@@ -1,3 +1,10 @@
+/// Creates a sliding transition by translating the element horizontally or vertically.
+/// @param {Keyword} $dir [in] - State to transition to.
+/// @param {Keyword} $from [left] - Side of the element to slide from. Can be `top`, `right`, `bottom`, or `left`.
+/// @param {Boolean} $fade [false] - Set to `true` to fade the element in or out simultaneously.
+/// @param {Keyword} $duration - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing - Easing of the transition.
+/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
 @mixin slide (
   $dir: in,
   $from: left,

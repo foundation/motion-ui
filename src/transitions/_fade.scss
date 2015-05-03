@@ -1,3 +1,10 @@
+/// Creates a fade transition by adjusting the opacity of the element.
+/// @param {Keyword} $dir - State to transition to.
+/// @param {Number} $from - Opacity to start at. Must be a number between 0 and 1.
+/// @param {Number} $to - Opacity to end on.
+/// @param {Keyword} $duration - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing - Easing of the transition.
+/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
 @mixin fade(
   $dir: in,
   $from: 0,

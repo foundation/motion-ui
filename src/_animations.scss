@@ -1,4 +1,5 @@
-// SHAKE
+// Shake
+// - - - - - - - - - - - - - - -
 @keyframes shake {
   0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     transform: translateX(7%);
@@ -9,7 +10,8 @@
   100% { transform: translateX(0); }
 }
 
-// SPINNERS
+// Spin
+// - - - - - - - - - - - - - - -
 @keyframes spin-cw {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -20,7 +22,8 @@
   100% { transform: rotate(-360deg); }
 }
 
-// WIGGLE
+// Wiggle
+// - - - - - - - - - - - - - - -
 @keyframes wiggle {
   40%, 50%, 60% {
     transform: rotate(7deg);
@@ -31,6 +34,12 @@
   0%, 30%, 70%, 100% { transform: rotate(0); }
 }
 
+/// Adds styles for an animation using the keyframe specified in `$animation`.
+/// @param {Keyword} $animation - Keyframes to use.
+/// @param {Number} $duration - Duration (speed) of the animation.
+/// @param {Keyword} $timing - Easing to apply to the animation.
+/// @param {Number} $delay - Time in seconds or milliseconds to delay before the animation starts.
+/// @param {Number} $iterations - Number of times to repeat the animation.
 @mixin animation(
   $animation,
   $duration: map-get($motion-ui-speeds, default),

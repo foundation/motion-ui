@@ -1,26 +1,39 @@
+/// Format for CSS classes created with Motion UI.
+/// @type Map
 $motion-ui-classes: (
+  /// @prop {Boolean} motion-ui-classes.append [true] - Defines if selectors are chained to the selector (`.class.enter`), or appended as a new class (`.class-enter`).
   append: true,
+  /// @prop {String} motion-ui-classes.prefix ['mui-'] - Prefix to add before the state of a class. Enter an empty string to use no prefix.
   prefix: 'mui-',
+  /// @prop {String} motion-ui-classes.prefix ['-active'] - Suffix to add to the active state class.
   active: '-active',
 );
 
+/// State names to reference when writing motion classes. To use multiple class names for one state, enter a list of strings instead of one string.
+/// @type Map
 $motion-ui-states: (
   in: 'enter',
   out: 'leave',
 );
 
+/// Default speed that transitions and animations play at, along with values for modifier classes to change the speed.
+/// @type
 $motion-ui-speeds: (
   default: 500ms,
   slow: 750ms,
   fast: 250ms,
 );
 
+/// Default delay to add before motion, along with values for modifier classes to change the delay.
+/// @type Map
 $motion-ui-delays: (
   default: 0,
   short: 300ms,
   long: 700ms,
 );
 
+/// Default easing for transitions and animations, along with values for modifier classes to change the easing.
+/// @type Map
 $motion-ui-easings: (
   default: linear,
   linear: linear,
@@ -33,9 +46,15 @@ $motion-ui-easings: (
   bounceInOut: cubic-bezier(0.760, -0.245, 0.240, 1.245),
 );
 
+/// Miscellaneous settings related to Motion UI.
+/// @type Map
 $motion-ui-settings: (
+  /// @prop {Boolean} motion-ui-settings.slideAndFade [false] - Defines if slide motions should also fade in/out.
   slideAndFade: false,
+  /// @prop {Boolean} motion-ui-settings.slideAndFade [true] - Defines if hinge motions should also fade in/out.
   hingeAndFade: true,
+  /// @prop {Boolean} motion-ui-settings.slideAndFade [true] - Defines if scale motions should also fade in/out.
   scaleAndFade: true,
+  /// @prop {Boolean} motion-ui-settings.slideAndFade [true] - Defines if spin motions should also fade in/out.
   spinAndFade: true,
 );

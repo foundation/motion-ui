@@ -1,3 +1,11 @@
+/// Creates a scaling transition. A scale of `1` means the element is the same size. Larger numbers make the element bigger, while numbers less than 1 make the element smaller.
+/// @param {Keyword} $dir [in] - State to transition to.
+/// @param {Number} $from [1.5] - Size to start at.
+/// @param {Number} $from [1] - Size to end at.
+/// @param {Boolean} $fade [true] - Set to `true` to fade the element in or out simultaneously.
+/// @param {Keyword} $duration - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing - Easing of the transition.
+/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
 @mixin scale(
   $dir: in,
   $from: 1.5,
