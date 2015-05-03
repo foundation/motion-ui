@@ -6,7 +6,7 @@
 .slideInLeft    { @include slide($from: right); }
 .slideInUp      { @include slide($from: bottom); }
 .slideInRight   { @include slide($from: left); }
-.slideOutBottom { @include slide($dir: out, $from: bottom); }
+.slideOutDown   { @include slide($dir: out, $from: bottom); }
 .slideOutRight  { @include slide($dir: out, $from: right); }
 .slideOutUp     { @include slide($dir: out, $from: top); }
 .slideOutLeft   { @include slide($dir: out, $from: left); }

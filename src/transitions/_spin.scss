@@ -21,6 +21,7 @@
   }
 
   @include transition-start($dir) {
+    @include transition-basics($duration, $timing, $delay);
     transition-property: transform, opacity;
     transform: rotate($start);
     @if $fade { opacity: if($dir == in, 0, 1); }
