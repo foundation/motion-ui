@@ -4,10 +4,10 @@
   $axis: edge,
   $perspective: 2000px,
   $turn-origin: from-back,
-  $fade: $motion-hinge-and-fade,
-  $duration: $motion-duration-default,
-  $timing: $motion-timing-default,
-  $delay: $motion-delay-default
+  $fade: map-get($motion-ui-settings, hingeAndFade),
+  $duration: map-get($motion-ui-speeds, default),
+  $timing: map-get($motion-ui-easings, default),
+  $delay: map-get($motion-ui-delays, default)
 ) {
 
   // Rotation directions when hinging from back vs. front

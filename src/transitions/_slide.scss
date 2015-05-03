@@ -1,10 +1,10 @@
 @mixin slide (
   $dir: in,
   $from: left,
-  $fade: $motion-slide-and-fade,
-  $duration: $motion-duration-default,
-  $timing: $motion-timing-default,
-  $delay: $motion-delay-default
+  $fade: map-get($motion-ui-settings, slideAndFade),
+  $duration: map-get($motion-ui-speeds, default),
+  $timing: map-get($motion-ui-easings, default),
+  $delay: map-get($motion-ui-delays, default)
 ) {
   $slideDirections: (
     top:    translateY(-100%),

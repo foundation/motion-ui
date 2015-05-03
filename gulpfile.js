@@ -21,5 +21,5 @@ gulp.task('dist', ['compile'], function() {
 });
 
 gulp.task('default', ['compile'], function() {
-  gulp.watch('./motion-ui.scss', ['compile']);
+  gulp.watch('./src/**/*.scss', ['compile']);
 });

@@ -42,20 +42,23 @@
 // Transition Modifiers
 // - - - - - - - - - - - - - - -
 
-// Duration
-.slow { transition-duration: $motion-duration-slow !important; }
-.fast { transition-duration: $motion-duration-fast !important; }
-
-// Easing
-@each $easing in map-keys($motion-timings) {
-  .#{$easing} {
-    transition-timing-function: map-get($motion-timings, $easing) !important;
+@each $name, $value in $motion-ui-speeds {
+  @if $name != default {
+    .#{$name} { transition-duration: $value !important; }
   }
 }
 
-// Delay
-.delay       { transition-delay: $motion-delay-short !important; }
-.long-delay  { transition-delay: $motion-delay-long !important; }
+@each $name, $value in $motion-ui-easings {
+  @if $name != default {
+    .#{$name} { transition-timing-function: $value !important; }
+  }
+}
+
+@each $name, $value in $motion-ui-delays {
+  @if $name != default {
+    .#{$name}-delay { transition-delay: $value !important; }
+  }
+}
 
 // Animations
 // - - - - - - - - - - - - - - -
@@ -75,25 +78,21 @@
   // Repeat
   &.infinite { animation-iteration-count: infinite; }
 
-  // Easing
-  @each $timing in map-keys($motion-timings) {
-    &.#{$timing} {
-      animation-timing-function: map-get($motion-timings, $timing) !important;
+  @each $name, $value in $motion-ui-speeds {
+    @if $name != default {
+      &.#{$name} { transition-duration: $value !important; }
     }
   }
 
-  // Duration
-  &.slow { animation-duration: $motion-duration-slow !important; }
-  &.fast { animation-duration: $motion-duration-fast !important; }
+  @each $name, $value in $motion-ui-easings {
+    @if $name != default {
+      &.#{$name} { transition-timing-function: $value !important; }
+    }
+  }
 
-  // Delay
-  &.delay       { animation-delay: $motion-delay-short !important; }
-  &.long-delay  { animation-delay: $motion-delay-long !important; }
+  @each $name, $value in $motion-ui-delays {
+    @if $name != default {
+      &.#{$name}-delay { transition-timing-function: $value !important; }
+    }
+  }
 }
-
-// ngAnimte Staggers
-// - - - - - - - - - - - - - - -
-
-.stagger { @include stagger($motion-stagger-duration-default); }
-.stort-stagger { @include stagger($motion-stagger-duration-default); }
-.long-stagger { @include stagger($motion-stagger-duration-default); }

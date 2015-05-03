@@ -33,12 +33,11 @@
 
 @mixin animation(
   $animation,
-  $duration: $motion-duration-default,
-  $timing: $motion-timing-default,
-  $delay: $motion-delay-default,
-  $iterations: null
+  $duration: map-get($motion-ui-speeds, default),
+  $timing: map-get($motion-ui-easings, default),
+  $delay: map-get($motion-ui-delays, default),
+  $iterations: 0
 ) {
-  
   animation-name: $animation;
   animation-duration: $duration;
   animation-timing-function: $timing;
@@ -46,10 +45,10 @@
   backface-visibility: hidden;
   transform: translate3d(0,0,0);
 
-  @if $delay != null {
+  @if $delay > 0 null {
     animation-delay: $delay;
   }
-  @if $iterations != null {
+  @if $iterations > 0 null {
     animation-iteration-count: $iterations;
   }
 

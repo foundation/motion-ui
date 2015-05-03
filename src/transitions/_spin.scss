@@ -2,10 +2,10 @@
   $dir: in,
   $amount: 0.75turn,
   $ccw: false,
-  $fade: $motion-spin-and-fade,
-  $duration: $motion-duration-default,
-  $timing: $motion-timing-default,
-  $delay: $motion-delay-default
+  $fade: map-get($motion-ui-settings, spinAndFade),
+  $duration: map-get($motion-ui-speeds, default),
+  $timing: map-get($motion-ui-easings, default),
+  $delay: map-get($motion-ui-delays, default)
 ) {
   $amount: turn-to-deg($amount);
   $start: 0;
