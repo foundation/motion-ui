@@ -21,7 +21,8 @@ gulp.task('sass', function() {
 });
 
 gulp.task('dist', ['sass'], function() {
-  gulp.src('./build/motion-ui.css')
+  gulp.src('./motion-ui.scss')
+    .pipe(sass())
     .pipe(gulp.dest('./dist'))
     .pipe(sass({
       outputStyle: 'compressed'
