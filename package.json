@@ -24,7 +24,8 @@
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^1.3.3"
+    "gulp-sass": "^1.3.3",
+    "supercollider": "^0.1.0"
   },
   "private": true
 }

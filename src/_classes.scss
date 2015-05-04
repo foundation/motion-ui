@@ -1,98 +1,102 @@
 // Transitions
 // - - - - - - - - - - - - - - -
 
-// Slide
-.slideInDown    { @include slide($from: top); }
-.slideInLeft    { @include slide($from: right); }
-.slideInUp      { @include slide($from: bottom); }
-.slideInRight   { @include slide($from: left); }
-.slideOutDown   { @include slide($dir: out, $from: bottom); }
-.slideOutRight  { @include slide($dir: out, $from: right); }
-.slideOutUp     { @include slide($dir: out, $from: top); }
-.slideOutLeft   { @include slide($dir: out, $from: left); }
+@mixin motion-ui-transitions {
+  // Slide
+  .slideInDown    { @include slide($from: top); }
+  .slideInLeft    { @include slide($from: right); }
+  .slideInUp      { @include slide($from: bottom); }
+  .slideInRight   { @include slide($from: left); }
+  .slideOutDown   { @include slide($dir: out, $from: bottom); }
+  .slideOutRight  { @include slide($dir: out, $from: right); }
+  .slideOutUp     { @include slide($dir: out, $from: top); }
+  .slideOutLeft   { @include slide($dir: out, $from: left); }
 
-// Fade
-.fadeIn  { @include fade(in, 0, 1); }
-.fadeOut { @include fade(out, 1, 0); }
+  // Fade
+  .fadeIn  { @include fade(in, 0, 1); }
+  .fadeOut { @include fade(out, 1, 0); }
 
-// Hinge
-.hingeInFromTop      { @include hinge($dir: in, $from: top); }
-.hingeInFromRight    { @include hinge($dir: in, $from: right); }
-.hingeInFromBottom   { @include hinge($dir: in, $from: bottom); }
-.hingeInFromLeft     { @include hinge($dir: in, $from: left); }
-.hingeInFromMiddleX  { @include hinge($dir: in, $from: top,   $axis: center); }
-.hingeInFromMiddleY  { @include hinge($dir: in, $from: right, $axis: center); }
-.hingeOutFromTop     { @include hinge($dir: out, $from: top); }
-.hingeOutFromRight   { @include hinge($dir: out, $from: right); }
-.hingeOutFromBottom  { @include hinge($dir: out, $from: bottom); }
-.hingeOutFromLeft    { @include hinge($dir: out, $from: left); }
-.hingeOutFromMiddleX { @include hinge($dir: out, $from: top,   $axis: center); }
-.hingeOutFromMiddleY { @include hinge($dir: out, $from: right, $axis: center); }
+  // Hinge
+  .hingeInFromTop      { @include hinge($dir: in, $from: top); }
+  .hingeInFromRight    { @include hinge($dir: in, $from: right); }
+  .hingeInFromBottom   { @include hinge($dir: in, $from: bottom); }
+  .hingeInFromLeft     { @include hinge($dir: in, $from: left); }
+  .hingeInFromMiddleX  { @include hinge($dir: in, $from: top,   $axis: center); }
+  .hingeInFromMiddleY  { @include hinge($dir: in, $from: right, $axis: center); }
+  .hingeOutFromTop     { @include hinge($dir: out, $from: top); }
+  .hingeOutFromRight   { @include hinge($dir: out, $from: right); }
+  .hingeOutFromBottom  { @include hinge($dir: out, $from: bottom); }
+  .hingeOutFromLeft    { @include hinge($dir: out, $from: left); }
+  .hingeOutFromMiddleX { @include hinge($dir: out, $from: top,   $axis: center); }
+  .hingeOutFromMiddleY { @include hinge($dir: out, $from: right, $axis: center); }
 
-// Scale
-.zoomIn  { @include scale(in,  1.5, 1); }
-.zoomOut { @include scale(out, 0.5, 1); }
+  // Scale
+  .zoomIn  { @include scale(in,  1.5, 1); }
+  .zoomOut { @include scale(out, 0.5, 1); }
 
-// Spin
-.spinIn     { @include spin(in, 0.75turn); }
-.spinOut    { @include spin(out, 0.75turn); }
-.spinInCCW  { @include spin(in, 0.75turn, true); }
-.spinOutCCW { @include spin(out, 0.75turn, true); }
+  // Spin
+  .spinIn     { @include spin(in, 0.75turn); }
+  .spinOut    { @include spin(out, 0.75turn); }
+  .spinInCCW  { @include spin(in, 0.75turn, true); }
+  .spinOutCCW { @include spin(out, 0.75turn, true); }
 
-// Transition Modifiers
-// - - - - - - - - - - - - - - -
+  // Transition Modifiers
+  // - - - - - - - - - - - - - - -
 
-@each $name, $value in $motion-ui-speeds {
-  @if $name != default {
-    .#{$name} { transition-duration: $value !important; }
+  @each $name, $value in $motion-ui-speeds {
+    @if $name != default {
+      .#{$name} { transition-duration: $value !important; }
+    }
   }
-}
 
-@each $name, $value in $motion-ui-easings {
-  @if $name != default {
-    .#{$name} { transition-timing-function: $value !important; }
+  @each $name, $value in $motion-ui-easings {
+    @if $name != default {
+      .#{$name} { transition-timing-function: $value !important; }
+    }
   }
-}
 
-@each $name, $value in $motion-ui-delays {
-  @if $name != default {
-    .#{$name}-delay { transition-delay: $value !important; }
+  @each $name, $value in $motion-ui-delays {
+    @if $name != default {
+      .#{$name}-delay { transition-delay: $value !important; }
+    }
   }
 }
 
 // Animations
 // - - - - - - - - - - - - - - -
 
-.shake    { @include animation(shake); }
-.spin-cw  { @include animation(spin-cw); }
-.spin-ccw { @include animation(spin-ccw); }
-.wiggle   { @include animation(wiggle); }
+@mixin motion-ui-animations {
+  .shake    { @include animation(shake); }
+  .spin-cw  { @include animation(spin-cw); }
+  .spin-ccw { @include animation(spin-ccw); }
+  .wiggle   { @include animation(wiggle); }
 
-// Animation Modifiers
-// - - - - - - - - - - - - - - -
+  // Animation Modifiers
+  // - - - - - - - - - - - - - - -
 
-.shake,
-.spin-cw,
-.spin-ccw,
-.wiggle {
-  // Repeat
-  &.infinite { animation-iteration-count: infinite; }
+  .shake,
+  .spin-cw,
+  .spin-ccw,
+  .wiggle {
+    // Repeat
+    &.infinite { animation-iteration-count: infinite; }
 
-  @each $name, $value in $motion-ui-speeds {
-    @if $name != default {
-      &.#{$name} { transition-duration: $value !important; }
+    @each $name, $value in $motion-ui-speeds {
+      @if $name != default {
+        &.#{$name} { transition-duration: $value !important; }
+      }
     }
-  }
 
-  @each $name, $value in $motion-ui-easings {
-    @if $name != default {
-      &.#{$name} { transition-timing-function: $value !important; }
+    @each $name, $value in $motion-ui-easings {
+      @if $name != default {
+        &.#{$name} { transition-timing-function: $value !important; }
+      }
     }
-  }
 
-  @each $name, $value in $motion-ui-delays {
-    @if $name != default {
-      &.#{$name}-delay { transition-timing-function: $value !important; }
+    @each $name, $value in $motion-ui-delays {
+      @if $name != default {
+        &.#{$name}-delay { transition-timing-function: $value !important; }
+      }
     }
   }
 }

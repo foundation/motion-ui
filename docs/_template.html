@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Motion UI by ZURB</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
+    <link rel="stylesheet" href="assets/motion-ui.css">
+  </head>
+  <body>
+    <div class="row"><div class="column">
+      <h1>Motion UI</h1>
+
+      <div class="row">
+        <div class="medium-3 columns">
+          <ul class="side-nav">
+            <li><a href="index.html">Getting Started</a></li>
+            <li><a href="configuration.html">Configuration</a></li>
+            <li><a href="transitions.html">Transitions</a></li>
+            <li><a href="animations.html">Animations</a></li>
+            <li><a href="helpers.html">Helpers</a></li>
+          </ul>
+        </div>
+        <div class="medium-9 columns">
+          <h2>{{ title }}</h2>
+          {{ docs }}
+          {{#if sass}}
+          <hr>
+
+          <section>
+            <h2 class="docs-header">Sass Reference</h2>
+
+            {{#if sass.variable}}
+            <section>
+              <h3 class="docs-header">Variables</h3>
+
+              <p>The default styles of this component can be customized using these Sass variables in your project's <a href="#">settings file</a>.</p>
+
+              <table class="docs-variable-table">
+                <tr><th>Name</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+                {{#each sass.variable}}
+                <tr>
+                  <td><code>${{this.context.name}}</code></td>
+                  <td>{{this.type}}</td>
+                  <td><code>{{this.context.value}}</code></td>
+                  <td>{{this.description}}</td>
+                </tr>
+                {{/each}}
+              </table>
+            </section>
+
+            {{#if sass.mixin}}
+              <hr>
+            {{/if}}
+
+            {{/if}}
+
+            {{#if sass.mixin}}
+            <section>
+              <h3 class="docs-header">Mixins</h3>
+
+              <p>We use these mixins to build the final CSS output of this component. You can use the mixins yourself to build your own class structure out of our components.</p>
+
+              {{#each sass.mixin}}
+              <section>
+                <h4 class="docs-header">{{this.context.name}}</h4>
+
+                {{this.description}}
+
+                {{#if this.parameter}}
+                <table class="docs-variable-table">
+                  <tr><th>Parameter</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+                  {{#each this.parameter}}
+                  <tr>
+                    <td><code>${{this.name}}</code></td>
+                    <td>{{this.type}}</td>
+                    <td><code>{{this.default}}</code></td>
+                    <td>{{this.description}}</td>
+                  </tr>
+                  {{/each}}
+                </table>
+                {{/if}}
+              </section>
+
+              {{#if sass.function}}
+                <hr>
+              {{/if}}
+
+              {{/each}}
+            </section>
+            {{/if}}
+
+            {{#if sass.mixin}}{{#if sass.function}}
+              <hr>
+            {{/if}}{{/if}}
+
+            {{#if sass.function}}
+            <section>
+              <h3 class="docs-header">Functions</h3>
+
+              {{#each sass.function}}
+              <section>
+                <h4 class="docs-header">{{this.context.name}}</h4>
+
+                {{this.description}}
+
+                {{#if this.parameter}}
+                <table class="docs-variable-table">
+                  <tr><th>Parameter</th><th>Type</th><th>Default Value</th><th>Description</th></tr>
+                  {{#each this.parameter}}
+                  <tr>
+                    <td><code>${{this.name}}</code></td>
+                    <td>{{this.type}}</td>
+                    <td><code>{{this.default}}</code></td>
+                    <td>{{this.description}}</td>
+                  </tr>
+                  {{/each}}
+                </table>
+                {{/if}}
+              </section>
+              {{/each}}
+            </section>
+            {{/if}}
+
+            {{#if js}}
+            <hr>
+            {{/if}}
+
+          </section>
+          {{/if}}
+        </div>
+      </div>
+    </div></div>
+  </body>
+</html>
