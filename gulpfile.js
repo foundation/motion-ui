@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var rubySass = require('gulp-ruby-sass');
 var rename = require('gulp-rename');
 var Super = require('supercollider').init;
 
@@ -13,16 +14,15 @@ gulp.task('docs', function() {
 });
 
 gulp.task('sass', function() {
-  gulp.src('./src/motion-ui.scss')
-    .pipe(sass({
-      errLogToConsole: true
-    }))
+  return rubySass('./motion-ui.scss')
+    .on('error', function (err) {
+      console.error('Error:', err.message);
+    })
     .pipe(gulp.dest('./build/assets'));
 });
 
 gulp.task('dist', ['sass'], function() {
-  gulp.src('./motion-ui.scss')
-    .pipe(sass())
+  gulp.src('./build/assets/motion-ui.css')
     .pipe(gulp.dest('./dist'))
     .pipe(sass({
       outputStyle: 'compressed'

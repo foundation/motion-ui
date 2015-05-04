@@ -4,15 +4,18 @@
 /// @return {String} A selector that can be interpolated into your Sass code.
 @function build-selector($states, $active: false) {
   $return: '';
-  $chain: map-get($motion-ui-classes, append);
-  
-  $prefix: if($chain, '&.', '&-');
-  $prefix: $prefix + map-get($motion-ui-classes, prefix);
-  
-  $suffix: if($active, map-get($motion-ui-classes, active), '');
+  $chain: map-get($motion-ui-classes, chain);
+  $prefix: map-get($motion-ui-classes, prefix);
+  $suffix: map-get($motion-ui-classes, active);
   
   @each $sel in $states {
-    $return: $return + $prefix + $sel + $suffix + ', ';
+    $return: $return + if($chain, '&.', '#{&}-') + $prefix + $sel;
+
+    @if $active {
+      $return: $return + if($chain, '.', '#{&}-') + $prefix + $sel + $suffix;
+    }
+
+    $return: $return + ', ';
   }
   
   @return str-slice($return, 1, -3);
@@ -40,8 +43,10 @@
 @mixin transition-start($dir) {
   $selector: build-selector(map-get($motion-ui-states, $dir));
     
-  #{$selector} {
-    @content;
+  @at-root {
+    #{$selector} {
+      @content;
+    }
   }
 }
 
@@ -50,8 +55,10 @@
 @mixin transition-end($dir) {
   $selector: build-selector(map-get($motion-ui-states, $dir), true);
     
-  #{$selector} {
-    @content;
+  @at-root {
+    #{$selector} {
+      @content;
+    }
   }
 }
 

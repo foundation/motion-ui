@@ -2,7 +2,7 @@
 /// @type Map
 $motion-ui-classes: (
   /// @prop {Boolean} motion-ui-classes.append [true] - Defines if selectors are chained to the selector (`.class.enter`), or appended as a new class (`.class-enter`).
-  append: true,
+  chain: true,
   /// @prop {String} motion-ui-classes.prefix ['mui-'] - Prefix to add before the state of a class. Enter an empty string to use no prefix.
   prefix: 'mui-',
   /// @prop {String} motion-ui-classes.prefix ['-active'] - Suffix to add to the active state class.
