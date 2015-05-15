@@ -1,0 +1,23 @@
+@function fade($from: 0, $to: 1) {
+  $type: type-of($from);
+  $keyframes: ();
+
+  @if $type == 'string' {
+    @if $from == in {
+      $from: 0;
+      $to: 1;
+    }
+    @else if $from == out {
+      $from: 1;
+      $to: 0;
+    }
+  }
+
+  $keyframes: (
+    name: 'fade-#{$from}-to-#{$to}',
+    0: (opacity $from),
+    100: (opacity $to),
+  );
+
+  @return $keyframes;
+}

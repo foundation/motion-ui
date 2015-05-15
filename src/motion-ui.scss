@@ -2,13 +2,20 @@
 // -----------------
 
 @import "settings";
-@import "helpers";
+
+@import "util/keyframe";
+@import "util/selector";
+@import "util/series";
+@import "util/transition";
+@import "util/unit";
 
 @import "transitions/fade";
 @import "transitions/hinge";
 @import "transitions/scale";
 @import "transitions/slide";
 @import "transitions/spin";
-@import "animations";
+
+@import "animations/fade";
+@import "animations/shake";
 
 @import "classes";

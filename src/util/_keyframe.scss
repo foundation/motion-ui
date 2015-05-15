@@ -1,0 +1,32 @@
+/// Creates a string for a CSS keyframe.
+@function -mui-kf-pct($input) {
+  $output: '';
+  
+  @if type-of($input) == 'number' {
+    $output: $input + '%';
+  }
+  @else if type-of($input) == 'list' {
+    @each $i in $input {
+      $output: $output + $i + '%, ';
+    }
+    $output: str-slice($output, 1, -3);
+  }
+  
+  @return $output;
+}
+
+/// Generates CSS for a keyframe animation using a Motion UI keyframe object.
+@mixin generate-keyframes($obj) {
+  @if type-of($obj) == 'map' {
+    $name: map-get($obj, name);
+    $obj: map-remove($obj, name);
+  
+    @keyframes #{$name} {
+      @each $n, $value in $obj {
+        #{-mui-kf-pct($n)} {
+          #{nth($value, 1)}: #{nth($value, 2)};
+        }
+      }
+    }
+  }
+}

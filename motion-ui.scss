@@ -1,4 +1,16 @@
 @import "src/motion-ui";
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+.thing {
+  @include mui-series {
+    .thing-one {
+      @include mui-queue(shake(7%));
+    }
+
+    .thing-two {
+      @include mui-queue(fade(in));
+    }
+  }
+}

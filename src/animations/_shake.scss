@@ -1,0 +1,11 @@
+@function shake($intensity: 7%) {
+  $name: str-slice('shake-#{$intensity}', 1, -3);
+
+  $keyframes: (
+    name: 'shake-#{$intensity}',
+    (0, 5, 10): (transform, translateX($intensity)),
+    100: (transform, translateX(-$intensity)),
+  );
+  
+  @return $keyframes;
+}

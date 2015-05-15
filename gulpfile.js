@@ -14,7 +14,9 @@ gulp.task('docs', function() {
 });
 
 gulp.task('sass', function() {
-  return rubySass('./motion-ui.scss')
+  return rubySass('./motion-ui.scss', {
+    outputStyle: 'expanded'
+  })
     .on('error', function (err) {
       console.error('Error:', err.message);
     })
@@ -33,5 +35,5 @@ gulp.task('dist', ['sass'], function() {
 
 gulp.task('default', ['docs', 'sass'], function() {
   gulp.watch('./docs/*.md', ['docs']);
-  gulp.watch('./src/**/*.scss', ['sass']);
+  gulp.watch(['./src/**/*.scss', './motion-ui.scss'], ['sass']);
 });
