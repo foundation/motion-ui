@@ -1,0 +1,16 @@
+@function spin($direction: cw, $amount: 360deg) {
+  @if $direction == ccw {
+    $amount: -$amount;
+  }
+  @else if $direction != cw {
+    @warn '$direction must be "cw" or "ccw"';
+  }
+
+  $keyframes: (
+    name: 'spin-#{$direction}-#{$amount}',
+    0: (transform, rotate(0deg)),
+    100: (transform, rotate($amount)),
+  );
+
+  @return $keyframes;
+}

@@ -1,6 +1,5 @@
 // Transitions
 // - - - - - - - - - - - - - - -
-
 @mixin motion-ui-transitions {
   // Slide
   .slideInDown    { @include slide($from: top); }
@@ -64,20 +63,15 @@
 
 // Animations
 // - - - - - - - - - - - - - - -
-
 @mixin motion-ui-animations {
-  .shake    { @include animation(shake); }
-  .spin-cw  { @include animation(spin-cw); }
-  .spin-ccw { @include animation(spin-ccw); }
-  .wiggle   { @include animation(wiggle); }
+  .shake    { @include generate-keyframes(shake()); }
+  .spin-cw  { @include generate-keyframes(spin()); }
+  .spin-ccw { @include generate-keyframes(spin(ccw)); }
+  .wiggle   { @include generate-keyframes(wiggle()); }
 
   // Animation Modifiers
   // - - - - - - - - - - - - - - -
-
-  .shake,
-  .spin-cw,
-  .spin-ccw,
-  .wiggle {
+  .mui-animate {
     // Repeat
     &.infinite { animation-iteration-count: infinite; }
 
