@@ -14,9 +14,7 @@ gulp.task('docs', function() {
 });
 
 gulp.task('sass', function() {
-  return rubySass('./motion-ui.scss', {
-    outputStyle: 'expanded'
-  })
+  return rubySass('./motion-ui.scss')
     .on('error', function (err) {
       console.error('Error:', err.message);
     })
