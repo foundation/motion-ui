@@ -30,8 +30,10 @@
   .hingeOutFromMiddleY { @include hinge($dir: out, $from: right, $axis: center); }
 
   // Scale
-  .zoomIn  { @include scale(in,  1.5, 1); }
-  .zoomOut { @include scale(out, 0.5, 1); }
+  .scaleInUp    { @include scale(in, 0.5, 1); }
+  .scaleInDown  { @include scale(in, 1.5, 1); }
+  .scaleOutUp   { @include scale(out, 1, 1.5); }
+  .scaleOutDown { @include scale(out, 1, 0.5); }
 
   // Spin
   .spinIn     { @include spin(in, 0.75turn); }
