@@ -1,11 +1,11 @@
 /// Format for CSS classes created with Motion UI.
 /// @type Map
+/// @prop {Boolean} append [true] - Defines if selectors are chained to the selector (`.class.enter`), or appended as a new class (`.class-enter`).
+/// @prop {String} prefix ['mui-'] - Prefix to add before the state of a class. Enter an empty string to use no prefix.
+/// @prop {String} prefix ['-active'] - Suffix to add to the active state class.
 $motion-ui-classes: (
-  /// @prop {Boolean} motion-ui-classes.append [true] - Defines if selectors are chained to the selector (`.class.enter`), or appended as a new class (`.class-enter`).
   chain: true,
-  /// @prop {String} motion-ui-classes.prefix ['mui-'] - Prefix to add before the state of a class. Enter an empty string to use no prefix.
   prefix: 'mui-',
-  /// @prop {String} motion-ui-classes.prefix ['-active'] - Suffix to add to the active state class.
   active: '-active',
 );
 
@@ -48,13 +48,13 @@ $motion-ui-easings: (
 
 /// Miscellaneous settings related to Motion UI.
 /// @type Map
+/// @prop {Boolean} slideAndFade [false] - Defines if slide motions should also fade in/out.
+/// @prop {Boolean} slideAndFade [true] - Defines if hinge motions should also fade in/out.
+/// @prop {Boolean} slideAndFade [true] - Defines if scale motions should also fade in/out.
+/// @prop {Boolean} slideAndFade [true] - Defines if spin motions should also fade in/out.
 $motion-ui-settings: (
-  /// @prop {Boolean} motion-ui-settings.slideAndFade [false] - Defines if slide motions should also fade in/out.
   slideAndFade: false,
-  /// @prop {Boolean} motion-ui-settings.slideAndFade [true] - Defines if hinge motions should also fade in/out.
   hingeAndFade: true,
-  /// @prop {Boolean} motion-ui-settings.slideAndFade [true] - Defines if scale motions should also fade in/out.
   scaleAndFade: true,
-  /// @prop {Boolean} motion-ui-settings.slideAndFade [true] - Defines if spin motions should also fade in/out.
   spinAndFade: true,
 );

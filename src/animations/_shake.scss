@@ -1,3 +1,6 @@
+/// Creates a shaking animation.
+/// @param {Number} $intensity [7%] - Intensity of the shake, as a percentage value.
+/// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function shake($intensity: 7%) {
   $keyframes: (
     name: 'shake-#{$intensity}',

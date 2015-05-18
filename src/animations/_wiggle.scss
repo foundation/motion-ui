@@ -1,3 +1,6 @@
+/// Creates a wiggling animation.
+/// @param {Number} $intensity [7deg] - Intensity of the wiggle. Can be any CSS angle unit.
+/// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function wiggle($intensity: 7deg) {
   $keyframes: (
     name: 'wiggle-#{$intensity}',

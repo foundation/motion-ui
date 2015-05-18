@@ -5,9 +5,9 @@
 /// @param {Number} $perspective [2000px] - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced.
 /// @param {Keyword} $turn-origin [from-back] - Side of the element to start the rotation from. Can be `from-back` or `from-front`.
 /// @param {Boolean} $fade [true] - Set to `true` to fade the element in or out simultaneously.
-/// @param {Keyword} $duration - Length (speed) of the transition.
-/// @param {Keyword|Function} $timing - Easing of the transition.
-/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
+/// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing [linear] - Easing of the transition.
+/// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin hinge (
   $dir: in,
   $from: left,

@@ -1,4 +1,6 @@
-/// Creates a string for a CSS keyframe.
+/// Creates a string for a CSS keyframe, by converting a list of numbers to a comma-separated list of percentage values.
+/// @param {List} $input - List of numbers to use.
+/// @return {String} A set of comma-separated percentage values.
 @function -mui-kf-pct($input) {
   $output: '';
   
@@ -15,7 +17,16 @@
   @return $output;
 }
 
-/// Generates CSS for a keyframe animation using a Motion UI keyframe object.
+/// Generates CSS for a keyframe animation using a Motion UI keyframe object. A keyframe object has this format:
+/// ```scss
+/// (
+///   name: 'keyframe-name',
+///   0: (opacity, 0),
+///   (25, 75): (opacity, 0.5),
+///   100: (opacity, 1),
+/// )
+/// ```
+/// @param {Map} $obj - Keyframe object to convert.
 @mixin generate-keyframes($obj) {
   @if type-of($obj) == 'map' {
     $name: map-get($obj, name);

@@ -1,3 +1,7 @@
+/// Creates a spinning animation.
+/// @param {Keyword} $direction [cw] - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise).
+/// @param {Number} $amount [360deg] - Amount to spin. Can be any CSS angle unit.
+/// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function spin($direction: cw, $amount: 360deg) {
   @if $direction == ccw {
     $amount: -$amount;

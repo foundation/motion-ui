@@ -3,9 +3,9 @@
 /// @param {Number} $from [1.5] - Size to start at.
 /// @param {Number} $from [1] - Size to end at.
 /// @param {Boolean} $fade [true] - Set to `true` to fade the element in or out simultaneously.
-/// @param {Keyword} $duration - Length (speed) of the transition.
-/// @param {Keyword|Function} $timing - Easing of the transition.
-/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
+/// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing [linear] - Easing of the transition.
+/// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin scale(
   $dir: in,
   $from: 1.5,

@@ -1,4 +1,4 @@
 ---
 title: Animations
-sass: src/_animations.scss
+sass: src/animations/*.scss
 ---

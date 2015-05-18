@@ -3,9 +3,9 @@
 /// @param {Number} $amount [0.75turn] - Amount to element the element.
 /// @param {Boolean} $ccw [false] - Set to `true` to spin counterclockwise.
 /// @param {Boolean} $fade [false] - Set to `true` to fade the element in or out simultaneously.
-/// @param {Keyword} $duration - Length (speed) of the transition.
-/// @param {Keyword|Function} $timing - Easing of the transition.
-/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
+/// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing [linear] - Easing of the transition.
+/// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin spin(
   $dir: in,
   $amount: 0.75turn,
