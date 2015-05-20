@@ -21,30 +21,33 @@
 /// Reformats a map containing duplicate values. Keys with identical values are merged into one value, where the key is a list of the matching values' keys.
 @function combine-maps($maps...) {
   $new-map: ();
-  $map-values: ();
   
+  // Iterate through each map passed in
   @each $map in $maps {
     $map: split-map($map);
     
+    // Iterate through each keyframe in the map
+    // $key is the keyframe percentage
+    // $value is a map of CSS properties
     @each $key, $value in $map {
-      @if not map-has-key($map-values, $value) {
-        $map-values: map-merge($map-values, ($value: $key));
+      $new-value: ();
+
+      // If the map already has the keyframe %, append the new property
+      @if map-has-key($new-map, $key) {
+        $new-value: map-merge(map-get($new-map, $key), $value);
       }
+      // Otherwise, create a new map with the new property
       @else {
-        $old-key: map-get($map-values, $value);
-        $new-key: append($old-key, $key, comma);
-        $map-values: map-merge($map-values, ($value: $new-key));
+        $new-value: $value;
       }
+
+      // Finally, merge the modified keyframe value into the output map
+      $new-map: map-merge($new-map, ($key: $new-value));
     }
   }
-  
-  @each $key, $value in $map-values {
-    $new-map: map-merge($new-map, ($value: $key));
-  }
 
-  $name: 'custom-#{random(1000)}';
-  $map-name: (name: $name);
-
+  // Make a name for the keyframes
+  $map-name: (name: 'custom-#{random(1000)}');
   $new-map: map-merge($new-map, $map-name);
   
   @return $new-map;
