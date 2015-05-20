@@ -1,9 +1,9 @@
 @import "src/motion-ui";
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
 
 p {
-  $kf: combo(fade(), spin());
+  $kf: combo(fade(), shake(), spin());
   @include mui-keyframes($kf);
 }

@@ -21,6 +21,21 @@
   @return $new-map;
 }
 
+/// Combines two maps of CSS properties into one map. If both maps have a transform property, the values from each will be combined into one property.
+/// @param {Map} $one - First map to merge.
+/// @param {Map} $two - Second map to merge.
+/// @return {Map} A combined map.
+/// @access private
+@function -mui-merge-properties($one, $two) {
+  @if map-has-key($one, transform) and map-has-key($two, transform) {
+    $transform: join(map-get($one, transform), map-get($two, transform));
+    $one: map-merge($one, (transform: $transform));
+    $two: map-remove($two, transform);
+  }
+
+  @return map-merge($one, $two);
+}
+
 /// Combines a series of keyframe objects into one.
 /// @param {Map} $maps... - A series of maps to merge, as individual parameters.
 /// @return {Map} A combined keyframe object.
@@ -40,7 +55,7 @@
 
       // If the map already has the keyframe %, append the new property
       @if map-has-key($new-map, $key) {
-        $new-value: map-merge(map-get($new-map, $key), $value);
+        $new-value: -mui-merge-properties(map-get($new-map, $key), $value);
       }
       // Otherwise, create a new map with the new property
       @else {
