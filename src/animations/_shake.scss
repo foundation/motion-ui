@@ -4,8 +4,8 @@
 @function shake($intensity: 7%) {
   $keyframes: (
     name: 'shake-#{$intensity}',
-    (0, 5, 10): (transform, translateX($intensity)),
-    100: (transform, translateX(-$intensity)),
+    (0, 5, 10): (transform: translateX($intensity)),
+    100: (transform: translateX(-$intensity)),
   );
   
   @return $keyframes;
