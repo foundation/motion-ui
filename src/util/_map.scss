@@ -1,0 +1,55 @@
+/// Reformats a map containing keys with a list of values, so that each key is a single value.
+@function split-map($map) {
+  $new-map: ();
+  
+  // Split keys with multiple values into individual keys
+  @each $key, $item in $map {
+    $key-type: type-of($key);
+    @if $key-type == 'number' {
+      $new-map: map-merge($new-map, ($key: $item));
+    }
+    @else if $key-type == 'list' {
+      @each $k in $key {
+        $new-map: map-merge($new-map, ($k: $item));
+      }
+    }
+  }
+  
+  @return $new-map;
+}
+
+/// Reformats a map containing duplicate values. Keys with identical values are merged into one value, where the key is a list of the matching values' keys.
+@function combine-maps($maps...) {
+  $new-map: ();
+  $map-values: ();
+  
+  @each $map in $maps {
+    $map: split-map($map);
+    
+    @each $key, $value in $map {
+      @if not map-has-key($map-values, $value) {
+        $map-values: map-merge($map-values, ($value: $key));
+      }
+      @else {
+        $old-key: map-get($map-values, $value);
+        $new-key: append($old-key, $key, comma);
+        $map-values: map-merge($map-values, ($value: $new-key));
+      }
+    }
+  }
+  
+  @each $key, $value in $map-values {
+    $new-map: map-merge($new-map, ($value: $key));
+  }
+
+  $name: 'custom-#{random(1000)}';
+  $map-name: (name: $name);
+
+  $new-map: map-merge($new-map, $map-name);
+  
+  @return $new-map;
+}
+
+@function combo($args...) {
+  @return combine-maps($args...);
+}

@@ -27,15 +27,24 @@
 /// )
 /// ```
 /// @param {Map} $obj - Keyframe object to convert.
-@mixin generate-keyframes($obj) {
+@mixin mui-keyframes($obj) {
   @if type-of($obj) == 'map' {
     $name: map-get($obj, name);
     $obj: map-remove($obj, name);
   
     @keyframes #{$name} {
       @each $n, $value in $obj {
+        $type: type-of(nth($value, 1));
+
         #{-mui-kf-pct($n)} {
-          #{nth($value, 1)}: #{nth($value, 2)};
+          @if $type == 'string' {
+            #{nth($value, 1)}: #{nth($value, 2)};
+          }
+          @else if $type == 'list' {
+            @each $v in $value {
+              #{nth($v, 1)}: #{nth($v, 2)};
+            }
+          }
         }
       }
     }
