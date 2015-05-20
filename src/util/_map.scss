@@ -1,5 +1,8 @@
 /// Reformats a map containing keys with a list of values, so that each key is a single value.
-@function split-map($map) {
+/// @param {Map} $map - Map to split up.
+/// @return {Map} A reformatted map.
+/// @access private
+@function -mui-split-keyframes($map) {
   $new-map: ();
   
   // Split keys with multiple values into individual keys
@@ -18,13 +21,16 @@
   @return $new-map;
 }
 
-/// Reformats a map containing duplicate values. Keys with identical values are merged into one value, where the key is a list of the matching values' keys.
-@function combine-maps($maps...) {
+/// Combines a series of keyframe objects into one.
+/// @param {Map} $maps... - A series of maps to merge, as individual parameters.
+/// @return {Map} A combined keyframe object.
+/// @access private
+@function -mui-combine-keyframes($maps...) {
   $new-map: ();
   
   // Iterate through each map passed in
   @each $map in $maps {
-    $map: split-map($map);
+    $map: -mui-split-keyframes($map);
     
     // Iterate through each keyframe in the map
     // $key is the keyframe percentage
@@ -53,6 +59,7 @@
   @return $new-map;
 }
 
+/// Creates a keyframe animation that combines multiple animations into one.
 @function combo($args...) {
-  @return combine-maps($args...);
+  @return -mui-combine-keyframes($args...);
 }

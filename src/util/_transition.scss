@@ -18,7 +18,7 @@
 /// Wraps the content in the setup class for a transition.
 /// @param {Keyword} $dir - State to setup for transition.
 @mixin transition-start($dir) {
-  $selector: build-selector(map-get($motion-ui-states, $dir));
+  $selector: -mui-build-selector(map-get($motion-ui-states, $dir));
     
   @at-root {
     #{$selector} {
@@ -30,7 +30,7 @@
 /// Wraps the content in the active class for a transition.
 /// @param {Keyword} $dir - State to activate a transition on.
 @mixin transition-end($dir) {
-  $selector: build-selector(map-get($motion-ui-states, $dir), true);
+  $selector: -mui-build-selector(map-get($motion-ui-states, $dir), true);
     
   @at-root {
     #{$selector} {

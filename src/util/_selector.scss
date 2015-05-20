@@ -2,7 +2,8 @@
 /// @param {String|List} $states - One or more strings that correlate to a state.
 /// @param {Boolean} $active - Defines if the selector is for the setup or active class.
 /// @return {String} A selector that can be interpolated into your Sass code.
-@function build-selector($states, $active: false) {
+/// @access private
+@function -mui-build-selector($states, $active: false) {
   $return: '';
   $chain: map-get($motion-ui-classes, chain);
   $prefix: map-get($motion-ui-classes, prefix);
