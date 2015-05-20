@@ -45,7 +45,7 @@ $-mui-queue: ();
   
   // CSS output
   @extend %animated-element;
-  @include generate-keyframes($keyframes);
+  @include mui-keyframes($keyframes);
   animation-name: map-get($keyframes, name);
   animation-duration: $duration;
   animation-delay: $actual-delay;
