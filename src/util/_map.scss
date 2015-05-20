@@ -1,3 +1,5 @@
+$-mui-custom: 0;
+
 /// Reformats a map containing keys with a list of values, so that each key is a single value.
 /// @param {Map} $map - Map to split up.
 /// @return {Map} A reformatted map.
@@ -68,7 +70,8 @@
   }
 
   // Make a name for the keyframes
-  $map-name: (name: 'custom-#{random(1000)}');
+  $-mui-custom: $-mui-custom + 1;
+  $map-name: (name: 'custom-#{$-mui-custom}');
   $new-map: map-merge($new-map, $map-name);
   
   @return $new-map;
