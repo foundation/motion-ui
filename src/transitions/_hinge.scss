@@ -1,5 +1,5 @@
 /// Creates a hinge transition by rotating the element.
-/// @param {Keyword} $dir [in] - State to transition to.
+/// @param {Keyword} $state [in] - State to transition to.
 /// @param {Keyword} $from [left] - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`.
 /// @param {Keyword} $axis [edge] - Axis of the element to rotate on. Can be `edge` or `center`.
 /// @param {Number} $perspective [2000px] - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced.
@@ -9,7 +9,7 @@
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin hinge (
-  $dir: in,
+  $state: in,
   $from: left,
   $axis: edge,
   $perspective: 2000px,
@@ -50,7 +50,7 @@
   // Start and end state
   $start: '';
   $end: '';
-  @if $dir == in {
+  @if $state == in {
     $start: perspective($perspective) $rotation;
     $end: rotate(0deg);
   }
@@ -68,15 +68,15 @@
     $origin: center;
   }
 
-  @include transition-start($dir) {
+  @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
     transition-property: transform, opacity;
     transform: $start;
     transform-origin: $origin;
-    @if $fade { opacity: if($dir == in, 0, 1); }
+    @if $fade { opacity: if($state == in, 0, 1); }
   }
-  @include transition-end($dir) {
+  @include transition-end($state) {
     transform: $end;
-    @if $fade { opacity: if($dir == in, 1, 0); }
+    @if $fade { opacity: if($state == in, 1, 0); }
   }
 }

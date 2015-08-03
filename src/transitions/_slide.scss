@@ -1,48 +1,29 @@
 /// Creates a sliding transition by translating the element horizontally or vertically.
-/// @param {Keyword} $dir [in] - State to transition to.
-/// @param {Keyword} $from [left] - Side of the element to slide from. Can be `top`, `right`, `bottom`, or `left`.
+/// @param {Keyword} $state [in] - State to transition to.
+/// @param {Keyword} $direction [left] - Side of the element to slide from. Can be `top`, `right`, `bottom`, or `left`.
 /// @param {Boolean} $fade [false] - Set to `true` to fade the element in or out simultaneously.
 /// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin slide (
-  $dir: in,
-  $from: left,
+  $state: in,
+  $direction: left,
+  $amount: 100%,
   $fade: map-get($motion-ui-settings, slideAndFade),
   $duration: map-get($motion-ui-speeds, default),
   $timing: map-get($motion-ui-easings, default),
   $delay: map-get($motion-ui-delays, default)
 ) {
-  $slideDirections: (
-    top:    translateY(-100%),
-    right:  translateX(100%),
-    bottom: translateY(100%),
-    left:   translateX(-100%),
-  );
-  $start: '';
-  $end: '';
-
-  @if $dir == in {
-    $start: map-get($slideDirections, $from);
-    $end: translateX(0) translateY(0);
-  }
-  @else {
-    $start: translateX(0) translateY(0);
-    $end: map-get($slideDirections, $from);
-  }
+  $slide: slide($state, $direction, $amount, $fade);
 
   // CSS Output
-  @include transition-start($dir) {
+  @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
+    @include -mui-kf-get($slide, 0);
     transition-property: transform, opacity;
     backface-visibility: hidden;
-    transform: $start;
-
-    @if $fade { opacity: if($dir == in, 0, 1); }
   }
-  @include transition-end($dir) {
-    transform: $end;
-
-    @if $fade { opacity: if($dir == in, 1, 0); }
+  @include transition-end($state) {
+    @include -mui-kf-get($slide, 100);
   }
 }

@@ -4,9 +4,10 @@
 /// @param {Number} $amount [100%] - Distance to move. Can be any CSS length unit.
 /// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function slide(
-  $direction: up,
   $state: in,
-  $amount: 100%
+  $direction: up,
+  $amount: 100%,
+  $fade: map-get($motion-ui-settings, slideAndFade)
 ) {
   $from: $amount;
   $to: 0;
@@ -32,13 +33,20 @@
     }
   }
 
-  $from: '#{$func}(#{$from})';
-  $to: '#{$func}(#{$to})';
+  $from: (transform: '#{$func}(#{$from})');
+  $to: (transform: '#{$func}(#{$to})');
+
+  @if $fade {
+    $opacity-from: if($state == in, 0, 100);
+    $opacity-to: if($state == in, 100, 0);
+    $from: map-merge($from, (opacity: $opacity-from));
+    $to: map-merge($from, (opacity: $opacity-to));
+  }
 
   $keyframes: (
     name: 'slide-#{$state}-#{$direction}-#{$amount}',
-    0: (transform: $from),
-    100: (transform: $to),
+    0: $from,
+    100: $to,
   );
 
   @return $keyframes;

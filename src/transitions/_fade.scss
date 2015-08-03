@@ -1,24 +1,26 @@
 /// Creates a fade transition by adjusting the opacity of the element.
-/// @param {Keyword} $dir [in] - State to transition to.
+/// @param {Keyword} $state [in] - State to transition to.
 /// @param {Number} $from [0] - Opacity to start at. Must be a number between 0 and 1.
 /// @param {Number} $to [1] - Opacity to end on.
 /// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin fade(
-  $dir: in,
+  $state: in,
   $from: 0,
   $to: 1,
   $duration: map-get($motion-ui-speeds, default),
   $timing: map-get($motion-ui-easings, default),
   $delay: map-get($motion-ui-delays, default)
 ) {
-  @include transition-start($dir) {
+  $fade: fade($from, $to);
+
+  @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
+    @include -mui-kf-get($fade, 0);
     transition-property: opacity;
-    opacity: $from;
   }
-  @include transition-end($dir) {
-    opacity: $to;
+  @include transition-end($state) {
+    @include -mui-kf-get($fade, 100);
   }
 }
