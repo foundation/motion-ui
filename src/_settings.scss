@@ -7,22 +7,22 @@ $motion-ui-classes: (
   chain: true,
   prefix: 'mui-',
   active: '-active',
-);
+) !default;
 
 /// State names to reference when writing motion classes. To use multiple class names for one state, enter a list of strings instead of one string.
 /// @type Map
 $motion-ui-states: (
   in: 'enter',
   out: 'leave',
-);
+) !default;
 
 /// Default speed that transitions and animations play at, along with values for modifier classes to change the speed.
-/// @type
+/// @type Map
 $motion-ui-speeds: (
   default: 500ms,
   slow: 750ms,
   fast: 250ms,
-);
+) !default;
 
 /// Default delay to add before motion, along with values for modifier classes to change the delay.
 /// @type Map
@@ -30,7 +30,7 @@ $motion-ui-delays: (
   default: 0,
   short: 300ms,
   long: 700ms,
-);
+) !default;
 
 /// Default easing for transitions and animations, along with values for modifier classes to change the easing.
 /// @type Map
@@ -44,7 +44,7 @@ $motion-ui-easings: (
   bounceIn: cubic-bezier(0.485, 0.155, 0.240, 1.245),
   bounceOut: cubic-bezier(0.485, 0.155, 0.515, 0.845),
   bounceInOut: cubic-bezier(0.760, -0.245, 0.240, 1.245),
-);
+) !default;
 
 /// Miscellaneous settings related to Motion UI.
 /// @type Map
@@ -57,4 +57,4 @@ $motion-ui-settings: (
   hingeAndFade: true,
   scaleAndFade: true,
   spinAndFade: true,
-);
+) !default;
