@@ -43,19 +43,5 @@
 /// @param {Number} $delay-amount - Amount of time in seconds or milliseconds to add between each item's animation.
 @mixin stagger($delay-amount) {
   transition-delay: $delay-amount;
-
-  // Prevent accidental CSS inheritance
-  transition-duration: 0;
-}
-
-@mixin -mui-kf-get($kf, $key) {
-  @if map-has-key($kf, $key) {
-    @each $prop, $value in map-get($kf, $key) {
-      // Some keyframe maps store transforms as quoted strings
-      @if type-of($value) == 'string' {
-        $value: unquote($value);
-      }
-      #{$prop}: $value;
-    }
-  }
+  transition-duration: 0; // Prevent accidental CSS inheritance
 }

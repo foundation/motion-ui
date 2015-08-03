@@ -1,22 +1,3 @@
-/// Creates a string for a CSS keyframe, by converting a list of numbers to a comma-separated list of percentage values.
-/// @param {List} $input - List of numbers to use.
-/// @return {String} A set of comma-separated percentage values.
-@function -mui-kf-pct($input) {
-  $output: '';
-  
-  @if type-of($input) == 'number' {
-    $output: $input + '%';
-  }
-  @else if type-of($input) == 'list' {
-    @each $i in $input {
-      $output: $output + $i + '%, ';
-    }
-    $output: str-slice($output, 1, -3);
-  }
-  
-  @return $output;
-}
-
 /// Generates CSS for a keyframe animation using a Motion UI keyframe object. A keyframe object has this format:
 /// ```scss
 /// (
@@ -43,6 +24,46 @@
           }
         }
       }
+    }
+  }
+}
+
+/// Creates a keyframe animation that combines multiple animations into one.
+@function combo($args...) {
+  @return -mui-combine-keyframes($args...);
+}
+
+/// Creates a string for a CSS keyframe, by converting a list of numbers to a comma-separated list of percentage values.
+/// @param {List} $input - List of numbers to use.
+/// @return {String} A set of comma-separated percentage values.
+@function -mui-kf-pct($input) {
+  $output: '';
+  
+  @if type-of($input) == 'number' {
+    $output: $input + '%';
+  }
+  @else if type-of($input) == 'list' {
+    @each $i in $input {
+      $output: $output + $i + '%, ';
+    }
+    $output: str-slice($output, 1, -3);
+  }
+  
+  @return $output;
+}
+
+/// Prints the CSS properties from a specific key in a keyframes map. Used to borrow CSS from keyframe functions for use in transitions.
+/// @param {Map} $kf - Keyframe map to extract from.
+/// @param {Number} $key - Key in the map to print the CSS of.
+/// @access private
+@mixin -mui-kf-get($kf, $key) {
+  @if map-has-key($kf, $key) {
+    @each $prop, $value in map-get($kf, $key) {
+      // Some keyframe maps store transforms as quoted strings
+      @if type-of($value) == 'string' {
+        $value: unquote($value);
+      }
+      #{$prop}: $value;
     }
   }
 }

@@ -15,14 +15,14 @@ $-mui-queue: ();
   @content;
 }
 
-/// Injects a delay into an animation queue.
+/// Adds a delay to an animation queue.
 /// @param {Number} $length - Amount of time in seconds or milliseconds to delay.
 @mixin mui-delay($length) {
   $item: ($length, 0s);
   $-mui-queue: append($-mui-queue, $item) !global;
 }
 
-/// Adds an animation to the queue.
+/// Adds an animation to an animation queue.
 /// @param {Map} $keyframes - Motion UI keyframes map to use.
 /// @param {Number} $duration [1s] - Length of the animation.
 /// @param {Number} $gap [0s] - Amount of time to pause before playing the animation after this one.
