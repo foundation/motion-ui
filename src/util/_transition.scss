@@ -47,3 +47,11 @@
   // Prevent accidental CSS inheritance
   transition-duration: 0;
 }
+
+@mixin -mui-kf-get($kf, $key) {
+  @if map-has-key($kf, $key) {
+    @each $prop, $value in map-get($kf, $key) {
+      #{$prop}: $value;
+    }
+  }
+}
