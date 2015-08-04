@@ -1,88 +1,88 @@
 .slideInDown.mui-enter {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateY(-100%);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateY(-100%); }
+  backface-visibility: hidden; }
 .slideInDown.mui-enter.mui-enter-active {
-  transform: translateX(0) translateY(0); }
+  transform: translateY(0); }
 
 .slideInLeft.mui-enter {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateX(-100%);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateX(100%); }
+  backface-visibility: hidden; }
 .slideInLeft.mui-enter.mui-enter-active {
-  transform: translateX(0) translateY(0); }
+  transform: translateX(0); }
 
 .slideInUp.mui-enter {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateY(100%);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateY(100%); }
+  backface-visibility: hidden; }
 .slideInUp.mui-enter.mui-enter-active {
-  transform: translateX(0) translateY(0); }
+  transform: translateY(0); }
 
 .slideInRight.mui-enter {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateX(100%);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateX(-100%); }
+  backface-visibility: hidden; }
 .slideInRight.mui-enter.mui-enter-active {
-  transform: translateX(0) translateY(0); }
+  transform: translateX(0); }
 
 .slideOutDown.mui-leave {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateY(0);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateX(0) translateY(0); }
+  backface-visibility: hidden; }
 .slideOutDown.mui-leave.mui-leave-active {
-  transform: translateY(100%); }
+  transform: translateY(-100%); }
 
 .slideOutRight.mui-leave {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateX(0);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateX(0) translateY(0); }
+  backface-visibility: hidden; }
 .slideOutRight.mui-leave.mui-leave-active {
   transform: translateX(100%); }
 
 .slideOutUp.mui-leave {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateY(0);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateX(0) translateY(0); }
+  backface-visibility: hidden; }
 .slideOutUp.mui-leave.mui-leave-active {
   transform: translateY(-100%); }
 
 .slideOutLeft.mui-leave {
   transition-duration: 500ms;
   transition-timing-function: linear;
+  transform: translateX(0);
   transition-property: transform, opacity;
-  backface-visibility: hidden;
-  transform: translateX(0) translateY(0); }
+  backface-visibility: hidden; }
 .slideOutLeft.mui-leave.mui-leave-active {
   transform: translateX(-100%); }
 
 .fadeIn.mui-enter {
   transition-duration: 500ms;
   transition-timing-function: linear;
-  transition-property: opacity;
-  opacity: 0; }
+  opacity: 0;
+  transition-property: opacity; }
 .fadeIn.mui-enter.mui-enter-active {
   opacity: 1; }
 
 .fadeOut.mui-leave {
   transition-duration: 500ms;
   transition-timing-function: linear;
-  transition-property: opacity;
-  opacity: 1; }
+  opacity: 1;
+  transition-property: opacity; }
 .fadeOut.mui-leave.mui-leave-active {
   opacity: 0; }
 
@@ -334,10 +334,10 @@
 .long-delay {
   transition-delay: 700ms !important; }
 
-@keyframes shake-7% {
-  0%, 5%, 10% {
+@keyframes shake-7 {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     transform: translateX(7%); }
-  100% {
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
     transform: translateX(-7%); } }
 @keyframes spin-cw-360deg {
   0% {
