@@ -1,50 +1,19 @@
 # Motion UI
 
-A Sass library for creating CSS transitions and animations from your friends at ZURB. Used by Foundation for Sites and Foundation for Apps.
+A Sass library for creating CSS transitions and animations from your friends at [ZURB](http://zurb.com). Originally created for [Foundation for Apps](http://foundation.zurb.com/apps), the code is now a standalone library, soon to be used by [Foundation for Sites](http://foundation.zurb.com/sites) and Foundation for Apps.
 
-## Settings
+## Installation
 
-Motion UI's settings are stored in six Sass variables. Refer to the Motion UI documentation to see what each one does.
+- On npm: `npm install motion-ui`
+- On Bower: `bower install motion-ui`
 
-```scss
-$motion-ui-classes: ();
-$motion-ui-states: ();
-$motion-ui-speeds: ();
-$motion-ui-delays: ();
-$motion-ui-easings: ();
-$motion-ui-settings: ();
-```
+## Documentation
 
-## Transitions
-
-Transitions are used to show and hide components, moving them between an active and inactive state. Create a transition by defining it within a class.
-
-```scss
-.slideIn {
-  @include mui-slide(in, bottom);
-}
-```
-
-This creates a set of classes that can be used with an animation library, such as Foundation for Sites's Motion library, or ngAnimate.
-
-```css
-.slideIn.mui-enter { }
-.slideIn.mui-enter.mui-enter-active { }
-```
-
-To modify the structure of the transition classes, change the `$motion-ui-classes` variable.
-
-## Animations
-
-Animations are for one-off bits of flair, like making an image shake or a series of elements animate in. Our preset animations can be combined on one element, or strung together into a series.
-
-## Running this repo
-
-Requires Node.
+View the documentation in the [docs folder](docs). You can also download the code and compile the documentation into HTML.
 
 ```
 git clone https://github.com/zurb/motion-ui.git
 cd motion-ui
-npm i
+npm install
 npm start
 ```

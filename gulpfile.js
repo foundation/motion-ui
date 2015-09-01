@@ -5,7 +5,7 @@ var rename = require('gulp-rename');
 var Super = require('supercollider').init;
 
 gulp.task('docs', function() {
-  gulp.src('./docs/*.md')
+  return gulp.src('./docs/*.md')
     .pipe(Super({
       template: './docs/_template.html',
       adapters: ['sass']
@@ -22,7 +22,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('dist', ['sass'], function() {
-  gulp.src('./build/assets/motion-ui.css')
+  return gulp.src('./build/assets/motion-ui.css')
     .pipe(gulp.dest('./dist'))
     .pipe(sass({
       outputStyle: 'compressed'

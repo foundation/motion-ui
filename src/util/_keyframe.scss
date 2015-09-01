@@ -8,7 +8,7 @@
 /// )
 /// ```
 /// @param {Map} $obj - Keyframe object to convert.
-@mixin mui-keyframes($obj) {
+@mixin mui-animation($obj) {
   @if type-of($obj) == 'map' {
     // Get the name of the keyframe, and then remove it from the map
     $name: map-get($obj, name);
@@ -25,6 +25,8 @@
         }
       }
     }
+
+    animation-name: $name;
   }
 }
 

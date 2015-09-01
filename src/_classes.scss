@@ -66,10 +66,10 @@
 // Animations
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-animations {
-  .shake    { @include mui-keyframes(shake()); }
-  .spin-cw  { @include mui-keyframes(spin()); }
-  .spin-ccw { @include mui-keyframes(spin(ccw)); }
-  .wiggle   { @include mui-keyframes(wiggle()); }
+  .shake    { @include mui-animation(shake()); }
+  .spin-cw  { @include mui-animation(spin()); }
+  .spin-ccw { @include mui-animation(spin(ccw)); }
+  .wiggle   { @include mui-animation(wiggle()); }
 
   // Animation Modifiers
   // - - - - - - - - - - - - - - -
