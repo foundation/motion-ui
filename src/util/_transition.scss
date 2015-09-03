@@ -3,14 +3,21 @@
 /// @param {Keyword|Function} $timing - Easing of the transition.
 /// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
 @mixin transition-basics(
-  $duration: map-get($motion-ui-speeds, default),
-  $timing: map-get($motion-ui-easings, default),
-  $delay: map-get($motion-ui-delays, default)
+  $duration: null,
+  $timing: null,
+  $delay: null
 ) {
-  transition-duration: $duration;
-  transition-timing-function: $timing;
+  @extend %mui-defaults;
 
-  @if $delay > 0 {
+  @if $duration {
+    transition-duration: $duration;
+  }
+
+  @if $timing {
+    transition-timing-function: $timing;
+  }
+
+  @if $delay {
     transition-delay: $delay;
   }
 }

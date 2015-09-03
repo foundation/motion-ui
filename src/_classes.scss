@@ -1,6 +1,11 @@
 // Transitions
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-transitions {
+  %mui-defaults {
+    transition-duration: map-get($motion-ui-speeds, default);
+    transition-timing-function: map-get($motion-ui-easings, default);
+  }
+
   // Slide
   .slideInDown    { @include slide(in,  down); }
   .slideInLeft    { @include slide(in,  right); }

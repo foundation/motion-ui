@@ -11,9 +11,9 @@
   $direction: cw,
   $amount: 0.75turn,
   $fade: map-get($motion-ui-settings, spinAndFade),
-  $duration: map-get($motion-ui-speeds, default),
-  $timing: map-get($motion-ui-easings, default),
-  $delay: map-get($motion-ui-delays, default)
+  $duration: null,
+  $timing: null,
+  $delay: null
 ) {
   $amount: turn-to-deg($amount);
   $start: 0;

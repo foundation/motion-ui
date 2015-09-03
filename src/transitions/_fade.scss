@@ -9,9 +9,9 @@
   $state: in,
   $from: 0,
   $to: 1,
-  $duration: map-get($motion-ui-speeds, default),
-  $timing: map-get($motion-ui-easings, default),
-  $delay: map-get($motion-ui-delays, default)
+  $duration: null,
+  $timing: null,
+  $delay: null
 ) {
   $fade: fade($from, $to);
 

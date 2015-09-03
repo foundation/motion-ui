@@ -15,9 +15,9 @@
   $perspective: 2000px,
   $turn-origin: from-back,
   $fade: map-get($motion-ui-settings, hingeAndFade),
-  $duration: map-get($motion-ui-speeds, default),
-  $timing: map-get($motion-ui-easings, default),
-  $delay: map-get($motion-ui-delays, default)
+  $duration: null,
+  $timing: null,
+  $delay: null
 ) {
 
   // Rotation directions when hinging from back vs. front

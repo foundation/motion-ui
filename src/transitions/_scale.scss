@@ -11,9 +11,9 @@
   $from: 1.5,
   $to: 1,
   $fade: map-get($motion-ui-settings, scaleAndFade),
-  $duration: map-get($motion-ui-speeds, default),
-  $timing: map-get($motion-ui-easings, default),
-  $delay: map-get($motion-ui-delays, default)
+  $duration: null,
+  $timing: null,
+  $delay: null
 ) {
   @include transition-start($dir) {
     @include transition-basics($duration, $timing, $delay);
