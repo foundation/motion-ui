@@ -9,25 +9,29 @@
 /// ```
 /// @param {Map} $obj - Keyframe object to convert.
 @mixin mui-animation($obj) {
-  @if type-of($obj) == 'map' {
-    // Get the name of the keyframe, and then remove it from the map
-    $name: map-get($obj, name);
-    $obj: map-remove($obj, name);
+  // If a string is passed in, call it as a function
+  // So "slide" can be passed in instead of "slide()"
+  @if type-of($obj) == 'string' {
+    $obj: call($obj);
+  }
+
+  // Get the name of the keyframe and then remove that value from the map
+  $name: map-get($obj, name);
+  $obj: map-remove($obj, name);
   
-    @keyframes #{$name} {
-      // Now iterate through each keyframe percentage
-      @each $pct, $props in $obj {
-        #{-mui-kf-pct($pct)} {
-          // Lastly, iterate through each CSS property within a percentage and print it out
-          @each $prop, $value in $props {
-            #{$prop}: #{$value};
-          }
+  @keyframes #{$name} {
+    // Now iterate through each keyframe percentage
+    @each $pct, $props in $obj {
+      #{-mui-kf-pct($pct)} {
+        // Lastly, iterate through each CSS property within a percentage and print it out
+        @each $prop, $value in $props {
+          #{$prop}: #{$value};
         }
       }
     }
-
-    animation-name: $name;
   }
+
+  animation-name: $name;
 }
 
 /// Creates a keyframe animation that combines multiple animations into one.
