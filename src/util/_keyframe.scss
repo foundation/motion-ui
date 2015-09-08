@@ -85,6 +85,10 @@ $-mui-custom: 0;
   
   // Iterate through each map passed in
   @each $map in $maps {
+    @if type-of($map == 'string') {
+      $map: call($map);
+    }
+    
     $map: -mui-keyframe-split($map);
     
     // Iterate through each keyframe in the map
