@@ -1,0 +1,31 @@
+/// Generates CSS for a keyframe animation using a Motion UI keyframe object. A keyframe object has this format:
+/// ```scss
+/// (
+///   name: 'keyframe-name',
+///   0: (opacity: 0),
+///   (25, 75): (opacity: 0.5),
+///   100: (opacity: 1),
+/// )
+/// ```
+/// @param {Map} $obj - Keyframe object to convert.
+@mixin mui-animation($args...) {
+  $obj: -mui-process-args($args...);
+
+  // Get the name of the keyframe and then remove that value from the map
+  $name: map-get($obj, name);
+  $obj: map-remove($obj, name);
+  
+  @keyframes #{$name} {
+    // Now iterate through each keyframe percentage
+    @each $pct, $props in $obj {
+      #{-mui-kf-pct($pct)} {
+        // Lastly, iterate through each CSS property within a percentage and print it out
+        @each $prop, $value in $props {
+          #{$prop}: #{$value};
+        }
+      }
+    }
+  }
+
+  animation-name: $name;
+}

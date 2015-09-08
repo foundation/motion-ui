@@ -71,10 +71,10 @@
 // Animations
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-animations {
-  .shake    { @include mui-animation(shake()); }
-  .spin-cw  { @include mui-animation(spin()); }
+  .shake    { @include mui-animation(shake); }
+  .spin-cw  { @include mui-animation(spin); }
   .spin-ccw { @include mui-animation(spin(ccw)); }
-  .wiggle   { @include mui-animation(wiggle()); }
+  .wiggle   { @include mui-animation(wiggle); }
 
   // Animation Modifiers
   // - - - - - - - - - - - - - - -
