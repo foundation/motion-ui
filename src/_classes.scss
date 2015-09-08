@@ -35,10 +35,10 @@
   .hingeOutFromMiddleY { @include mui-hinge(out, right, center); }
 
   // Scale
-  .scaleInUp    { @include mui-scale(in,  0.5, 1); }
-  .scaleInDown  { @include mui-scale(in,  1.5, 1); }
-  .scaleOutUp   { @include mui-scale(out, 1, 1.5); }
-  .scaleOutDown { @include mui-scale(out, 1, 0.5); }
+  .scaleInUp    { @include mui-zoom(in,  0.5, 1); }
+  .scaleInDown  { @include mui-zoom(in,  1.5, 1); }
+  .scaleOutUp   { @include mui-zoom(out, 1, 1.5); }
+  .scaleOutDown { @include mui-zoom(out, 1, 0.5); }
 
   // Spin
   .spinIn     { @include mui-spin(in,  cw); }

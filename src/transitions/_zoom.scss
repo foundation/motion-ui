@@ -6,7 +6,7 @@
 /// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
-@mixin mui-scale(
+@mixin mui-zoom(
   $dir: in,
   $from: 1.5,
   $to: 1,
@@ -15,14 +15,21 @@
   $timing: null,
   $delay: null
 ) {
+  $scale: zoom($from, $to, $fade);
+
   @include transition-start($dir) {
     @include transition-basics($duration, $timing, $delay);
-    transition-property: transform, property;
-    transform: scale($from);
-    @if $fade { opacity: if($dir == in, 0, 1) }
+    @include -mui-kf-get($scale, 0);
+    
+    @if $fade {
+      transition-property: transform, opacity;
+    }
+    @else {
+      transition-property: transform;
+    }
   }
+
   @include transition-end($dir) {
-    transform: scale($to);
-    @if $fade { opacity: if($dir == in, 1, 0) }
+    @include -mui-kf-get($scale, 100);
   }
 }
