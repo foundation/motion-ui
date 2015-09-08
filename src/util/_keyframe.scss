@@ -1,3 +1,20 @@
+@mixin mui-keyframes($name, $effects...) {
+  $obj: -mui-process-args($effects...);
+  $obj: map-remove($obj, name);
+  
+  @keyframes #{$name} {
+    // Now iterate through each keyframe percentage
+    @each $pct, $props in $obj {
+      #{-mui-kf-pct($pct)} {
+        // Lastly, iterate through each CSS property within a percentage and print it out
+        @each $prop, $value in $props {
+          #{$prop}: #{$value};
+        }
+      }
+    }
+  }
+}
+
 /// Creates a string for a CSS keyframe, by converting a list of numbers to a comma-separated list of percentage values.
 /// @param {List} $input - List of numbers to use.
 /// @return {String} A set of comma-separated percentage values.
