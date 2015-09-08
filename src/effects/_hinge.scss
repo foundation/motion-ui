@@ -1,0 +1,79 @@
+/// Creates a hinge effect by rotating the element.
+/// @param {Keyword} $state [in] - State to transition to.
+/// @param {Keyword} $from [left] - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`.
+/// @param {Keyword} $axis [edge] - Axis of the element to rotate on. Can be `edge` or `center`.
+/// @param {Number} $perspective [2000px] - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced.
+/// @param {Keyword} $turn-origin [from-back] - Side of the element to start the rotation from. Can be `from-back` or `from-front`.
+/// @param {Boolean} $fade [true] - Set to `true` to fade the element in or out simultaneously.
+@function hinge (
+  $state: in,
+  $from: left,
+  $axis: edge,
+  $perspective: 2000px,
+  $turn-origin: from-back,
+  $fade: map-get($motion-ui-settings, hingeAndFade)
+) {
+  // Rotation directions when hinging from back vs. front
+  $rotationAmount: 90deg;
+  $rotationsBack: (
+    top: rotateX($rotationAmount * -1),
+    right: rotateY($rotationAmount * -1),
+    bottom: rotateX($rotationAmount),
+    left: rotateY($rotationAmount),
+  );
+  $rotationsFrom: (
+    top: rotateX($rotationAmount),
+    right: rotateY($rotationAmount),
+    bottom: rotateX($rotationAmount * -1),
+    left: rotateY($rotationAmount * -1),
+  );
+
+  // Rotation origin
+  $rotation: '';
+  @if $turn-origin == from-front {
+    $rotation: map-get($rotationsFrom, $from);
+  }
+  @else if $turn-origin == from-back {
+    $rotation: map-get($rotationsBack, $from);
+  }
+  @else {
+    @warn "`$turn-origin` must be either `from-back` or `from-front`";
+  }
+
+  // Start and end state
+  $start: '';
+  $end: '';
+  @if $state == in {
+    $start: perspective($perspective) $rotation;
+    $end: perspective($perspective) rotate(0deg);
+  }
+  @else {
+    $start: perspective($perspective) rotate(0deg);
+    $end: perspective($perspective) $rotation;
+  }
+
+  // Turn axis
+  $origin: '';
+  @if $axis == edge {
+    $origin: $from;
+  }
+  @else {
+    $origin: center;
+  }
+
+  $start: (transform: $start, transform-origin: $origin);
+  $end:   (transform: $end);
+
+  @if $fade {
+    $start: map-merge($start, (opacity: if($state == in, 0, 1)));
+    $end:   map-merge($end,   (opacity: if($state == in, 1, 0)));
+  }
+
+  $keyframes: (
+    name: 'hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}',
+    0: $start,
+    100: $end,
+  );
+
+  @return $keyframes;
+}

@@ -19,64 +19,21 @@
   $timing: null,
   $delay: null
 ) {
-
-  // Rotation directions when hinging from back vs. front
-  $rotationAmount: 90deg;
-  $rotationsBack: (
-    top: rotateX($rotationAmount * -1),
-    right: rotateY($rotationAmount * -1),
-    bottom: rotateX($rotationAmount),
-    left: rotateY($rotationAmount),
-  );
-  $rotationsFrom: (
-    top: rotateX($rotationAmount),
-    right: rotateY($rotationAmount),
-    bottom: rotateX($rotationAmount * -1),
-    left: rotateY($rotationAmount * -1),
-  );
-
-  // Rotation origin
-  $rotation: '';
-  @if $turn-origin == from-front {
-    $rotation: map-get($rotationsFrom, $from);
-  }
-  @else if $turn-origin == from-back {
-    $rotation: map-get($rotationsBack, $from);
-  }
-  @else {
-    @warn "`$turn-origin` must be either `from-back` or `from-front`";
-  }
-
-  // Start and end state
-  $start: '';
-  $end: '';
-  @if $state == in {
-    $start: perspective($perspective) $rotation;
-    $end: rotate(0deg);
-  }
-  @else {
-    $start: rotate(0deg);
-    $end: perspective($perspective) $rotation;
-  }
-
-  // Turn axis
-  $origin: '';
-  @if $axis == edge {
-    $origin: $from;
-  }
-  @else {
-    $origin: center;
-  }
+  $hinge: hinge($state, $from, $axis, $perspective, $turn-origin, $fade);
 
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
-    transition-property: transform, opacity;
-    transform: $start;
-    transform-origin: $origin;
-    @if $fade { opacity: if($state == in, 0, 1); }
+    @include -mui-kf-get($hinge, 0);
+
+    @if $fade {
+      transition-property: transform, opacity;
+    }
+    @else {
+      transition-property: transform;
+    }
   }
+
   @include transition-end($state) {
-    transform: $end;
-    @if $fade { opacity: if($state == in, 1, 0); }
+    @include -mui-kf-get($hinge, 100);
   }
 }
