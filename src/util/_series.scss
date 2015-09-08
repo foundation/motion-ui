@@ -10,16 +10,15 @@ $-mui-queue: ();
 }
 
 /// Creates a new animation queue.
-@mixin mui-series() {
+@mixin mui-series($delay: 0s) {
   $-mui-queue: () !global;
-  @content;
-}
 
-/// Adds a delay to an animation queue.
-/// @param {Number} $length - Amount of time in seconds or milliseconds to delay.
-@mixin mui-delay($length) {
-  $item: ($length, 0s);
-  $-mui-queue: append($-mui-queue, $item) !global;
+  @if $delay > 0 {
+    $item: ($delay, 0s);
+    $-mui-queue: append($-mui-queue, $item) !global;
+  }
+
+  @content;
 }
 
 /// Adds an animation to an animation queue.
@@ -30,8 +29,7 @@ $-mui-queue: ();
 @mixin mui-queue(
   $keyframes, 
   $duration: 1s, 
-  $gap: 0s,
-  $easing: linear
+  $gap: 0s
 ) {
   // Calculate the delay for this animation based on how long the previous ones take
   $actual-delay: 0s;
@@ -45,8 +43,7 @@ $-mui-queue: ();
   
   // CSS output
   @extend %animated-element;
-  @include mui-keyframes($keyframes);
+  @include mui-animation($keyframes);
   animation-duration: $duration;
   animation-delay: $actual-delay;
-  animation-timing-function: $easing;
 }
