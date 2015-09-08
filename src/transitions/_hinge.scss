@@ -8,7 +8,7 @@
 /// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
-@mixin hinge (
+@mixin mui-hinge (
   $state: in,
   $from: left,
   $axis: edge,

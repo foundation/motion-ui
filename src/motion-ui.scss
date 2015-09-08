@@ -13,16 +13,16 @@
 @import "util/unit";
 @import "util/map";
 
-@import "transitions/fade";
-@import "transitions/hinge";
-@import "transitions/scale";
-@import "transitions/slide";
-@import "transitions/spin";
-
 @import "effects/fade";
 @import "effects/spin";
 @import "effects/shake";
 @import "effects/slide";
 @import "effects/wiggle";
+
+@import "transitions/fade";
+@import "transitions/hinge";
+@import "transitions/scale";
+@import "transitions/slide";
+@import "transitions/spin";
 
 @import "classes";

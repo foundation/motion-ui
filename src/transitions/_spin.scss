@@ -6,7 +6,7 @@
 /// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
-@mixin spin(
+@mixin mui-spin(
   $state: in,
   $direction: cw,
   $amount: 0.75turn,

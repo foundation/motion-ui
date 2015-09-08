@@ -7,44 +7,44 @@
   }
 
   // Slide
-  .slideInDown    { @include slide(in,  down); }
-  .slideInLeft    { @include slide(in,  right); }
-  .slideInUp      { @include slide(in,  bottom); }
-  .slideInRight   { @include slide(in,  left); }
-  .slideOutDown   { @include slide(out, bottom); }
-  .slideOutRight  { @include slide(out, right); }
-  .slideOutUp     { @include slide(out, top); }
-  .slideOutLeft   { @include slide(out, left); }
+  .slideInDown    { @include mui-slide(in,  down); }
+  .slideInLeft    { @include mui-slide(in,  right); }
+  .slideInUp      { @include mui-slide(in,  bottom); }
+  .slideInRight   { @include mui-slide(in,  left); }
+  .slideOutDown   { @include mui-slide(out, bottom); }
+  .slideOutRight  { @include mui-slide(out, right); }
+  .slideOutUp     { @include mui-slide(out, top); }
+  .slideOutLeft   { @include mui-slide(out, left); }
 
   // Fade
-  .fadeIn  { @include fade(in,  0, 1); }
-  .fadeOut { @include fade(out, 1, 0); }
+  .fadeIn  { @include mui-fade(in,  0, 1); }
+  .fadeOut { @include mui-fade(out, 1, 0); }
 
   // Hinge
-  .hingeInFromTop      { @include hinge(in,  top); }
-  .hingeInFromRight    { @include hinge(in,  right); }
-  .hingeInFromBottom   { @include hinge(in,  bottom); }
-  .hingeInFromLeft     { @include hinge(in,  left); }
-  .hingeInFromMiddleX  { @include hinge(in,  top,   center); }
-  .hingeInFromMiddleY  { @include hinge(in,  right, center); }
-  .hingeOutFromTop     { @include hinge(out, top); }
-  .hingeOutFromRight   { @include hinge(out, right); }
-  .hingeOutFromBottom  { @include hinge(out, bottom); }
-  .hingeOutFromLeft    { @include hinge(out, left); }
-  .hingeOutFromMiddleX { @include hinge(out, top,   center); }
-  .hingeOutFromMiddleY { @include hinge(out, right, center); }
+  .hingeInFromTop      { @include mui-hinge(in,  top); }
+  .hingeInFromRight    { @include mui-hinge(in,  right); }
+  .hingeInFromBottom   { @include mui-hinge(in,  bottom); }
+  .hingeInFromLeft     { @include mui-hinge(in,  left); }
+  .hingeInFromMiddleX  { @include mui-hinge(in,  top,   center); }
+  .hingeInFromMiddleY  { @include mui-hinge(in,  right, center); }
+  .hingeOutFromTop     { @include mui-hinge(out, top); }
+  .hingeOutFromRight   { @include mui-hinge(out, right); }
+  .hingeOutFromBottom  { @include mui-hinge(out, bottom); }
+  .hingeOutFromLeft    { @include mui-hinge(out, left); }
+  .hingeOutFromMiddleX { @include mui-hinge(out, top,   center); }
+  .hingeOutFromMiddleY { @include mui-hinge(out, right, center); }
 
   // Scale
-  .scaleInUp    { @include scale(in,  0.5, 1); }
-  .scaleInDown  { @include scale(in,  1.5, 1); }
-  .scaleOutUp   { @include scale(out, 1, 1.5); }
-  .scaleOutDown { @include scale(out, 1, 0.5); }
+  .scaleInUp    { @include mui-scale(in,  0.5, 1); }
+  .scaleInDown  { @include mui-scale(in,  1.5, 1); }
+  .scaleOutUp   { @include mui-scale(out, 1, 1.5); }
+  .scaleOutDown { @include mui-scale(out, 1, 0.5); }
 
   // Spin
-  .spinIn     { @include spin(in,  cw); }
-  .spinOut    { @include spin(out, cw); }
-  .spinInCCW  { @include spin(in,  ccw); }
-  .spinOutCCW { @include spin(out, ccw); }
+  .spinIn     { @include mui-spin(in,  cw); }
+  .spinOut    { @include mui-spin(out, cw); }
+  .spinInCCW  { @include mui-spin(in,  ccw); }
+  .spinOutCCW { @include mui-spin(out, ccw); }
 
   // Transition Modifiers
   // - - - - - - - - - - - - - - -
