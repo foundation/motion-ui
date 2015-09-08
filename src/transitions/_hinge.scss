@@ -19,7 +19,7 @@
   $timing: null,
   $delay: null
 ) {
-  $hinge: hinge($state, $from, $axis, $perspective, $turn-origin, $fade);
+  $hinge: hinge($state, $from, $axis, $perspective, $turn-origin);
 
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
@@ -27,13 +27,16 @@
 
     @if $fade {
       transition-property: transform, opacity;
+      opacity: if($state == in, 0, 1);
     }
     @else {
-      transition-property: transform;
+      transition-property: transform, opacity;
     }
   }
 
   @include transition-end($state) {
     @include -mui-kf-get($hinge, 100);
+
+    @if $fade { opacity: if($state == in, 1, 0); }
   }
 }

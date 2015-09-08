@@ -1,5 +1,5 @@
 /// Creates a scaling transition. A scale of `1` means the element is the same size. Larger numbers make the element bigger, while numbers less than 1 make the element smaller.
-/// @param {Keyword} $dir [in] - State to transition to.
+/// @param {Keyword} $state [in] - State to transition to.
 /// @param {Number} $from [1.5] - Size to start at.
 /// @param {Number} $from [1] - Size to end at.
 /// @param {Boolean} $fade [true] - Set to `true` to fade the element in or out simultaneously.
@@ -7,7 +7,7 @@
 /// @param {Keyword|Function} $timing [linear] - Easing of the transition.
 /// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-zoom(
-  $dir: in,
+  $state: in,
   $from: 1.5,
   $to: 1,
   $fade: map-get($motion-ui-settings, scaleAndFade),
@@ -15,21 +15,24 @@
   $timing: null,
   $delay: null
 ) {
-  $scale: zoom($from, $to, $fade);
+  $scale: zoom($from, $to);
 
-  @include transition-start($dir) {
+  @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
     @include -mui-kf-get($scale, 0);
     
     @if $fade {
       transition-property: transform, opacity;
+      opacity: if($state == in, 0, 1);
     }
     @else {
-      transition-property: transform;
+      transition-property: transform, opacity;
     }
   }
 
-  @include transition-end($dir) {
+  @include transition-end($state) {
     @include -mui-kf-get($scale, 100);
+
+    @if $fade { opacity: if($state == in, 1, 0); }
   }
 }

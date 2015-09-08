@@ -14,16 +14,26 @@
   $timing: null,
   $delay: null
 ) {
-  $slide: slide($state, $direction, $amount, $fade);
+  $slide: slide($state, $direction, $amount);
 
   // CSS Output
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
     @include -mui-kf-get($slide, 0);
-    transition-property: transform, opacity;
+    
+    @if $fade {
+      transition-property: transform, opacity;
+      opacity: if($state == in, 0, 1);
+    }
+    @else {
+      transition-property: transform, opacity;
+    }
+
     backface-visibility: hidden;
   }
   @include transition-end($state) {
     @include -mui-kf-get($slide, 100);
+
+    @if $fade { opacity: if($state == in, 1, 0); }
   }
 }

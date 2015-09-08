@@ -6,8 +6,7 @@
 @function slide(
   $state: in,
   $direction: up,
-  $amount: 100%,
-  $fade: map-get($motion-ui-settings, slideAndFade)
+  $amount: 100%
 ) {
   $from: $amount;
   $to: 0;
@@ -33,20 +32,10 @@
     }
   }
 
-  $from: (transform: '#{$func}(#{$from})');
-  $to: (transform: '#{$func}(#{$to})');
-
-  @if $fade {
-    $opacity-from: if($state == in, 0, 100);
-    $opacity-to: if($state == in, 100, 0);
-    $from: map-merge($from, (opacity: $opacity-from));
-    $to: map-merge($from, (opacity: $opacity-to));
-  }
-
   $keyframes: (
     name: 'slide-#{$state}-#{$direction}-#{$amount}',
-    0: $from,
-    100: $to,
+    0: (transform: '#{$func}(#{$from})'),
+    100: (transform: '#{$func}(#{$to})'),
   );
 
   @return $keyframes;
