@@ -19,7 +19,7 @@
   // CSS Output
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
-    @include -mui-kf-get($slide, 0);
+    @include -mui-keyframe-get($slide, 0);
     
     @if $fade {
       transition-property: transform, opacity;
@@ -32,7 +32,7 @@
     backface-visibility: hidden;
   }
   @include transition-end($state) {
-    @include -mui-kf-get($slide, 100);
+    @include -mui-keyframe-get($slide, 100);
 
     @if $fade { opacity: if($state == in, 1, 0); }
   }

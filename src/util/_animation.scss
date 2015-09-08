@@ -18,7 +18,7 @@
   @keyframes #{$name} {
     // Now iterate through each keyframe percentage
     @each $pct, $props in $obj {
-      #{-mui-kf-pct($pct)} {
+      #{-mui-keyframe-pct($pct)} {
         // Lastly, iterate through each CSS property within a percentage and print it out
         @each $prop, $value in $props {
           #{$prop}: #{$value};

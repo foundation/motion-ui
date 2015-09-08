@@ -17,10 +17,10 @@
 
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
-    @include -mui-kf-get($fade, 0);
+    @include -mui-keyframe-get($fade, 0);
     transition-property: opacity;
   }
   @include transition-end($state) {
-    @include -mui-kf-get($fade, 100);
+    @include -mui-keyframe-get($fade, 100);
   }
 }

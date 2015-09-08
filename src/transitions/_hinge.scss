@@ -23,7 +23,7 @@
 
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
-    @include -mui-kf-get($hinge, 0);
+    @include -mui-keyframe-get($hinge, 0);
 
     @if $fade {
       transition-property: transform, opacity;
@@ -35,7 +35,7 @@
   }
 
   @include transition-end($state) {
-    @include -mui-kf-get($hinge, 100);
+    @include -mui-keyframe-get($hinge, 100);
 
     @if $fade { opacity: if($state == in, 1, 0); }
   }

@@ -10,6 +10,6 @@
     }
   }
   @else {
-    @return -mui-combine-keyframes($args...);
+    @return -mui-keyframe-combine($args...);
   }
 }
