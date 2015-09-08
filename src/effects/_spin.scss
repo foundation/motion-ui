@@ -3,20 +3,27 @@
 /// @param {Number} $amount [360deg] - Amount to spin. Can be any CSS angle unit.
 /// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function spin(
+  $state: in,
   $direction: cw,
-  $amount: 360deg
+  $amount: 0.75turn
 ) {
-  @if $direction == ccw {
-    $amount: -$amount;
+  $amount: turn-to-deg($amount);
+  $start: 0;
+  $end: 0;
+
+  @if $state == in {
+    $start: if($direction == ccw, $amount, $amount * -1);
+    $end: 0;
   }
-  @else if $direction != cw {
-    @warn '$direction must be "cw" or "ccw"';
+  @else {
+    $start: 0;
+    $end: if($direction == ccw, $amount * -1, $amount);
   }
 
   $keyframes: (
     name: 'spin-#{$direction}-#{$amount}',
-    0: (transform: rotate(0deg)),
-    100: (transform: rotate($amount)),
+    0: (transform: rotate($start)),
+    100: (transform: rotate($end)),
   );
 
   @return $keyframes;

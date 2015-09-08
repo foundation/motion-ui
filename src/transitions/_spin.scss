@@ -15,27 +15,24 @@
   $timing: null,
   $delay: null
 ) {
-  $amount: turn-to-deg($amount);
-  $start: 0;
-  $end: 0;
-
-  @if $state == in {
-    $start: if($direction == ccw, $amount, $amount * -1);
-    $end: 0;
-  }
-  @else {
-    $start: 0;
-    $end: if($direction == ccw, $amount * -1, $amount);
-  }
+  $spin: spin($state, $direction, $amount);
 
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
-    transition-property: transform, opacity;
-    transform: rotate($start);
-    @if $fade { opacity: if($state == in, 0, 1); }
+    @include -mui-kf-get($spin, 0);
+
+    @if $fade {
+      transition-property: transform, opacity;
+      opacity: if($state == in, 0, 1);
+    }
+    @else {
+      transition-property: transform, opacity;
+    }
   }
+  
   @include transition-end($state) {
-    transform: rotate($end);
+    @include -mui-kf-get($spin, 100);
+
     @if $fade { opacity: if($state == in, 1, 0); }
   }
 }
