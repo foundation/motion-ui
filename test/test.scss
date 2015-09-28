@@ -1,0 +1,76 @@
+@import 'true';
+@import '../src/motion-ui';
+
+@include test-module('Animation') {
+  @include test('Animation [mixin]') {
+    // @include mui-animation;
+  }
+}
+
+@include test-module('Arguments') {
+  @include test('Process Arguments [function]') {
+    // -mui-process-args();
+  }
+}
+
+@include test-module('Keyframe') {
+  @include test('Keyframes [mixin]') {
+
+  }
+
+  @include test('Keyframe Percent [function]') {
+    @include assert-equal(-mui-keyframe-pct(0), '0%', 'Converts a single number into a string with a percentage');
+    @include assert-equal(-mui-keyframe-pct((0, 50, 100)), '0%, 50%, 100%', 'Converts a list of numbers into a string of comma-separated percentage values');
+  }
+
+  @include test('Keyframe Get [function]') {
+    // -mui-keyframe-get();
+  }
+
+  @include test('Keyframe Split [function]') {
+    // -mui-keyframe-split();
+  }
+
+  @include test('Keyframe Combine [function]') {
+    // -mui-keyframe-combine();
+  }
+
+  @include test('Merge Properties [function]') {
+    $input-1: (transform: translateY(0%), opacity: 0);
+    $input-2: (transform: scale(0));
+
+    $expected: (transform: translateY(0%) scale(0), opacity: 0);
+
+    @include assert-equal(-mui-merge-properties($input-1, $input-2), $expected, 'Merges two maps of CSS properties, including transforms');
+  }
+}
+
+@include test-module('Selector') {
+  @include test('Build Selector [function]') {
+    @include assert-equal(-mui-build-selector('enter'), '&.mui-enter', 'Creates a chained setup state selector');
+    @include assert-equal(-mui-build-selector('enter', true), '&.mui-enter.mui-enter-active', 'Creates a chained active state selector');
+
+    $motion-ui-classes: (
+      chain: false,
+      prefix: 'mui-',
+      active: '-active',
+    ) !global;
+
+    @at-root {
+      .sel {
+        @include assert-equal(-mui-build-selector('enter'), '.sel-mui-enter', 'Creates a standalone setup state selector');
+        @include assert-equal(-mui-build-selector('enter', true), '.sel-mui-enter-active', 'Creates a standalone setup state selector');
+      }
+    }
+  }
+}
+
+@include test-module('Series') {
+  @include test('Series [mixin]') {
+    // @include mui-series;
+  }
+
+  @include test('Queue [mixin]') {
+    // @include mui-queue;
+  }
+}
