@@ -1,24 +1,32 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sequence = require('run-sequence');
+var rimraf = require('rimraf');
 var rubySass = require('gulp-ruby-sass');
 var rename = require('gulp-rename');
 var Super = require('supercollider').init;
 var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
 
+gulp.task('clean', function(done) {
+  rimraf('./_build, ./docs/*.md', done);
+});
+
 gulp.task('docs', function() {
-  return gulp.src('./docs/*.md')
+  return gulp.src('./docs/src/*.md')
     .pipe(Super({
-      template: './docs/_template.html',
-      adapters: ['sass']
+      template: './docs/src/_template.html',
+      adapters: ['sass'],
+      extension: 'md',
+      marked: false
     }))
-    .pipe(gulp.dest('./build'));
+    .pipe(gulp.dest('./docs'));
 });
 
 gulp.task('sass', function() {
   return gulp.src('./motion-ui.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./build/assets'));
+    .pipe(gulp.dest('./_build'));
 });
 
 gulp.task('javascript', function() {
@@ -34,13 +42,13 @@ gulp.task('javascript', function() {
         return 'MotionUI';
       }
     }))
-    .pipe(gulp.dest('./build/assets'));
+    .pipe(gulp.dest('./_build'));
 });
 
 gulp.task('dist', ['dist:sass', 'dist:javascript']);
 
 gulp.task('dist:sass', ['sass'], function() {
-  return gulp.src('./build/assets/motion-ui.css')
+  return gulp.src('./_build/motion-ui.css')
     .pipe(gulp.dest('./dist'))
     .pipe(sass({
       outputStyle: 'compressed'
@@ -50,14 +58,18 @@ gulp.task('dist:sass', ['sass'], function() {
 });
 
 gulp.task('dist:javascript', ['javascript'], function() {
-  return gulp.src('./build/assets/motion-ui.js')
+  return gulp.src('./_build/motion-ui.js')
     .pipe(gulp.dest('./dist'))
     .pipe(uglify())
     .pipe(rename('motion-ui.min.js'))
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['docs', 'sass', 'javascript'], function() {
+gulp.task('build', function(done) {
+  sequence('clean', ['docs', 'sass', 'javascript'], done);
+});
+
+gulp.task('default', ['build'], function() {
   gulp.watch('./docs/*.md', ['docs']);
   gulp.watch(['./src/**/*.scss', './motion-ui.scss'], ['sass']);
   gulp.watch('./motion-ui.js', ['javascript']);

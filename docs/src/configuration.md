@@ -1,4 +1,7 @@
-# Configuration
+---
+title: Configuration
+sass: src/_settings.scss
+---
 
 Motion UI has six variables which store all of the library's settings. Each is a map of keys and values.
 
@@ -66,6 +69,3 @@ $motion-ui-settings: (
   activateQueueClass: 'is-animating'
 );
 ```
-
-
-

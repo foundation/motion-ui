@@ -28,8 +28,10 @@
     "gulp-uglify": "^1.4.1",
     "gulp-umd": "^0.2.0",
     "mocha": "^2.3.3",
+    "rimraf": "^2.4.3",
+    "run-sequence": "^1.1.4",
     "sass-true": "^2.0.2",
-    "supercollider": "^0.2.0"
+    "supercollider": "^0.3.1"
   },
   "private": true
 }

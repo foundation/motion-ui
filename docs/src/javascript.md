@@ -1,4 +1,6 @@
-# JavaScript
+---
+title: JavaScript
+---
 
 Motion UI includes a small JavaScript library that can play transitions. Animating in reveals a hidden element, while animating out hides a visible element.
 
@@ -21,6 +23,3 @@ MotionUI.animateIn($elem, 'slideIn', function() {
   console.log('Transition finished!');
 });
 ```
-
-
-

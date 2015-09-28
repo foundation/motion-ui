@@ -1,0 +1,36 @@
+# {{ title }}
+{{ docs }}
+
+{{#if sass}}
+{{#if sass.mixin}}
+## Mixins
+
+{{#each sass.mixin}}
+### {{this.context.name}}()
+
+{{this.description}}
+{{#if this.parameter}}
+**Parameters:**
+{{#each this.parameter}}- `{{this.name}}` ({{this.type}}) - {{this.description}}{{#if this.default}} (**Default:** {{this.default}}){{/if}}
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+{{/if}}
+
+{{#if sass}}
+{{#if sass.function}}
+## Functions
+
+{{#each sass.function}}
+### {{this.context.name}}()
+
+{{this.description}}
+{{#if this.parameter}}
+**Parameters:**
+{{#each this.parameter}}- `{{this.name}}` ({{this.type}}) - {{this.description}}{{#if this.default}} (**Default:** {{this.default}}){{/if}}
+{{/each}}
+{{/if}}
+{{/each}}
+{{/if}}
+{{/if}}
