@@ -58,7 +58,7 @@ The maps `$motion-ui-speeds`, `$motion-ui-delays`, and `$motion-ui-easings` defi
 
 ## Other Settings
 
-Miscellaneous settings are in the `$motion-ui-settings` map. These settings define if animations include a fade.
+Miscellaneous settings are in the `$motion-ui-settings` map. These settings define if animations include a fade, and what class to use for triggering an animation queue.
 
 ```scss
 $motion-ui-settings: (
@@ -66,5 +66,6 @@ $motion-ui-settings: (
   hingeAndFade: true,
   scaleAndFade: true,
   spinAndFade: true,
+  activateQueueClass: 'is-animating'
 );
 ```
