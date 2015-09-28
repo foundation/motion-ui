@@ -15,7 +15,7 @@ gulp.task('clean', function(done) {
 gulp.task('docs', function() {
   return gulp.src('./docs/src/*.md')
     .pipe(Super({
-      template: './docs/src/_template.html',
+      template: './docs/src/_template.hbs',
       adapters: ['sass'],
       extension: 'md',
       marked: false
