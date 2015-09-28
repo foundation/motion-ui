@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var rubySass = require('gulp-ruby-sass');
 var rename = require('gulp-rename');
 var Super = require('supercollider').init;
+var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
 
 gulp.task('docs', function() {
@@ -36,15 +37,19 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('./build/assets'));
 });
 
-gulp.task('dist', ['sass', 'javascript'], function() {
-  gulp.src('./build/assets/motion-ui.css')
+gulp.task('dist', ['dist:sass', 'dist:javascript']);
+
+gulp.task('dist:sass', ['sass'], function() {
+  return gulp.src('./build/assets/motion-ui.css')
     .pipe(gulp.dest('./dist'))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
     .pipe(rename('motion-ui.min.css'))
     .pipe(gulp.dest('./dist'));
+});
 
+gulp.task('dist:javascript', ['javascript'], function() {
   return gulp.src('./build/assets/motion-ui.js')
     .pipe(gulp.dest('./dist'))
     .pipe(uglify())

@@ -25,6 +25,7 @@
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "2.1.0-beta",
+    "gulp-uglify": "^1.4.1",
     "gulp-umd": "^0.2.0",
     "mocha": "^2.3.3",
     "sass-true": "^2.0.2",
