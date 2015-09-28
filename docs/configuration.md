@@ -2,8 +2,6 @@
 
 Motion UI has six variables which store all of the library's settings. Each is a map of keys and values.
 
----
-
 ## States
 
 ```scss
@@ -14,8 +12,6 @@ $motion-ui-states: (
 ```
 
 Motion UI defines two motion states: `in` and `out`, which create classes with the words `enter` and `leave` respectively.
-
----
 
 ## Classes
 
@@ -45,13 +41,9 @@ Set the `chain` property of `$motion-ui-classes` to `false` to create classes li
 
 The class output can also be fine-tuned with the `prefix` and `active` properties.
 
----
-
 ## Animation Defaults
 
 The maps `$motion-ui-speeds`, `$motion-ui-delays`, and `$motion-ui-easings` define terms for animation speeds, delays, and timing functions. For example, the `default` speed of animations is 500ms, while `slow` is 750ms, and `fast` is 250ms.
-
----
 
 ## Other Settings
 
