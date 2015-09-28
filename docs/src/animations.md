@@ -50,8 +50,6 @@ If you're using a keyframe effect as-is, it can be inserted as a plain string in
   @include mui-animation(zoom);
 }
 
----
-
 ## Combination Effects
 
 Multiple keyframe effects can be combined into one. For example, you can combine a fade, slide, and spin into one animation, for something truly monstrous.
@@ -65,8 +63,6 @@ To create a combined effect, just add more keyframe functions to the `mui-animat
 ```
 
 **Note that this doesn't work with the `shake()` or `wiggle()` animations. Only animations with single start and end keyframes can be combined.**
-
----
 
 ## Series Animations
 
