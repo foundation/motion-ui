@@ -27,10 +27,13 @@ $-mui-queue: ();
 /// @param {Number} $gap [0s] - Amount of time to pause before playing the animation after this one.
 /// @param {Keyword} $easing [linear] - Timing function to use.
 @mixin mui-queue(
-  $keyframes, 
   $duration: 1s, 
-  $gap: 0s
+  $gap: 0s,
+  $keyframes...
 ) {
+  // Build the animation
+  $kf: -mui-process-args($keyframes...);
+
   // Calculate the delay for this animation based on how long the previous ones take
   $actual-delay: 0s;
   @each $anim in $-mui-queue {
@@ -43,7 +46,7 @@ $-mui-queue: ();
   
   // CSS output
   @extend %animated-element;
-  @include mui-animation($keyframes);
+  @include mui-animation($kf);
   animation-duration: $duration;
   animation-delay: $actual-delay;
 }
