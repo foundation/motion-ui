@@ -11,8 +11,9 @@
 {{this.description}}
 {{#if this.parameter}}
 **Parameters:**
+{{#each this.parameter}}
 
-{{#each this.parameter}}- `{{this.name}}` ({{this.type}}) - {{this.description}}{{#if this.default}} (**Default:** {{this.default}}){{/if}}{{/each}}
+- `{{this.name}}` ({{this.type}}) - {{this.description}}{{#if this.default}} (**Default:** {{this.default}}){{/if}}{{/each}}
 {{/if}}
 {{/each}}
 {{/if}}

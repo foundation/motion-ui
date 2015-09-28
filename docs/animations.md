@@ -130,7 +130,8 @@ Prints the CSS properties from a specific key in a keyframes map. Used to borrow
 
 **Parameters:**
 
-- `kf` (Map) - Keyframe map to extract from.- `key` (Number) - Key in the map to print the CSS of.
+- `kf` (Map) - Keyframe map to extract from.
+- `key` (Number) - Key in the map to print the CSS of.
 
 ### mui-series()
 
@@ -143,7 +144,10 @@ Adds an animation to an animation queue.
 
 **Parameters:**
 
-- `keyframes` (Map) - Motion UI keyframes map to use.- `duration` (Number) - Length of the animation. (**Default:** 1s)- `gap` (Number) - Amount of time to pause before playing the animation after this one. (**Default:** 0s)- `easing` (Keyword) - Timing function to use. (**Default:** linear)
+- `keyframes` (Map) - Motion UI keyframes map to use.
+- `duration` (Number) - Length of the animation. (**Default:** 1s)
+- `gap` (Number) - Amount of time to pause before playing the animation after this one. (**Default:** 0s)
+- `easing` (Keyword) - Timing function to use. (**Default:** linear)
 
 ## Functions
 
