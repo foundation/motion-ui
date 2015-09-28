@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sequence = require('run-sequence');
-var rimraf = require('rimraf');
+var rimraf = require('rimraf').sync;
 var rubySass = require('gulp-ruby-sass');
 var rename = require('gulp-rename');
 var Super = require('supercollider').init;
@@ -9,7 +9,9 @@ var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
 
 gulp.task('clean', function(done) {
-  rimraf('./_build, ./docs/*.md', done);
+  rimraf('./_build');
+  rimraf('./docs/*.md');
+  done();
 });
 
 gulp.task('docs', function() {
@@ -70,7 +72,7 @@ gulp.task('build', function(done) {
 });
 
 gulp.task('default', ['build'], function() {
-  gulp.watch('./docs/*.md', ['docs']);
+  gulp.watch(['./docs/src/*.md', './docs/src/_template.hbs'], ['docs']);
   gulp.watch(['./src/**/*.scss', './motion-ui.scss'], ['sass']);
   gulp.watch('./motion-ui.js', ['javascript']);
 });
