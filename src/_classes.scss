@@ -78,26 +78,23 @@
 
   // Animation Modifiers
   // - - - - - - - - - - - - - - -
-  .mui-animate {
-    // Repeat
-    &.infinite { animation-iteration-count: infinite; }
+  .infinite { animation-iteration-count: infinite; }
 
-    @each $name, $value in $motion-ui-speeds {
-      @if $name != default {
-        &.#{$name} { transition-duration: $value !important; }
-      }
+  @each $name, $value in $motion-ui-speeds {
+    @if $name != default {
+      .#{$name} { animation-duration: $value !important; }
     }
+  }
 
-    @each $name, $value in $motion-ui-easings {
-      @if $name != default {
-        &.#{$name} { transition-timing-function: $value !important; }
-      }
+  @each $name, $value in $motion-ui-easings {
+    @if $name != default {
+      .#{$name} { animation-timing-function: $value !important; }
     }
+  }
 
-    @each $name, $value in $motion-ui-delays {
-      @if $name != default {
-        &.#{$name}-delay { transition-timing-function: $value !important; }
-      }
+  @each $name, $value in $motion-ui-delays {
+    @if $name != default {
+      .#{$name}-delay { animation-delay: $value !important; }
     }
   }
 }
