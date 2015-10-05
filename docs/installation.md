@@ -17,6 +17,8 @@ To import the Sass files into a project, add the load path `[modules_folder]/mot
 @import 'motion-ui';
 ```
 
+**[Autoprefixer](https://github.com/postcss/autoprefixer) is required to use this library.** The library uses unprefixed `transition` and `animation` properties, which are then prefixed by Autoprefixer.
+
 The library includes two mixins which export all of the [default CSS](classes.md) for the framework. This includes:
 
 - Transitions for slide, fade, hinge, scale, and spin

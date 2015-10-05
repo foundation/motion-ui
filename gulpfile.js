@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 var sequence = require('run-sequence');
 var rimraf = require('rimraf').sync;
@@ -7,6 +8,12 @@ var rename = require('gulp-rename');
 var Super = require('supercollider').init;
 var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
+
+var COMPATIBILITY = [
+  'last 2 versions',
+  'ie >= 9',
+  'and_chr >= 2.3'
+];
 
 gulp.task('clean', function(done) {
   rimraf('./_build');
@@ -28,6 +35,9 @@ gulp.task('docs', function() {
 gulp.task('sass', function() {
   return gulp.src('./motion-ui.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: COMPATIBILITY
+    }))
     .pipe(gulp.dest('./_build'));
 });
 
