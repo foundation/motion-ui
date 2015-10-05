@@ -17,12 +17,11 @@ To import the Sass files into a project, add the load path `[modules_folder]/mot
 @import 'motion-ui';
 ```
 
-The library includes two mixins which export all of the default CSS for the framework. This includes:
+The library includes two mixins which export all of the [default CSS](classes.md) for the framework. This includes:
 
 - Transitions for slide, fade, hinge, scale, and spin
-- Modifier classes to change transition length, delay, and easing
 - Animation classes for spinning, shaking, and wiggling
-- Modifier classes to change animation length, delay, and easing
+- Modifier classes for transition/animation speed, timing, and delay
 
 ```scss
 @include motion-ui-transitions;
