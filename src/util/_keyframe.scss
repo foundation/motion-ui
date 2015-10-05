@@ -112,7 +112,7 @@ $-mui-custom: 0;
   }
 
   // Make a name for the keyframes
-  $-mui-custom: $-mui-custom + 1;
+  $-mui-custom: $-mui-custom + 1 !global;
   $map-name: (name: 'custom-#{$-mui-custom}');
   $new-map: map-merge($new-map, $map-name);
   
