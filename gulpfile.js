@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var Super = require('supercollider').init;
 var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
+var minifyCSS = require('gulp-minify-css');
 
 var COMPATIBILITY = [
   'last 2 versions',
@@ -62,9 +63,7 @@ gulp.task('dist', ['dist:sass', 'dist:javascript']);
 gulp.task('dist:sass', ['sass'], function() {
   return gulp.src('./_build/motion-ui.css')
     .pipe(gulp.dest('./dist'))
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
+    .pipe(minifyCSS())
     .pipe(rename('motion-ui.min.css'))
     .pipe(gulp.dest('./dist'));
 });
