@@ -157,7 +157,8 @@ Creates a fading animation.
 
 **Parameters:**
 
-- `from` (Number) - Opacity to start at. (**Default:** 0)- `to:` (Number) - Opacity to end at. (**Default:** 1)
+- `from` (Number) - Opacity to start at. (**Default:** 0)
+- `to:` (Number) - Opacity to end at. (**Default:** 1)
 
 ### hinge()
 
@@ -165,7 +166,11 @@ Creates a hinge effect by rotating the element.
 
 **Parameters:**
 
-- `state` (Keyword) - State to transition to. (**Default:** in)- `from` (Keyword) - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`. (**Default:** left)- `axis` (Keyword) - Axis of the element to rotate on. Can be `edge` or `center`. (**Default:** edge)- `perspective` (Number) - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced. (**Default:** 2000px)- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default:** from-back)
+- `state` (Keyword) - State to transition to. (**Default:** in)
+- `from` (Keyword) - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`. (**Default:** left)
+- `axis` (Keyword) - Axis of the element to rotate on. Can be `edge` or `center`. (**Default:** edge)
+- `perspective` (Number) - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced. (**Default:** 2000px)
+- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default:** from-back)
 
 ### -mui-keyframe-pct()
 
@@ -197,7 +202,8 @@ Combines two maps of CSS properties into one map. If both maps have a transform 
 
 **Parameters:**
 
-- `one` (Map) - First map to merge.- `two` (Map) - Second map to merge.
+- `one` (Map) - First map to merge.
+- `two` (Map) - Second map to merge.
 
 ### shake()
 
@@ -213,7 +219,9 @@ Creates a sliding animation.
 
 **Parameters:**
 
-- `state` (Keyword) - Whether to move to (`in`) or from (`out`) the element's default position. (**Default:** in)- `direction` (Keyword) - Direction to move. Can be `up`, `down`, `left`, or `right`. (**Default:** up)- `amount` (Number) - Distance to move. Can be any CSS length unit. (**Default:** 100%)
+- `state` (Keyword) - Whether to move to (`in`) or from (`out`) the element's default position. (**Default:** in)
+- `direction` (Keyword) - Direction to move. Can be `up`, `down`, `left`, or `right`. (**Default:** up)
+- `amount` (Number) - Distance to move. Can be any CSS length unit. (**Default:** 100%)
 
 ### spin()
 
@@ -221,7 +229,8 @@ Creates a spinning animation.
 
 **Parameters:**
 
-- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** cw)- `amount` (Number) - Amount to spin. Can be any CSS angle unit. (**Default:** 360deg)
+- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** cw)
+- `amount` (Number) - Amount to spin. Can be any CSS angle unit. (**Default:** 360deg)
 
 ### wiggle()
 
@@ -237,4 +246,5 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 
 **Parameters:**
 
-- `from` (Number) - Size to start at. (**Default:** 1.5)- `from` (Number) - Size to end at. (**Default:** 1)
+- `from` (Number) - Size to start at. (**Default:** 1.5)
+- `from` (Number) - Size to end at. (**Default:** 1)
