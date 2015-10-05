@@ -1,14 +1,8 @@
-var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
-var sass = require('gulp-sass');
-var sequence = require('run-sequence');
-var rimraf = require('rimraf').sync;
-var rubySass = require('gulp-ruby-sass');
-var rename = require('gulp-rename');
-var Super = require('supercollider').init;
-var uglify = require('gulp-uglify');
-var umd = require('gulp-umd');
-var minifyCSS = require('gulp-minify-css');
+var $             = require('gulp-load-plugins')();
+var gulp          = require('gulp');
+var rimraf        = require('rimraf').sync;
+var sequence      = require('run-sequence');
+var supercollider = require('supercollider').init;
 
 var COMPATIBILITY = [
   'last 2 versions',
@@ -24,7 +18,7 @@ gulp.task('clean', function(done) {
 
 gulp.task('docs', function() {
   return gulp.src('./docs/src/*.md')
-    .pipe(Super({
+    .pipe(supercollider({
       template: './docs/src/_template.hbs',
       adapters: ['sass'],
       extension: 'md',
@@ -35,8 +29,8 @@ gulp.task('docs', function() {
 
 gulp.task('sass', function() {
   return gulp.src('./motion-ui.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
+    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
     .pipe(gulp.dest('./_build'));
@@ -44,7 +38,7 @@ gulp.task('sass', function() {
 
 gulp.task('javascript', function() {
   return gulp.src('./motion-ui.js')
-    .pipe(umd({
+    .pipe($.umd({
       dependencies: function(file) {
         return [{ name: 'jquery', amd: 'jquery', cjs: 'jquery', global: 'jQuery', param: '$' }];
       },
@@ -63,16 +57,16 @@ gulp.task('dist', ['dist:sass', 'dist:javascript']);
 gulp.task('dist:sass', ['sass'], function() {
   return gulp.src('./_build/motion-ui.css')
     .pipe(gulp.dest('./dist'))
-    .pipe(minifyCSS())
-    .pipe(rename('motion-ui.min.css'))
+    .pipe($.minifyCss())
+    .pipe($.rename('motion-ui.min.css'))
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('dist:javascript', ['javascript'], function() {
   return gulp.src('./_build/motion-ui.js')
     .pipe(gulp.dest('./dist'))
-    .pipe(uglify())
-    .pipe(rename('motion-ui.min.js'))
+    .pipe($.uglify())
+    .pipe($.rename('motion-ui.min.js'))
     .pipe(gulp.dest('./dist'));
 });
 
