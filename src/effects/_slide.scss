@@ -33,7 +33,7 @@
   }
 
   $keyframes: (
-    name: 'slide-#{$state}-#{$direction}-#{$amount}',
+    name: 'slide-#{$state}-#{$direction}-#{strip-unit($amount)}',
     0: (transform: '#{$func}(#{$from})'),
     100: (transform: '#{$func}(#{$to})'),
   );
