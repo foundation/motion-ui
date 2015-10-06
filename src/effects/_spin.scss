@@ -5,7 +5,7 @@
 @function spin(
   $state: in,
   $direction: cw,
-  $amount: 0.75turn
+  $amount: 1turn
 ) {
   $amount: turn-to-deg($amount);
   $start: 0;
