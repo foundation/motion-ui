@@ -13,7 +13,7 @@ A Sass library for creating CSS transitions and animations from your friends at 
 
 ## Documentation
 
-[View the documentation here.](docs);
+[View the documentation here.](docs)
 
 ## Develop Locally
 
