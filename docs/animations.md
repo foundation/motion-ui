@@ -110,19 +110,20 @@ $('.animation-wrapper').addClass('is-animating');
 
 ### mui-animation()
 
-Generates CSS for a keyframe animation using a Motion UI keyframe object. A keyframe object has this format:
-```scss
-(
-  name: 'keyframe-name',
-  0: (opacity: 0),
-  (25, 75): (opacity: 0.5),
-  100: (opacity: 1),
-)
-```
+Creates a keyframe from one or more effect functions and assigns it to the element by adding the `animation-name` property.
 
 **Parameters:**
 
-- `obj` (Map) - Keyframe object to convert.
+- `effects...` (Function) - One or more effect functions to build the keyframe with.
+
+### mui-keyframes()
+
+Creates a keyframe from one or more effect functions. Use this function instead of `mui-animation` if you want to create a keyframe animation *without* automatically assigning it to the element.
+
+**Parameters:**
+
+- `name` (String) - Name of the keyframe.
+- `effects...` (Function) - One or more effect functions to build the keyframe with.
 
 ### -mui-keyframe-get()
 
@@ -137,17 +138,19 @@ Prints the CSS properties from a specific key in a keyframes map. Used to borrow
 
 Creates a new animation queue.
 
+**Parameters:**
+
+- `delay` (Number) - Delay in seconds or milliseconds to place at the front of the animation queue. (**Default:** 0s)
 
 ### mui-queue()
 
-Adds an animation to an animation queue.
+Adds an animation to an animation queue. Only use this mixin inside of `mui-series()`.
 
 **Parameters:**
 
-- `keyframes` (Map) - Motion UI keyframes map to use.
 - `duration` (Number) - Length of the animation. (**Default:** 1s)
-- `gap` (Number) - Amount of time to pause before playing the animation after this one. (**Default:** 0s)
-- `easing` (Keyword) - Timing function to use. (**Default:** linear)
+- `gap` (Number) - Amount of time to pause before playing the animation after this one. Use a negative value to make the next effect overlap with the current one. (**Default:** 0s)
+- `keyframes...` (Function) - One or more effect functions to build the keyframe with.
 
 ## Functions
 
