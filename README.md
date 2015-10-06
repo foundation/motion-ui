@@ -7,19 +7,22 @@ A Sass library for creating CSS transitions and animations from your friends at 
 - On npm: `npm install motion-ui`
 - On Bower: `bower install motion-ui`
 
-## Usage
+## Demos
 
-View the documentation in the [docs folder](docs). You can also download the code and compile the documentation into HTML.
+[View live demos on the ZURB Playground.](http://zurb.com/playground/motion-ui)
 
-```
-git clone https://github.com/zurb/motion-ui.git
-cd motion-ui
-npm install
-npm start
-```
+## Documentation
+
+[View the documentation here.](docs);
 
 ## Develop Locally
 
-- Run `npm start` to compile the documentation.
+```
+git clone https://github.com/zurb/motion-ui
+cd motion-ui
+npm install
+```
+
+- Run `npm start` to compile test Sass/JS files, and to build the documentation.
 - Run `npm test` to run the unit tests.
 - Run `npm start dist` to compile distribution files.
