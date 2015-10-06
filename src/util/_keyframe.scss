@@ -1,6 +1,9 @@
 // Internal counter for creating unique keyframe names
 $-mui-custom: 0;
 
+/// Creates a keyframe from one or more effect functions. Use this function instead of `mui-animation` if you want to create a keyframe animation *without* automatically assigning it to the element.
+/// @param {String} $name - Name of the keyframe.
+/// @param {Function} $effects... - One or more effect functions to build the keyframe with.
 @mixin mui-keyframes($name, $effects...) {
   $obj: -mui-process-args($effects...);
   $obj: map-remove($obj, name);
@@ -21,6 +24,7 @@ $-mui-custom: 0;
 /// Creates a string for a CSS keyframe, by converting a list of numbers to a comma-separated list of percentage values.
 /// @param {List} $input - List of numbers to use.
 /// @return {String} A set of comma-separated percentage values.
+/// @access private
 @function -mui-keyframe-pct($input) {
   $output: '';
   

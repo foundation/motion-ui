@@ -1,13 +1,5 @@
-/// Generates CSS for a keyframe animation using a Motion UI keyframe object. A keyframe object has this format:
-/// ```scss
-/// (
-///   name: 'keyframe-name',
-///   0: (opacity: 0),
-///   (25, 75): (opacity: 0.5),
-///   100: (opacity: 1),
-/// )
-/// ```
-/// @param {Map} $obj - Keyframe object to convert.
+/// Creates a keyframe from one or more effect functions and assigns it to the element by adding the `animation-name` property.
+/// @param {Function} $effects... - One or more effect functions to build the keyframe with.
 @mixin mui-animation($args...) {
   $obj: -mui-process-args($args...);
 

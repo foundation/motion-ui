@@ -1,3 +1,5 @@
+/// Processes a series of keyframe function arguments.
+/// @access private
 @function -mui-process-args($args...) {
   @if length($args) == 1 {
     $arg: nth($args, 1);
