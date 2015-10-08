@@ -1,6 +1,6 @@
 {
   "name": "motion-ui",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "authors": [
     "ZURB <foundation@zurb.com>"
   ],
@@ -18,5 +18,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
 }
