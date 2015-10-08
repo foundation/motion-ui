@@ -19,7 +19,7 @@
     "_build",
     "node_modules",
     "bower_components",
-    "docs/src"
+    "docs/src",
     "test"
   ],
   "dependencies": {
