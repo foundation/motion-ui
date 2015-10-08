@@ -1,0 +1,6 @@
+.DS_Store
+_build
+node_modules
+bower_components
+docs/src
+test

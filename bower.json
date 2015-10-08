@@ -5,19 +5,22 @@
     "ZURB <foundation@zurb.com>"
   ],
   "description": "Sass library for creating transitions and animations.",
-  "main": "dist/motion-ui.css",
+  "main": [
+    "dist/motion-ui.css",
+    "dist/motion-ui.js"
+  ],
   "keywords": [
     "Sass",
     "motion"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
+    "_build",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "docs/src"
+    "test"
   ],
   "dependencies": {
     "jquery": "~2.1.4"
