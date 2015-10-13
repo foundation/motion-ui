@@ -7,13 +7,15 @@
   $name: map-get($obj, name);
   $obj: map-remove($obj, name);
   
-  @keyframes #{$name} {
-    // Now iterate through each keyframe percentage
-    @each $pct, $props in $obj {
-      #{-mui-keyframe-pct($pct)} {
-        // Lastly, iterate through each CSS property within a percentage and print it out
-        @each $prop, $value in $props {
-          #{$prop}: #{$value};
+  @at-root {
+    @keyframes #{$name} {
+      // Now iterate through each keyframe percentage
+      @each $pct, $props in $obj {
+        #{-mui-keyframe-pct($pct)} {
+          // Lastly, iterate through each CSS property within a percentage and print it out
+          @each $prop, $value in $props {
+            #{$prop}: #{$value};
+          }
         }
       }
     }
