@@ -46,14 +46,14 @@ $-mui-custom: 0;
 /// @param {Number} $key - Key in the map to print the CSS of.
 /// @access private
 @mixin -mui-keyframe-get($kf, $key) {
-  @if map-has-key($kf, $key) {
-    @each $prop, $value in map-get($kf, $key) {
-      // Some keyframe maps store transforms as quoted strings
-      @if type-of($value) == 'string' {
-        $value: unquote($value);
-      }
-      #{$prop}: $value;
+  $map: map-get($kf, $key);
+
+  @each $prop, $value in $map or () {
+    // Some keyframe maps store transforms as quoted strings
+    @if type-of($value) == 'string' {
+      $value: unquote($value);
     }
+    #{$prop}: $value;
   }
 }
 
