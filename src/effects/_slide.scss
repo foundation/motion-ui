@@ -4,38 +4,38 @@
 /// @param {Number} $amount [100%] - Distance to move. Can be any CSS length unit.
 /// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function slide(
-  $state: in,
-  $direction: up,
+  $state: 'in',
+  $direction: 'up',
   $amount: 100%
 ) {
   $from: $amount;
   $to: 0;
   $func: 'translateY';
 
-  @if $direction == left or $direction == right {
+  @if $direction == 'left' or $direction == 'right' {
     $func: 'translateX';
   }
 
-  @if $state == out {
+  @if $state == 'out' {
     $from: 0;
     $to: $amount;
   }
 
-  @if $direction == down or $direction == right {
-    @if $state == in {
+  @if $direction == 'down' or $direction == 'right' {
+    @if $state == 'in' {
       $from: -$from;
     }
   }
   @else {
-    @if $state == out {
+    @if $state == 'out' {
       $to: -$to; 
     }
   }
 
   $keyframes: (
-    name: 'slide-#{$state}-#{$direction}-#{strip-unit($amount)}',
-    0: (transform: '#{$func}(#{$from})'),
-    100: (transform: '#{$func}(#{$to})'),
+    'name': 'slide-#{$state}-#{$direction}-#{strip-unit($amount)}',
+    0: ('transform': '#{$func}(#{$from})'),
+    100: ('transform': '#{$func}(#{$to})'),
   );
 
   @return $keyframes;

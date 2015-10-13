@@ -7,10 +7,10 @@
 /// @param {Keyword|Function} $timing [null] - Easing of the transition.
 /// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-spin(
-  $state: in,
-  $direction: cw,
+  $state: 'in',
+  $direction: 'cw',
   $amount: 0.75turn,
-  $fade: map-get($motion-ui-settings, spinAndFade),
+  $fade: map-get($motion-ui-settings, 'spinAndFade'),
   $duration: null,
   $timing: null,
   $delay: null
@@ -23,7 +23,7 @@
 
     @if $fade {
       transition-property: transform, opacity;
-      opacity: if($state == in, 0, 1);
+      opacity: if($state == 'in', 0, 1);
     }
     @else {
       transition-property: transform, opacity;
@@ -33,6 +33,6 @@
   @include transition-end($state) {
     @include -mui-keyframe-get($spin, 100);
 
-    @if $fade { opacity: if($state == in, 1, 0); }
+    @if $fade { opacity: if($state == 'in', 1, 0); }
   }
 }

@@ -9,12 +9,12 @@
 /// @param {Keyword|Function} $timing [null] - Easing of the transition.
 /// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-hinge (
-  $state: in,
-  $from: left,
-  $axis: edge,
+  $state: 'in',
+  $from: 'left',
+  $axis: 'edge',
   $perspective: 2000px,
-  $turn-origin: from-back,
-  $fade: map-get($motion-ui-settings, hingeAndFade),
+  $turn-origin: 'from-back',
+  $fade: map-get($motion-ui-settings, 'hingeAndFade'),
   $duration: null,
   $timing: null,
   $delay: null
@@ -27,7 +27,7 @@
 
     @if $fade {
       transition-property: transform, opacity;
-      opacity: if($state == in, 0, 1);
+      opacity: if($state == 'in', 0, 1);
     }
     @else {
       transition-property: transform, opacity;
@@ -37,6 +37,6 @@
   @include transition-end($state) {
     @include -mui-keyframe-get($hinge, 100);
 
-    @if $fade { opacity: if($state == in, 1, 0); }
+    @if $fade { opacity: if($state == 'in', 1, 0); }
   }
 }

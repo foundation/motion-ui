@@ -6,7 +6,7 @@
 /// @param {Keyword|Function} $timing [null] - Easing of the transition.
 /// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-fade(
-  $state: in,
+  $state: 'in',
   $from: 0,
   $to: 1,
   $duration: null,

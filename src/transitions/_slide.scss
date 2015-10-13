@@ -7,10 +7,10 @@
 /// @param {Keyword|Function} $timing [null] - Easing of the transition.
 /// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-slide (
-  $state: in,
-  $direction: left,
+  $state: 'in',
+  $direction: 'left',
   $amount: 100%,
-  $fade: map-get($motion-ui-settings, slideAndFade),
+  $fade: map-get($motion-ui-settings, 'slideAndFade'),
   $duration: null,
   $timing: null,
   $delay: null
@@ -24,7 +24,7 @@
     
     @if $fade {
       transition-property: transform, opacity;
-      opacity: if($state == in, 0, 1);
+      opacity: if($state == 'in', 0, 1);
     }
     @else {
       transition-property: transform, opacity;
@@ -35,6 +35,6 @@
   @include transition-end($state) {
     @include -mui-keyframe-get($slide, 100);
 
-    @if $fade { opacity: if($state == in, 1, 0); }
+    @if $fade { opacity: if($state == 'in', 1, 0); }
   }
 }

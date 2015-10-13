@@ -5,9 +5,9 @@
 /// @access private
 @function -mui-build-selector($states, $active: false) {
   $return: '';
-  $chain: map-get($motion-ui-classes, chain);
-  $prefix: map-get($motion-ui-classes, prefix);
-  $suffix: map-get($motion-ui-classes, active);
+  $chain: map-get($motion-ui-classes, 'chain');
+  $prefix: map-get($motion-ui-classes, 'prefix');
+  $suffix: map-get($motion-ui-classes, 'active');
   
   @each $sel in $states {
     $return: $return + if($chain, '&.', '#{&}-') + $prefix + $sel;
