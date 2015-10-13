@@ -7,7 +7,6 @@
   $direction: cw,
   $amount: 1turn
 ) {
-  $amount: turn-to-deg($amount);
   $start: 0;
   $end: 0;
 
