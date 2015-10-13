@@ -1,6 +1,7 @@
 /// Creates a sliding transition by translating the element horizontally or vertically.
 /// @param {Keyword} $state [in] - State to transition to.
 /// @param {Keyword} $direction [left] - Side of the element to slide from. Can be `top`, `right`, `bottom`, or `left`.
+/// @param {Length} $amount [100%] - Length of the slide as a percentage value.
 /// @param {Boolean} $fade [false] - Set to `true` to fade the element in or out simultaneously.
 /// @param {Duration} $duration [null] - Length (speed) of the transition.
 /// @param {Keyword|Function} $timing [null] - Easing of the transition.
