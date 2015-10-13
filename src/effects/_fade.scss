@@ -1,6 +1,6 @@
 /// Creates a fading animation.
 /// @param {Number} $from [0] - Opacity to start at.
-/// @param {Number} $to: [1] - Opacity to end at.
+/// @param {Number} $to [1] - Opacity to end at.
 /// @return {Map} A keyframes map that can be used with the `generate-keyframes()` mixin.
 @function fade(
   $from: 0,
