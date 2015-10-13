@@ -1,25 +1,7 @@
 /// Creates a keyframe from one or more effect functions and assigns it to the element by adding the `animation-name` property.
 /// @param {Function} $effects... - One or more effect functions to build the keyframe with.
 @mixin mui-animation($args...) {
-  $obj: -mui-process-args($args...);
-
-  // Get the name of the keyframe and then remove that value from the map
-  $name: map-get($obj, name);
-  $obj: map-remove($obj, name);
-  
-  @at-root {
-    @keyframes #{$name} {
-      // Now iterate through each keyframe percentage
-      @each $pct, $props in $obj {
-        #{-mui-keyframe-pct($pct)} {
-          // Lastly, iterate through each CSS property within a percentage and print it out
-          @each $prop, $value in $props {
-            #{$prop}: #{$value};
-          }
-        }
-      }
-    }
-  }
-
+  $name: map-get(-mui-process-args($args...), name);
+  @include mui-keyframes($name, $args...);
   animation-name: unquote($name);
 }
