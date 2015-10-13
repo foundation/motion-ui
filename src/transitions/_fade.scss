@@ -2,9 +2,9 @@
 /// @param {Keyword} $state [in] - State to transition to.
 /// @param {Number} $from [0] - Opacity to start at. Must be a number between 0 and 1.
 /// @param {Number} $to [1] - Opacity to end on.
-/// @param {Keyword} $duration [500ms] - Length (speed) of the transition.
-/// @param {Keyword|Function} $timing [linear] - Easing of the transition.
-/// @param {Number} $delay [0s] - Delay in seconds or milliseconds before the transition starts.
+/// @param {Keyword} $duration [null] - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing [null] - Easing of the transition.
+/// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-fade(
   $state: in,
   $from: 0,
