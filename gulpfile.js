@@ -74,6 +74,11 @@ gulp.task('build', function(done) {
   sequence('clean', ['docs', 'sass', 'javascript'], done);
 });
 
+gulp.task('lint', function() {
+  return gulp.src('./src/**/*.scss')
+    .pipe($.scssLint());
+})
+
 gulp.task('default', ['build'], function() {
   gulp.watch(['./docs/src/*.md', './docs/src/_template.hbs'], ['docs']);
   gulp.watch(['./src/**/*.scss', './motion-ui.scss'], ['sass']);
