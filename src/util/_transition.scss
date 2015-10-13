@@ -1,7 +1,7 @@
 /// Applies basic transition settings to an element.
-/// @param {Keyword} $duration - Length (speed) of the transition.
-/// @param {Keyword|Function} $timing - Easing of the transition.
-/// @param {Number} $delay - Delay in seconds or milliseconds before the transition starts.
+/// @param {Duration} $duration [null] - Length (speed) of the transition.
+/// @param {Keyword|Function} $timing [null] - Easing of the transition.
+/// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin transition-basics(
   $duration: null,
   $timing: null,
@@ -47,7 +47,7 @@
 }
 
 /// Adds styles for a stagger animation, which can be used with Angular's `ng-repeat`.
-/// @param {Number} $delay-amount - Amount of time in seconds or milliseconds to add between each item's animation.
+/// @param {Duration} $delay-amount - Amount of time in seconds or milliseconds to add between each item's animation.
 @mixin stagger($delay-amount) {
   transition-delay: $delay-amount;
   transition-duration: 0; // Prevent accidental CSS inheritance
