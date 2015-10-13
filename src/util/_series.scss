@@ -1,5 +1,7 @@
 $-mui-queue: ();
 
+/// Pauses the animation on an element by default, and then plays it when an active class is added to a parent. Also sets the fill mode of the animation to `both`. This pauses the element at the first frame of the animation, and holds it in place at the end.
+/// @access private
 %animated-element {
   animation-play-state: paused;
   animation-fill-mode: both;
