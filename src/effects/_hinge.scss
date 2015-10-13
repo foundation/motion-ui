@@ -5,33 +5,33 @@
 /// @param {Number} $perspective [2000px] - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced.
 /// @param {Keyword} $turn-origin [from-back] - Side of the element to start the rotation from. Can be `from-back` or `from-front`.
 @function hinge (
-  $state: in,
-  $from: left,
-  $axis: edge,
+  $state: 'in',
+  $from: 'left',
+  $axis: 'edge',
   $perspective: 2000px,
-  $turn-origin: from-back
+  $turn-origin: 'from-back'
 ) {
   // Rotation directions when hinging from back vs. front
   $rotationAmount: 90deg;
   $rotationsBack: (
-    top: rotateX($rotationAmount * -1),
-    right: rotateY($rotationAmount * -1),
-    bottom: rotateX($rotationAmount),
-    left: rotateY($rotationAmount),
+    'top': rotateX($rotationAmount * -1),
+    'right': rotateY($rotationAmount * -1),
+    'bottom': rotateX($rotationAmount),
+    'left': rotateY($rotationAmount),
   );
   $rotationsFrom: (
-    top: rotateX($rotationAmount),
-    right: rotateY($rotationAmount),
-    bottom: rotateX($rotationAmount * -1),
-    left: rotateY($rotationAmount * -1),
+    'top': rotateX($rotationAmount),
+    'right': rotateY($rotationAmount),
+    'bottom': rotateX($rotationAmount * -1),
+    'left': rotateY($rotationAmount * -1),
   );
 
   // Rotation origin
   $rotation: '';
-  @if $turn-origin == from-front {
+  @if $turn-origin == 'from-front' {
     $rotation: map-get($rotationsFrom, $from);
   }
-  @else if $turn-origin == from-back {
+  @else if $turn-origin == 'from-back' {
     $rotation: map-get($rotationsBack, $from);
   }
   @else {
@@ -41,7 +41,7 @@
   // Start and end state
   $start: '';
   $end: '';
-  @if $state == in {
+  @if $state == 'in' {
     $start: perspective($perspective) $rotation;
     $end: perspective($perspective) rotate(0deg);
   }
@@ -52,17 +52,17 @@
 
   // Turn axis
   $origin: '';
-  @if $axis == edge {
+  @if $axis == 'edge' {
     $origin: $from;
   }
   @else {
-    $origin: center;
+    $origin: 'center';
   }
 
   $keyframes: (
-    name: 'hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}',
-    0: (transform: $start, transform-origin: $origin),
-    100: (transform: $end),
+    'name': 'hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}',
+    0: ('transform': $start, 'transform-origin': unquote($origin)),
+    100: ('transform': $end),
   );
 
   @return $keyframes;

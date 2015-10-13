@@ -6,7 +6,7 @@ $-mui-custom: 0;
 /// @param {Function} $effects... - One or more effect functions to build the keyframe with.
 @mixin mui-keyframes($name, $effects...) {
   $obj: -mui-process-args($effects...);
-  $obj: map-remove($obj, name);
+  $obj: map-remove($obj, 'name');
   
   @keyframes #{$name} {
     // Now iterate through each keyframe percentage
@@ -33,7 +33,7 @@ $-mui-custom: 0;
   }
   @else if type-of($input) == 'list' {
     @each $i in $input {
-      $output: append($output, ($i * 1%), comma);
+      $output: append($output, ($i * 1%), 'comma');
     }
   }
   
@@ -52,7 +52,7 @@ $-mui-custom: 0;
     @if type-of($value) == 'string' {
       $value: unquote($value);
     }
-    #{$prop}: $value;
+    #{$prop}: #{$value};
   }
 }
 
@@ -116,7 +116,7 @@ $-mui-custom: 0;
 
   // Make a name for the keyframes
   $-mui-custom: $-mui-custom + 1 !global;
-  $map-name: (name: 'custom-#{$-mui-custom}');
+  $map-name: ('name': 'custom-#{$-mui-custom}');
   $new-map: map-merge($new-map, $map-name);
   
   @return $new-map;
@@ -128,10 +128,10 @@ $-mui-custom: 0;
 /// @return {Map} A combined map.
 /// @access private
 @function -mui-merge-properties($one, $two) {
-  @if map-has-key($one, transform) and map-has-key($two, transform) {
-    $transform: join(map-get($one, transform), map-get($two, transform));
-    $one: map-merge($one, (transform: $transform));
-    $two: map-remove($two, transform);
+  @if map-has-key($one, 'transform') and map-has-key($two, 'transform') {
+    $transform: join(map-get($one, 'transform'), map-get($two, 'transform'));
+    $one: map-merge($one, ('transform': $transform));
+    $two: map-remove($two, 'transform');
   }
 
   @return map-merge($one, $two);

@@ -4,8 +4,8 @@
   $obj: -mui-process-args($args...);
 
   // Get the name of the keyframe and then remove that value from the map
-  $name: map-get($obj, name);
-  $obj: map-remove($obj, name);
+  $name: map-get($obj, 'name');
+  $obj: map-remove($obj, 'name');
   
   @at-root {
     @keyframes #{$name} {

@@ -6,9 +6,9 @@
   $left: (5, 15, 25, 35, 45, 55, 65, 75, 85, 95);
 
   $keyframes: (
-    name: 'shake-#{($intensity / 1%)}',
-    $right: (transform: translateX($intensity)),
-    $left: (transform: translateX(-$intensity)),
+    'name': 'shake-#{($intensity / 1%)}',
+    $right: ('transform': translateX($intensity)),
+    $left: ('transform': translateX(-$intensity)),
   );
   
   @return $keyframes;

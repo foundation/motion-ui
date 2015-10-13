@@ -6,7 +6,7 @@ $-mui-queue: ();
   animation-play-state: paused;
   animation-fill-mode: both;
 
-  .#{map-get($motion-ui-settings, activateQueueClass)} & {
+  .#{map-get($motion-ui-settings, 'activateQueueClass')} & {
     animation-play-state: running;
   }
 }
