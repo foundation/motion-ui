@@ -8,18 +8,9 @@
   $delay: null
 ) {
   @extend %mui-defaults;
-
-  @if $duration {
-    transition-duration: $duration;
-  }
-
-  @if $timing {
-    transition-timing-function: $timing;
-  }
-
-  @if $delay {
-    transition-delay: $delay;
-  }
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
 }
 
 /// Wraps the content in the setup class for a transition.
