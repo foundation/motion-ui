@@ -10,11 +10,13 @@
   $suffix: map-get($motion-ui-classes, active);
   
   @each $sel in $states {
-    $return: append($return, if($chain, '&.', '#{&}-') + $prefix + $sel, comma);
+    $selector: if($chain, '&.', '#{&}-') + $prefix + $sel;
 
     @if $active {
-      $return: append($return, if($chain, '.', '#{&}-') + $prefix + $sel + $suffix, comma);
+      $selector: $selector + if($chain, '.', '#{&}-') + $prefix + $sel + $suffix;
     }
+
+    $return: append($return, $selector, comma);
   }
   
   @return $return;
