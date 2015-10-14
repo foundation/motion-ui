@@ -28,8 +28,7 @@
     @if $fade {
       transition-property: transform, opacity;
       opacity: if($state == in, 0, 1);
-    }
-    @else {
+    } @else {
       transition-property: transform, opacity;
     }
   }
@@ -37,6 +36,8 @@
   @include transition-end($state) {
     @include -mui-keyframe-get($hinge, 100);
 
-    @if $fade { opacity: if($state == in, 1, 0); }
+    @if $fade {
+      opacity: if($state == in, 1, 0);
+    }
   }
 }

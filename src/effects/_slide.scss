@@ -25,10 +25,9 @@
     @if $state == in {
       $from: -$from;
     }
-  }
-  @else {
+  } @else {
     @if $state == out {
-      $to: -$to; 
+      $to: -$to;
     }
   }
 

@@ -21,20 +21,22 @@
   @include transition-start($state) {
     @include transition-basics($duration, $timing, $delay);
     @include -mui-keyframe-get($slide, 0);
-    
+
     @if $fade {
       transition-property: transform, opacity;
       opacity: if($state == in, 0, 1);
-    }
-    @else {
+    } @else {
       transition-property: transform, opacity;
     }
 
     backface-visibility: hidden;
   }
+
   @include transition-end($state) {
     @include -mui-keyframe-get($slide, 100);
 
-    @if $fade { opacity: if($state == in, 1, 0); }
+    @if $fade {
+      opacity: if($state == in, 1, 0);
+    }
   }
 }

@@ -13,8 +13,7 @@
   @if $state == in {
     $start: if($direction == ccw, $amount, $amount * -1);
     $end: 0;
-  }
-  @else {
+  } @else {
     $start: 0;
     $end: if($direction == ccw, $amount * -1, $amount);
   }

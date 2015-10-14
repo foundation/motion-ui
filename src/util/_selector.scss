@@ -8,7 +8,7 @@
   $chain: map-get($motion-ui-classes, chain);
   $prefix: map-get($motion-ui-classes, prefix);
   $suffix: map-get($motion-ui-classes, active);
-  
+
   @each $sel in $states {
     $return: $return + if($chain, '&.', '#{&}-') + $prefix + $sel;
 
@@ -18,6 +18,6 @@
 
     $return: $return + ', ';
   }
-  
+
   @return str-slice($return, 1, -3);
 }

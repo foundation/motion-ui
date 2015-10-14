@@ -12,30 +12,28 @@
   $turn-origin: from-back
 ) {
   // Rotation directions when hinging from back vs. front
-  $rotationAmount: 90deg;
-  $rotationsBack: (
-    top: rotateX($rotationAmount * -1),
-    right: rotateY($rotationAmount * -1),
-    bottom: rotateX($rotationAmount),
-    left: rotateY($rotationAmount),
+  $rotation-amount: 90deg;
+  $rotations-back: (
+    top: rotateX($rotation-amount * -1),
+    right: rotateY($rotation-amount * -1),
+    bottom: rotateX($rotation-amount),
+    left: rotateY($rotation-amount),
   );
-  $rotationsFrom: (
-    top: rotateX($rotationAmount),
-    right: rotateY($rotationAmount),
-    bottom: rotateX($rotationAmount * -1),
-    left: rotateY($rotationAmount * -1),
+  $rotations-from: (
+    top: rotateX($rotation-amount),
+    right: rotateY($rotation-amount),
+    bottom: rotateX($rotation-amount * -1),
+    left: rotateY($rotation-amount * -1),
   );
 
   // Rotation origin
   $rotation: '';
   @if $turn-origin == from-front {
-    $rotation: map-get($rotationsFrom, $from);
-  }
-  @else if $turn-origin == from-back {
-    $rotation: map-get($rotationsBack, $from);
-  }
-  @else {
-    @warn "`$turn-origin` must be either `from-back` or `from-front`";
+    $rotation: map-get($rotations-from, $from);
+  } @else if $turn-origin == from-back {
+    $rotation: map-get($rotations-back, $from);
+  } @else {
+    @warn '$turn-origin must be either "from-back" or "from-front"';
   }
 
   // Start and end state
@@ -44,8 +42,7 @@
   @if $state == in {
     $start: perspective($perspective) $rotation;
     $end: perspective($perspective) rotate(0deg);
-  }
-  @else {
+  } @else {
     $start: perspective($perspective) rotate(0deg);
     $end: perspective($perspective) $rotation;
   }
@@ -54,8 +51,7 @@
   $origin: '';
   @if $axis == edge {
     $origin: $from;
-  }
-  @else {
+  } @else {
     $origin: center;
   }
 

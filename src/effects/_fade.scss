@@ -13,8 +13,7 @@
     @if $from == in {
       $from: 0;
       $to: 1;
-    }
-    @else if $from == out {
+    } @else if $from == out {
       $from: 1;
       $to: 0;
     }

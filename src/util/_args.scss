@@ -6,11 +6,10 @@
 
     @if type-of($arg) == 'string' {
       @return call($arg);
-    }
-    @else if type-of($arg) == 'map' {
+    } @else if type-of($arg) == 'map' {
       @return $arg;
     }
   }
-  
+
   @return -mui-keyframe-combine($args...);
 }

@@ -41,9 +41,9 @@ $motion-ui-easings: (
   easeIn: ease-in,
   easeOut: ease-out,
   easeInOut: ease-in-out,
-  bounceIn: cubic-bezier(0.485, 0.155, 0.240, 1.245),
+  bounceIn: cubic-bezier(0.485, 0.155, 0.24, 1.245),
   bounceOut: cubic-bezier(0.485, 0.155, 0.515, 0.845),
-  bounceInOut: cubic-bezier(0.760, -0.245, 0.240, 1.245),
+  bounceInOut: cubic-bezier(0.76, -0.245, 0.24, 1.245),
 ) !default;
 
 /// Miscellaneous settings related to Motion UI.
