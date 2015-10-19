@@ -365,9 +365,9 @@
   opacity: 0; }
 
 .spinIn.mui-enter {
-  -webkit-transform: rotate(-270deg);
-      -ms-transform: rotate(-270deg);
-          transform: rotate(-270deg);
+  -webkit-transform: rotate(-0.75turn);
+      -ms-transform: rotate(-0.75turn);
+          transform: rotate(-0.75turn);
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
@@ -387,15 +387,15 @@
   opacity: 1; }
 
 .spinOut.mui-leave.mui-leave-active {
-  -webkit-transform: rotate(270deg);
-      -ms-transform: rotate(270deg);
-          transform: rotate(270deg);
+  -webkit-transform: rotate(0.75turn);
+      -ms-transform: rotate(0.75turn);
+          transform: rotate(0.75turn);
   opacity: 0; }
 
 .spinInCCW.mui-enter {
-  -webkit-transform: rotate(270deg);
-      -ms-transform: rotate(270deg);
-          transform: rotate(270deg);
+  -webkit-transform: rotate(0.75turn);
+      -ms-transform: rotate(0.75turn);
+          transform: rotate(0.75turn);
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   opacity: 0; }
@@ -415,9 +415,9 @@
   opacity: 1; }
 
 .spinOutCCW.mui-leave.mui-leave-active {
-  -webkit-transform: rotate(-270deg);
-      -ms-transform: rotate(-270deg);
-          transform: rotate(-270deg);
+  -webkit-transform: rotate(-0.75turn);
+      -ms-transform: rotate(-0.75turn);
+          transform: rotate(-0.75turn);
   opacity: 0; }
 
 .slow {
@@ -457,80 +457,80 @@
   transition-delay: 700ms !important; }
 
 .shake {
-  -webkit-animation-name: "shake-7";
-          animation-name: "shake-7"; }
+  -webkit-animation-name: shake-7;
+          animation-name: shake-7; }
 
 @-webkit-keyframes shake-7 {
-  "0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%" {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     -webkit-transform: translateX(7%);
             transform: translateX(7%); }
-  "5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%" {
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
     -webkit-transform: translateX(-7%);
             transform: translateX(-7%); } }
 
 @keyframes shake-7 {
-  "0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%" {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
     -webkit-transform: translateX(7%);
             transform: translateX(7%); }
-  "5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%" {
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
     -webkit-transform: translateX(-7%);
             transform: translateX(-7%); } }
 
 .spin-cw {
-  -webkit-animation-name: "spin-cw-360deg";
-          animation-name: "spin-cw-360deg"; }
+  -webkit-animation-name: spin-cw-1turn;
+          animation-name: spin-cw-1turn; }
 
-@-webkit-keyframes spin-cw-360deg {
-  "0%" {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg); }
-  "100%" {
+@-webkit-keyframes spin-cw-1turn {
+  0% {
+    -webkit-transform: rotate(-1turn);
+            transform: rotate(-1turn); }
+  100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
 
-@keyframes spin-cw-360deg {
-  "0%" {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg); }
-  "100%" {
+@keyframes spin-cw-1turn {
+  0% {
+    -webkit-transform: rotate(-1turn);
+            transform: rotate(-1turn); }
+  100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
 
 .spin-ccw {
-  -webkit-animation-name: "spin-cw-360deg";
-          animation-name: "spin-cw-360deg"; }
+  -webkit-animation-name: spin-cw-1turn;
+          animation-name: spin-cw-1turn; }
 
-@keyframes spin-cw-360deg {
-  "0%" {
+@keyframes spin-cw-1turn {
+  0% {
     -webkit-transform: rotate(0);
             transform: rotate(0); }
-  "100%" {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
 
 .wiggle {
-  -webkit-animation-name: "wiggle-7deg";
-          animation-name: "wiggle-7deg"; }
+  -webkit-animation-name: wiggle-7deg;
+          animation-name: wiggle-7deg; }
 
 @-webkit-keyframes wiggle-7deg {
-  "40%, 50%, 60%" {
+  40%, 50%, 60% {
     -webkit-transform: rotate(7deg);
             transform: rotate(7deg); }
-  "35%, 45%, 55%, 65%" {
+  35%, 45%, 55%, 65% {
     -webkit-transform: rotate(-7deg);
             transform: rotate(-7deg); }
-  "0%, 30%, 70%, 100%" {
+  0%, 30%, 70%, 100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
 
 @keyframes wiggle-7deg {
-  "40%, 50%, 60%" {
+  40%, 50%, 60% {
     -webkit-transform: rotate(7deg);
             transform: rotate(7deg); }
-  "35%, 45%, 55%, 65%" {
+  35%, 45%, 55%, 65% {
     -webkit-transform: rotate(-7deg);
             transform: rotate(-7deg); }
-  "0%, 30%, 70%, 100%" {
+  0%, 30%, 70%, 100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
 
