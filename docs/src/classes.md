@@ -12,7 +12,7 @@ The pre-made classes all use these transition/animation defaults:
 - **Timing:** Linear
 - **Delay:** 0s
 
-These defaults can be changed by modifying the [Motion UI settings](settings.md);
+These defaults can be changed by modifying the [Motion UI settings](configuration.md);
 
 ## Transition Classes
 
