@@ -4,7 +4,7 @@
 {{#if sass}}
 {{#if sass.mixin}}
 ## Mixins
-{{#each sass.mixin}}
+{{#each sass.mixin}}{{#private this}}
 
 ### {{this.context.name}}()
 
@@ -15,14 +15,14 @@
 
 - `{{this.name}}` ({{this.type}}) - {{this.description}}{{#if this.default}} (**Default:** {{this.default}}){{/if}}{{/each}}
 {{/if}}
-{{/each}}
+{{/private}}{{/each}}
 {{/if}}
 {{/if}}
 
 {{#if sass}}
 {{#if sass.function}}
 ## Functions
-{{#each sass.function}}
+{{#each sass.function}}{{#private this}}
 
 ### {{this.context.name}}()
 
@@ -33,6 +33,6 @@
 
 - `{{this.name}}` ({{this.type}}) - {{this.description}}{{#if this.default}} (**Default:** {{this.default}}){{/if}}{{/each}}
 {{/if}}
-{{/each}}
+{{/private}}{{/each}}
 {{/if}}
 {{/if}}

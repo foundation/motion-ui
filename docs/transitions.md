@@ -33,6 +33,7 @@ The last three parameters of every transition mixin are the same: `$duration`, w
 
 ## Mixins
 
+
 ### mui-fade()
 
 Creates a fade transition by adjusting the opacity of the element.
@@ -45,6 +46,7 @@ Creates a fade transition by adjusting the opacity of the element.
 - `duration` (Keyword) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
 - `delay` (Duration) - Delay in seconds or milliseconds before the transition starts. (**Default:** null)
+
 
 ### mui-hinge()
 
@@ -62,6 +64,7 @@ Creates a hinge transition by rotating the element.
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
 - `delay` (Duration) - Delay in seconds or milliseconds before the transition starts. (**Default:** null)
 
+
 ### mui-slide()
 
 Creates a sliding transition by translating the element horizontally or vertically.
@@ -75,6 +78,7 @@ Creates a sliding transition by translating the element horizontally or vertical
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
 - `delay` (Duration) - Delay in seconds or milliseconds before the transition starts. (**Default:** null)
+
 
 ### mui-spin()
 
@@ -90,6 +94,7 @@ Creates a spinning transition by rotating the element. The `turn` unit is used t
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
 - `delay` (Duration) - Delay in seconds or milliseconds before the transition starts. (**Default:** null)
 
+
 ### mui-zoom()
 
 Creates a scaling transition. A scale of `1` means the element is the same size. Larger numbers make the element bigger, while numbers less than 1 make the element smaller.
@@ -103,4 +108,5 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
 - `delay` (Duration) - Delay in seconds or milliseconds before the transition starts. (**Default:** null)
+
 

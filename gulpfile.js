@@ -22,7 +22,8 @@ gulp.task('docs', function() {
       template: './docs/src/_template.hbs',
       adapters: ['sass'],
       extension: 'md',
-      marked: false
+      marked: false,
+      handlebars: require('./lib/handlebars')
     }))
     .pipe(gulp.dest('./docs'));
 });

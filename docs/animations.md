@@ -108,6 +108,7 @@ $('.animation-wrapper').addClass('is-animating');
 
 ## Mixins
 
+
 ### mui-animation()
 
 Creates a keyframe from one or more effect functions and assigns it to the element by adding the `animation-name` property.
@@ -115,6 +116,7 @@ Creates a keyframe from one or more effect functions and assigns it to the eleme
 **Parameters:**
 
 - `effects...` (Function) - One or more effect functions to build the keyframe with.
+
 
 ### mui-keyframes()
 
@@ -125,14 +127,6 @@ Creates a keyframe from one or more effect functions. Use this function instead 
 - `name` (String) - Name of the keyframe.
 - `effects...` (Function) - One or more effect functions to build the keyframe with.
 
-### -mui-keyframe-get()
-
-Prints the CSS properties from a specific key in a keyframes map. Used to borrow CSS from keyframe functions for use in transitions.
-
-**Parameters:**
-
-- `kf` (Map) - Keyframe map to extract from.
-- `key` (Number) - Key in the map to print the CSS of.
 
 ### mui-series()
 
@@ -141,6 +135,7 @@ Creates a new animation queue.
 **Parameters:**
 
 - `delay` (Duration) - Delay in seconds or milliseconds to place at the front of the animation queue. (**Default:** 0s)
+
 
 ### mui-queue()
 
@@ -152,7 +147,9 @@ Adds an animation to an animation queue. Only use this mixin inside of `mui-seri
 - `gap` (Duration) - Amount of time to pause before playing the animation after this one. Use a negative value to make the next effect overlap with the current one. (**Default:** 0s)
 - `keyframes...` (Function) - One or more effect functions to build the keyframe with.
 
+
 ## Functions
+
 
 ### fade()
 
@@ -162,6 +159,7 @@ Creates a fading animation.
 
 - `from` (Number) - Opacity to start at. (**Default:** 0)
 - `to` (Number) - Opacity to end at. (**Default:** 1)
+
 
 ### hinge()
 
@@ -175,38 +173,6 @@ Creates a hinge effect by rotating the element.
 - `perspective` (Number) - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced. (**Default:** 2000px)
 - `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default:** from-back)
 
-### -mui-keyframe-pct()
-
-Creates a string for a CSS keyframe, by converting a list of numbers to a comma-separated list of percentage values.
-
-**Parameters:**
-
-- `input` (Number|List) - List of numbers to use.
-
-### -mui-keyframe-split()
-
-Reformats a map containing keys with a list of values, so that each key is a single value.
-
-**Parameters:**
-
-- `map` (Map) - Map to split up.
-
-### -mui-keyframe-combine()
-
-Combines a series of keyframe objects into one.
-
-**Parameters:**
-
-- `maps...` (Map) - A series of maps to merge, as individual parameters.
-
-### -mui-merge-properties()
-
-Combines two maps of CSS properties into one map. If both maps have a transform property, the values from each will be combined into one property.
-
-**Parameters:**
-
-- `one` (Map) - First map to merge.
-- `two` (Map) - Second map to merge.
 
 ### shake()
 
@@ -215,6 +181,7 @@ Creates a shaking animation.
 **Parameters:**
 
 - `intensity` (Percentage) - Intensity of the shake, as a percentage value. (**Default:** 7%)
+
 
 ### slide()
 
@@ -226,6 +193,7 @@ Creates a sliding animation.
 - `direction` (Keyword) - Direction to move. Can be `up`, `down`, `left`, or `right`. (**Default:** up)
 - `amount` (Number) - Distance to move. Can be any CSS length unit. (**Default:** 100%)
 
+
 ### spin()
 
 Creates a spinning animation.
@@ -235,6 +203,7 @@ Creates a spinning animation.
 - `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** cw)
 - `amount` (Number) - Amount to spin. Can be any CSS angle unit. (**Default:** 360deg)
 
+
 ### wiggle()
 
 Creates a wiggling animation.
@@ -242,6 +211,7 @@ Creates a wiggling animation.
 **Parameters:**
 
 - `intensity` (Number) - Intensity of the wiggle. Can be any CSS angle unit. (**Default:** 7deg)
+
 
 ### zoom()
 
@@ -251,3 +221,4 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 
 - `from` (Number) - Size to start at. (**Default:** 1.5)
 - `from` (Number) - Size to end at. (**Default:** 1)
+
