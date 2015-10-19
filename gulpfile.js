@@ -2,13 +2,22 @@ var $             = require('gulp-load-plugins')();
 var gulp          = require('gulp');
 var rimraf        = require('rimraf').sync;
 var sequence      = require('run-sequence');
-var supercollider = require('supercollider').init;
+var supercollider = require('supercollider');
 
 var COMPATIBILITY = [
   'last 2 versions',
   'ie >= 9',
   'and_chr >= 2.3'
 ];
+
+supercollider
+  .config({
+    template: './docs/src/_template.hbs',
+    extension: 'md',
+    marked: false,
+    handlebars: require('./lib/handlebars')
+  })
+  .adapter('sass');
 
 gulp.task('clean', function(done) {
   rimraf('./_build');
@@ -18,13 +27,7 @@ gulp.task('clean', function(done) {
 
 gulp.task('docs', function() {
   return gulp.src('./docs/src/*.md')
-    .pipe(supercollider({
-      template: './docs/src/_template.hbs',
-      adapters: ['sass'],
-      extension: 'md',
-      marked: false,
-      handlebars: require('./lib/handlebars')
-    }))
+    .pipe(supercollider.init())
     .pipe(gulp.dest('./docs'));
 });
 
