@@ -89,9 +89,9 @@ To add a delay to the start of the queue, add the length in seconds to the `mui-
 ```scss
 // 2 second delay before the first shake
 @include mui-series(2s) {
-  .shake  { @include mui-queue(shake(), 2s); }
-  .spin   { @include mui-queue(spin(), 1s, 2s); }
-  .wiggle { @include mui-queue(wiggle()); }
+  .shake  { @include mui-queue(2s, 0s, shake()); }
+  .spin   { @include mui-queue(1s, 2s, spin()); }
+  .wiggle { @include mui-queue(wiggle); }
 }
 ```
 
