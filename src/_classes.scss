@@ -1,13 +1,13 @@
 // scss-lint:disable ImportantRule, SpaceAfterComma, SingleLinePerProperty
 
+%mui-defaults {
+  transition-duration: map-get($motion-ui-speeds, default);
+  transition-timing-function: map-get($motion-ui-easings, default);
+}
+
 // Transitions
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-transitions {
-  %mui-defaults {
-    transition-duration: map-get($motion-ui-speeds, default);
-    transition-timing-function: map-get($motion-ui-easings, default);
-  }
-
   // Slide
   .slideInDown    { @include mui-slide(in,  down); }
   .slideInLeft    { @include mui-slide(in,  right); }
