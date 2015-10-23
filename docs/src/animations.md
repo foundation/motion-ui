@@ -87,7 +87,7 @@ Begin your series with the `mui-series()` mixin. Inside this mixin, attach anima
   // 1 second spin with a 2 second pause
   .spin     { @include mui-queue(1s, 2s, spin); }
   // 1 second zoom and fade
-  .fadeZoom { @include mui-queue(1s, 0s, fade, zoom); }
+  .fade-zoom { @include mui-queue(1s, 0s, fade, zoom); }
 }
 ```
 

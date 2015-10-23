@@ -28,15 +28,15 @@ Different animation libraries have different ways of writing classes, but most l
 The default configuration outputs classes like this:
 
 ```css
-.fadeIn.mui-enter {}
-.fadeIn.mui-enter.mui-enter-active {}
+.fade-in.mui-enter {}
+.fade-in.mui-enter.mui-enter-active {}
 ```
 
 Set the `chain` property of `$motion-ui-classes` to `false` to create classes like this:
 
 ```css
-.fadeIn-mui-enter {}
-.fadeIn-mui-enter.fadeIn-mui-enter-active {}
+.fade-in-mui-enter {}
+.fade-in-mui-enter.fadeIn-mui-enter-active {}
 ```
 
 The class output can also be fine-tuned with the `prefix` and `active` properties.
@@ -51,11 +51,11 @@ Miscellaneous settings are in the `$motion-ui-settings` map. These settings defi
 
 ```scss
 $motion-ui-settings: (
-  slideAndFade: false,
-  hingeAndFade: true,
-  scaleAndFade: true,
-  spinAndFade: true,
-  activateQueueClass: 'is-animating'
+  slide-and-fade: false,
+  hinge-and-fade: true,
+  scale-and-fade: true,
+  spin-and-fade: true,
+  activate-queue-class: 'is-animating'
 );
 ```
 
