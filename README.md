@@ -24,5 +24,6 @@ npm install
 ```
 
 - Run `npm start` to compile test Sass/JS files, and to build the documentation.
+  - **To make changes to the documentation, edit the files under `docs/src`.
 - Run `npm test` to run the unit tests.
 - Run `npm start dist` to compile distribution files.
