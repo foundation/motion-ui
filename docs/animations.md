@@ -25,6 +25,8 @@ The CSS output looks like this:
 }
 ```
 
+**Note that in order to play properly, the element must have at least the property `animation-duration` applied to it as well.**
+
 There are seven keyframe functions:
 
 - `fade($from, $to)`
