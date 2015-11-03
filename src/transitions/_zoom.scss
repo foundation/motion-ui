@@ -10,7 +10,7 @@
   $state: in,
   $from: 1.5,
   $to: 1,
-  $fade: map-get($motion-ui-settings, scaleAndFade),
+  $fade: map-get($motion-ui-settings, scale-and-fade),
   $duration: null,
   $timing: null,
   $delay: null

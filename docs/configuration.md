@@ -36,7 +36,7 @@ Set the `chain` property of `$motion-ui-classes` to `false` to create classes li
 
 ```css
 .fade-in-mui-enter {}
-.fade-in-mui-enter.fadeIn-mui-enter-active {}
+.fade-in-mui-enter.fade-in-mui-enter-active {}
 ```
 
 The class output can also be fine-tuned with the `prefix` and `active` properties.

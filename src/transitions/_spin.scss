@@ -10,7 +10,7 @@
   $state: in,
   $direction: cw,
   $amount: 0.75turn,
-  $fade: map-get($motion-ui-settings, spinAndFade),
+  $fade: map-get($motion-ui-settings, spin-and-fade),
   $duration: null,
   $timing: null,
   $delay: null

@@ -14,7 +14,7 @@
   $axis: edge,
   $perspective: 2000px,
   $turn-origin: from-back,
-  $fade: map-get($motion-ui-settings, hingeAndFade),
+  $fade: map-get($motion-ui-settings, hinge-and-fade),
   $duration: null,
   $timing: null,
   $delay: null

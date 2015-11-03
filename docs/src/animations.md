@@ -48,7 +48,7 @@ All keyframe functions have parameters that customize the effect. For example, w
 
 If you're using a keyframe effect as-is, it can be inserted as a plain string instead of a function call, like so:
 
-.zoomIn {
+.zoom-in {
   @include mui-animation(zoom);
 }
 

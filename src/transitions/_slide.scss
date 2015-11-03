@@ -10,7 +10,7 @@
   $state: in,
   $direction: left,
   $amount: 100%,
-  $fade: map-get($motion-ui-settings, slideAndFade),
+  $fade: map-get($motion-ui-settings, slide-and-fade),
   $duration: null,
   $timing: null,
   $delay: null
