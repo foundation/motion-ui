@@ -17,7 +17,7 @@ Here's an example:
 ```js
 var $elem = $('[data-animate]');
 
-MotionUI.animateIn($elem, 'slideIn', function() {
+MotionUI.animateIn($elem, 'slide-in', function() {
   console.log('Transition finished!');
 });
 ```

@@ -17,40 +17,40 @@ These defaults can be changed by modifying the [Motion UI settings](configuratio
 ## Transition Classes
 
 - **Slide:**
-  - `.slideInDown`
-  - `.slideInLeft`
-  - `.slideInUp`
-  - `.slideInRight`
-  - `.slideOutDown`
-  - `.slideOutLeft`
-  - `.slideOutUp`
-  - `.slideOutRight`
+  - `.slide-in-down`
+  - `.slide-in-left`
+  - `.slide-in-up`
+  - `.slide-in-right`
+  - `.slide-out-down`
+  - `.slide-out-left`
+  - `.slide-out-up`
+  - `.slide-out-right`
 - **Fade:**
-  - `.fadeIn`
-  - `.fadeOut`
+  - `.fade-in`
+  - `.fade-out`
 - **Hinge:**
-  - `.hingeInFromTop`
-  - `.hingeInFromRight`
-  - `.hingeInFromBottom`
-  - `.hingeInFromLeft`
-  - `.hingeInFromMiddleX`
-  - `.hingeInFromMiddleY`
-  - `.hingeOutFromTop`
-  - `.hingeOutFromRight`
-  - `.hingeOutFromBottom`
-  - `.hingeOutFromLeft`
-  - `.hingeOutFromMiddleX`
-  - `.hingeOutFromMiddleY`
+  - `.hinge-in-from-top`
+  - `.hinge-in-from-right`
+  - `.hinge-in-from-bottom`
+  - `.hinge-in-from-left`
+  - `.hinge-in-from-middle-x`
+  - `.hinge-in-from-middle-y`
+  - `.hinge-out-from-top`
+  - `.hinge-out-from-right`
+  - `.hinge-out-from-bottom`
+  - `.hinge-out-from-left`
+  - `.hinge-out-from-middle-x`
+  - `.hinge-out-from-middle-y`
 - **Scale:**
-  - `.scaleInUp`
-  - `.scaleInDown`
-  - `.scaleOutUp`
-  - `.scaleOutDown`
+  - `.scale-in-up`
+  - `.scale-in-down`
+  - `.scale-out-up`
+  - `.scale-out-down`
 - **Spin:**
-  - `.spinIn`
-  - `.spinOut`
-  - `.spinInCCW`
-  - `.spinOutCCW`
+  - `.spin-in`
+  - `.spin-out`
+  - `.spin-in-ccw`
+  - `.spin-out-ccw`
 
 ## Animation Classes
 
@@ -69,12 +69,12 @@ Modifiers work with both transitions and animations.
 - **Timing:**
   - `.linear`
   - `.ease`
-  - `.easeIn`
-  - `.easeOut`
-  - `.easeInOut`
-  - `.bounceIn`
-  - `.bounceOut`
-  - `.bounceInOut`
+  - `.ease-in`
+  - `.ease-out`
+  - `.ease-in-out`
+  - `.bounce-in`
+  - `.bounce-out`
+  - `.bounce-in-out`
 - **Delay:**
   - `.short-delay` (300ms)
   - `.long-delay` (700ms)

@@ -13,11 +13,11 @@ Here's a basic fade in class. The first parameter of every transition mixin is a
 Here's what the CSS looks like.
 
 ```css
-.fadeIn.mui-enter {
+.fade-in.mui-enter {
   opacity: 0;
   transition-property: opacity; }
 
-.fadeIn.mui-enter.mui-enter-active {
+.fade-in.mui-enter.mui-enter-active {
   opacity: 1; }
 ```
 

@@ -38,24 +38,24 @@ $motion-ui-easings: (
   default: linear,
   linear: linear,
   ease: ease,
-  easeIn: ease-in,
-  easeOut: ease-out,
-  easeInOut: ease-in-out,
-  bounceIn: cubic-bezier(0.485, 0.155, 0.24, 1.245),
-  bounceOut: cubic-bezier(0.485, 0.155, 0.515, 0.845),
-  bounceInOut: cubic-bezier(0.76, -0.245, 0.24, 1.245),
+  ease-in: ease-in,
+  ease-out: ease-out,
+  ease-in-out: ease-in-out,
+  bounce-in: cubic-bezier(0.485, 0.155, 0.24, 1.245),
+  bounce-out: cubic-bezier(0.485, 0.155, 0.515, 0.845),
+  bounce-in-out: cubic-bezier(0.76, -0.245, 0.24, 1.245),
 ) !default;
 
 /// Miscellaneous settings related to Motion UI.
 /// @type Map
-/// @prop {Boolean} slideAndFade [false] - Defines if slide motions should also fade in/out.
-/// @prop {Boolean} slideAndFade [true] - Defines if hinge motions should also fade in/out.
-/// @prop {Boolean} slideAndFade [true] - Defines if scale motions should also fade in/out.
-/// @prop {Boolean} slideAndFade [true] - Defines if spin motions should also fade in/out.
+/// @prop {Boolean} slide-and-fade [false] - Defines if slide motions should also fade in/out.
+/// @prop {Boolean} slide-and-fade [true] - Defines if hinge motions should also fade in/out.
+/// @prop {Boolean} slide-and-fade [true] - Defines if scale motions should also fade in/out.
+/// @prop {Boolean} slide-and-fade [true] - Defines if spin motions should also fade in/out.
 $motion-ui-settings: (
-  slideAndFade: false,
-  hingeAndFade: true,
-  scaleAndFade: true,
-  spinAndFade: true,
-  activateQueueClass: 'is-animating',
+  slide-and-fade: false,
+  hinge-and-fade: true,
+  scale-and-fade: true,
+  spin-and-fade: true,
+  activate-queue-class: 'is-animating',
 ) !default;

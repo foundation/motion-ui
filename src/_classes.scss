@@ -9,44 +9,44 @@
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-transitions {
   // Slide
-  .slideInDown    { @include mui-slide(in,  down); }
-  .slideInLeft    { @include mui-slide(in,  right); }
-  .slideInUp      { @include mui-slide(in,  bottom); }
-  .slideInRight   { @include mui-slide(in,  left); }
-  .slideOutDown   { @include mui-slide(out, bottom); }
-  .slideOutRight  { @include mui-slide(out, right); }
-  .slideOutUp     { @include mui-slide(out, top); }
-  .slideOutLeft   { @include mui-slide(out, left); }
+  .slide-in-down    { @include mui-slide(in,  down); }
+  .slide-in-left    { @include mui-slide(in,  right); }
+  .slide-in-up      { @include mui-slide(in,  bottom); }
+  .slide-in-right   { @include mui-slide(in,  left); }
+  .slide-out-down   { @include mui-slide(out, bottom); }
+  .slide-out-right  { @include mui-slide(out, right); }
+  .slide-out-up     { @include mui-slide(out, top); }
+  .slide-out-left   { @include mui-slide(out, left); }
 
   // Fade
-  .fadeIn  { @include mui-fade(in,  0, 1); }
-  .fadeOut { @include mui-fade(out, 1, 0); }
+  .fade-in  { @include mui-fade(in,  0, 1); }
+  .fade-out { @include mui-fade(out, 1, 0); }
 
   // Hinge
-  .hingeInFromTop      { @include mui-hinge(in,  top); }
-  .hingeInFromRight    { @include mui-hinge(in,  right); }
-  .hingeInFromBottom   { @include mui-hinge(in,  bottom); }
-  .hingeInFromLeft     { @include mui-hinge(in,  left); }
-  .hingeInFromMiddleX  { @include mui-hinge(in,  top,   center); }
-  .hingeInFromMiddleY  { @include mui-hinge(in,  right, center); }
-  .hingeOutFromTop     { @include mui-hinge(out, top); }
-  .hingeOutFromRight   { @include mui-hinge(out, right); }
-  .hingeOutFromBottom  { @include mui-hinge(out, bottom); }
-  .hingeOutFromLeft    { @include mui-hinge(out, left); }
-  .hingeOutFromMiddleX { @include mui-hinge(out, top,   center); }
-  .hingeOutFromMiddleY { @include mui-hinge(out, right, center); }
+  .hinge-in-from-top      { @include mui-hinge(in,  top); }
+  .hinge-in-from-right    { @include mui-hinge(in,  right); }
+  .hinge-in-from-bottom   { @include mui-hinge(in,  bottom); }
+  .hinge-in-from-left     { @include mui-hinge(in,  left); }
+  .hinge-in-from-middle-x  { @include mui-hinge(in,  top,   center); }
+  .hinge-in-from-middle-y  { @include mui-hinge(in,  right, center); }
+  .hinge-out-from-top     { @include mui-hinge(out, top); }
+  .hinge-out-from-right   { @include mui-hinge(out, right); }
+  .hinge-out-from-bottom  { @include mui-hinge(out, bottom); }
+  .hinge-out-from-left    { @include mui-hinge(out, left); }
+  .hinge-out-from-middle-x { @include mui-hinge(out, top,   center); }
+  .hinge-out-from-middle-y { @include mui-hinge(out, right, center); }
 
   // Scale
-  .scaleInUp    { @include mui-zoom(in,  0.5, 1); }
-  .scaleInDown  { @include mui-zoom(in,  1.5, 1); }
-  .scaleOutUp   { @include mui-zoom(out, 1, 1.5); }
-  .scaleOutDown { @include mui-zoom(out, 1, 0.5); }
+  .scale-in-up    { @include mui-zoom(in,  0.5, 1); }
+  .scale-in-down  { @include mui-zoom(in,  1.5, 1); }
+  .scale-out-up   { @include mui-zoom(out, 1, 1.5); }
+  .scale-out-down { @include mui-zoom(out, 1, 0.5); }
 
   // Spin
-  .spinIn     { @include mui-spin(in,  cw); }
-  .spinOut    { @include mui-spin(out, cw); }
-  .spinInCCW  { @include mui-spin(in,  ccw); }
-  .spinOutCCW { @include mui-spin(out, ccw); }
+  .spin-in     { @include mui-spin(in,  cw); }
+  .spin-out    { @include mui-spin(out, cw); }
+  .spin-in-ccw  { @include mui-spin(in,  ccw); }
+  .spin-out-ccw { @include mui-spin(out, ccw); }
 
   // Transition Modifiers
   // - - - - - - - - - - - - - - -
