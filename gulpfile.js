@@ -6,7 +6,7 @@ var supercollider = require('supercollider');
 
 var COMPATIBILITY = [
   'last 2 versions',
-  'ie >= 9',
+  'ie >= 10',
   'and_chr >= 2.3'
 ];
 
