@@ -2,7 +2,7 @@
 
 Motion UI includes a small JavaScript library that can play transitions, although this specific library is not required to take advantage of Motion UI's CSS. Animating in reveals a hidden element, while animating out hides a visible element.
 
-The library is available on `window.MotionUI`, or can imported with a module system.
+The library is available on `window.MotionUI`, or can be imported with a module system.
 
 ## Usage
 
