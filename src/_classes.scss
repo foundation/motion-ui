@@ -13,7 +13,7 @@
   .slide-in-left    { @include mui-slide(in,  right); }
   .slide-in-up      { @include mui-slide(in,  bottom); }
   .slide-in-right   { @include mui-slide(in,  left); }
-  .slide-out-down   { @include mui-slide(out, bottom); }
+  .slide-out-down   { @include mui-slide(out, down); }
   .slide-out-right  { @include mui-slide(out, right); }
   .slide-out-up     { @include mui-slide(out, top); }
   .slide-out-left   { @include mui-slide(out, left); }
