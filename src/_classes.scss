@@ -9,13 +9,13 @@
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-transitions {
   // Slide
-  .slide-in-down    { @include mui-slide(in,  down); }
+  .slide-in-down    { @include mui-slide(in,  up); }
   .slide-in-left    { @include mui-slide(in,  right); }
-  .slide-in-up      { @include mui-slide(in,  bottom); }
+  .slide-in-up      { @include mui-slide(in,  down); }
   .slide-in-right   { @include mui-slide(in,  left); }
   .slide-out-down   { @include mui-slide(out, down); }
   .slide-out-right  { @include mui-slide(out, right); }
-  .slide-out-up     { @include mui-slide(out, top); }
+  .slide-out-up     { @include mui-slide(out, up); }
   .slide-out-left   { @include mui-slide(out, left); }
 
   // Fade
