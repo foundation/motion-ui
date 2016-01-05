@@ -7,7 +7,7 @@
   $timing: null,
   $delay: null
 ) {
-  @extend %mui-defaults;
+  @include -motion-ui-defaults;
   transition-duration: $duration;
   transition-timing-function: $timing;
   transition-delay: $delay;

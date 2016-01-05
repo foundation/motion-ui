@@ -1,6 +1,6 @@
 // scss-lint:disable ImportantRule, SpaceAfterComma, SingleLinePerProperty
 
-%mui-defaults {
+@mixin -motion-ui-defaults {
   transition-duration: map-get($motion-ui-speeds, default);
   transition-timing-function: map-get($motion-ui-easings, default);
 }
