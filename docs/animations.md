@@ -222,5 +222,5 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 **Parameters:**
 
 - `from` (Number) - Size to start at. (**Default:** 1.5)
-- `from` (Number) - Size to end at. (**Default:** 1)
+- `to` (Number) - Size to end at. (**Default:** 1)
 
