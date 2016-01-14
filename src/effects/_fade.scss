@@ -19,8 +19,11 @@
     }
   }
 
+  $fromName: $from * 100;
+  $toName:   $to   * 100;
+
   $keyframes: (
-    name: 'fade-#{$from}-to-#{$to}',
+    name: 'fade-#{$fromName}-to-#{$toName}',
     0: (opacity: $from),
     100: (opacity: $to),
   );
