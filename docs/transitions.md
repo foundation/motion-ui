@@ -72,7 +72,7 @@ Creates a sliding transition by translating the element horizontally or vertical
 **Parameters:**
 
 - `state` (Keyword) - State to transition to. (**Default:** in)
-- `direction` (Keyword) - Side of the element to slide from. Can be `top`, `right`, `bottom`, or `left`. (**Default:** left)
+- `direction` (Keyword) - Direction to slide to. Can be `up`, `right`, `down`, or `left`. (**Default:** left)
 - `amount` (Length) - Length of the slide as a percentage value. (**Default:** 100%)
 - `fade` (Boolean) - Set to `true` to fade the element in or out simultaneously. (**Default:** false)
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
