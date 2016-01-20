@@ -1,3 +1,4 @@
+!function($) {
 'use strict';
 
 // Polyfill for requestAnimationFrame
@@ -102,4 +103,6 @@ var MotionUI = {
   animateOut: function(element, animation, cb) {
     animate(false, element, animation, cb);
   }
-}
+};
+
+}(jQuery);
