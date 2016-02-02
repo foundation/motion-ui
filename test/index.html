@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motion UI Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.css" />
+    <link rel="stylesheet" href="../_build/motion-ui.css" />
+    <style>
+      #yeti {
+        display: block;
+        max-width: 400px;
+        margin: 2rem auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="column row">
+      <h1>Motion UI Test</h1>
+
+      <hr>
+
+      <div class="row column collapse medium-6" style="margin: 0 auto;">
+        <div class="small-8 columns">
+          <select id="transitionList">
+            <option value="slide-in-up">slide-in-up</option>
+            <option value="slide-in-right">slide-in-right</option>
+            <option value="slide-in-down">slide-in-down</option>
+            <option value="slide-in-left">slide-in-left</option>
+            <option value="fade-in">fade-in</option>
+            <option value="spin-in">spin-in</option>
+            <option value="spin-in-ccw">spin-in-ccw</option>
+            <option value="scale-in-up">scale-in-up</option>
+            <option value="scale-in-down">scale-in-down</option>
+            <option value="hinge-in-from-top">hinge-in-from-top</option>
+            <option value="hinge-in-from-right">hinge-in-from-right</option>
+            <option value="hinge-in-from-bottom">hinge-in-from-bottom</option>
+            <option value="hinge-in-from-left">hinge-in-from-left</option>
+            <option value="hinge-in-from-middle-x">hinge-in-from-middle-x</option>
+            <option value="hinge-in-from-middle-y">hinge-in-from-middle-y</option>
+          </select>
+        </div>
+        <div class="small-4 columns">
+          <button class="expanded button" id="transitioner">Transition!</button>
+        </div>
+      </div>
+
+      <img id="yeti" src="yeti.svg">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.js"></script>
+    <script>
+      $(function() {
+        var $yeti = $('#yeti');
+        var $transitionList = $('#transitionList');
+
+        $('#transitioner').click(function() {
+          Foundation.Motion.animateIn($yeti, $transitionList.val());
+        });
+      });
+    </script>
+  </body>
+</html>
