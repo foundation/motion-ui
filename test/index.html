@@ -24,21 +24,46 @@
       <div class="row column collapse medium-6" style="margin: 0 auto;">
         <div class="small-8 columns">
           <select id="transitionList">
-            <option value="slide-in-up">slide-in-up</option>
-            <option value="slide-in-right">slide-in-right</option>
-            <option value="slide-in-down">slide-in-down</option>
-            <option value="slide-in-left">slide-in-left</option>
-            <option value="fade-in">fade-in</option>
-            <option value="spin-in">spin-in</option>
-            <option value="spin-in-ccw">spin-in-ccw</option>
-            <option value="scale-in-up">scale-in-up</option>
-            <option value="scale-in-down">scale-in-down</option>
-            <option value="hinge-in-from-top">hinge-in-from-top</option>
-            <option value="hinge-in-from-right">hinge-in-from-right</option>
-            <option value="hinge-in-from-bottom">hinge-in-from-bottom</option>
-            <option value="hinge-in-from-left">hinge-in-from-left</option>
-            <option value="hinge-in-from-middle-x">hinge-in-from-middle-x</option>
-            <option value="hinge-in-from-middle-y">hinge-in-from-middle-y</option>
+            <optgroup label="Slide">
+              <option value="slide-in-up">slide-in-up</option>
+              <option value="slide-in-right">slide-in-right</option>
+              <option value="slide-in-down">slide-in-down</option>
+              <option value="slide-in-left">slide-in-left</option>
+              <option value="slide-out-up">slide-out-up</option>
+              <option value="slide-out-right">slide-out-right</option>
+              <option value="slide-out-down">slide-out-down</option>
+              <option value="slide-out-left">slide-out-left</option>
+            </optgroup>
+            <optgroup label="Fade">
+              <option value="fade-in">fade-in</option>
+              <option value="fade-out">fade-out</option>
+            </optgroup>
+            <optgroup label="Spin">
+              <option value="spin-in">spin-in</option>
+              <option value="spin-in-ccw">spin-in-ccw</option>
+              <option value="spin-out">spin-out</option>
+              <option value="spin-out-ccw">spin-out-ccw</option>
+            </optgroup>
+            <optgroup label="Scale">
+              <option value="scale-in-up">scale-in-up</option>
+              <option value="scale-in-down">scale-in-down</option>
+              <option value="scale-out-up">scale-out-up</option>
+              <option value="scale-out-down">scale-out-down</option>
+            </optgroup>
+            <optgroup label="Hinge">
+              <option value="hinge-in-from-top">hinge-in-from-top</option>
+              <option value="hinge-in-from-right">hinge-in-from-right</option>
+              <option value="hinge-in-from-bottom">hinge-in-from-bottom</option>
+              <option value="hinge-in-from-left">hinge-in-from-left</option>
+              <option value="hinge-in-from-middle-x">hinge-in-from-middle-x</option>
+              <option value="hinge-in-from-middle-y">hinge-in-from-middle-y</option>
+              <option value="hinge-out-from-top">hinge-out-from-top</option>
+              <option value="hinge-out-from-right">hinge-out-from-right</option>
+              <option value="hinge-out-from-bottom">hinge-out-from-bottom</option>
+              <option value="hinge-out-from-left">hinge-out-from-left</option>
+              <option value="hinge-out-from-middle-x">hinge-out-from-middle-x</option>
+              <option value="hinge-out-from-middle-y">hinge-out-from-middle-y</option>
+            </optgroup>
           </select>
         </div>
         <div class="small-4 columns">
@@ -57,7 +82,16 @@
         var $transitionList = $('#transitionList');
 
         $('#transitioner').click(function() {
-          Foundation.Motion.animateIn($yeti, $transitionList.val());
+          var value = $transitionList.val();
+
+          if (value.match(/-in/)) {
+            Foundation.Motion.animateIn($yeti, value);
+          }
+          else {
+            Foundation.Motion.animateOut($yeti, value, function() {
+              $yeti.show();
+            });
+          }
         });
       });
     </script>
