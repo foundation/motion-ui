@@ -1,12 +1,11 @@
-.slide-in-down.mui-enter, .slide-in-left.mui-enter, .slide-in-up.mui-enter, .slide-in-right.mui-enter, .slide-out-down.mui-leave, .slide-out-right.mui-leave, .slide-out-up.mui-leave, .slide-out-left.mui-leave, .fade-in.mui-enter, .fade-out.mui-leave, .hinge-in-from-top.mui-enter, .hinge-in-from-right.mui-enter, .hinge-in-from-bottom.mui-enter, .hinge-in-from-left.mui-enter, .hinge-in-from-middle-x.mui-enter, .hinge-in-from-middle-y.mui-enter, .hinge-out-from-top.mui-leave, .hinge-out-from-right.mui-leave, .hinge-out-from-bottom.mui-leave, .hinge-out-from-left.mui-leave, .hinge-out-from-middle-x.mui-leave, .hinge-out-from-middle-y.mui-leave, .scale-in-up.mui-enter, .scale-in-down.mui-enter, .scale-out-up.mui-leave, .scale-out-down.mui-leave, .spin-in.mui-enter, .spin-out.mui-leave, .spin-in-ccw.mui-enter, .spin-out-ccw.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear; }
-
 .slide-in-down.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -15,10 +14,13 @@
           transform: translateY(0); }
 
 .slide-in-left.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -27,10 +29,13 @@
           transform: translateX(0); }
 
 .slide-in-up.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -39,10 +44,13 @@
           transform: translateY(0); }
 
 .slide-in-right.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -51,22 +59,28 @@
           transform: translateX(0); }
 
 .slide-out-down.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
 .slide-out-down.mui-leave.mui-leave-active {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%); }
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%); }
 
 .slide-out-right.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -75,10 +89,13 @@
           transform: translateX(100%); }
 
 .slide-out-up.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -87,10 +104,13 @@
           transform: translateY(-100%); }
 
 .slide-out-left.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -99,6 +119,8 @@
           transform: translateX(-100%); }
 
 .fade-in.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   opacity: 0;
   transition-property: opacity; }
 
@@ -106,6 +128,8 @@
   opacity: 1; }
 
 .fade-out.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   opacity: 1;
   transition-property: opacity; }
 
@@ -113,12 +137,15 @@
   opacity: 0; }
 
 .hinge-in-from-top.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   -webkit-transform-origin: top;
           transform-origin: top;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .hinge-in-from-top.mui-enter.mui-enter-active {
@@ -127,12 +154,15 @@
   opacity: 1; }
 
 .hinge-in-from-right.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   -webkit-transform-origin: right;
           transform-origin: right;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .hinge-in-from-right.mui-enter.mui-enter-active {
@@ -141,12 +171,15 @@
   opacity: 1; }
 
 .hinge-in-from-bottom.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotateX(90deg);
           transform: perspective(2000px) rotateX(90deg);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .hinge-in-from-bottom.mui-enter.mui-enter-active {
@@ -155,12 +188,15 @@
   opacity: 1; }
 
 .hinge-in-from-left.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotateY(90deg);
           transform: perspective(2000px) rotateY(90deg);
   -webkit-transform-origin: left;
           transform-origin: left;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .hinge-in-from-left.mui-enter.mui-enter-active {
@@ -169,12 +205,15 @@
   opacity: 1; }
 
 .hinge-in-from-middle-x.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   -webkit-transform-origin: center;
           transform-origin: center;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .hinge-in-from-middle-x.mui-enter.mui-enter-active {
@@ -183,12 +222,15 @@
   opacity: 1; }
 
 .hinge-in-from-middle-y.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   -webkit-transform-origin: center;
           transform-origin: center;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .hinge-in-from-middle-y.mui-enter.mui-enter-active {
@@ -197,12 +239,15 @@
   opacity: 1; }
 
 .hinge-out-from-top.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: top;
           transform-origin: top;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .hinge-out-from-top.mui-leave.mui-leave-active {
@@ -211,12 +256,15 @@
   opacity: 0; }
 
 .hinge-out-from-right.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: right;
           transform-origin: right;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .hinge-out-from-right.mui-leave.mui-leave-active {
@@ -225,12 +273,15 @@
   opacity: 0; }
 
 .hinge-out-from-bottom.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .hinge-out-from-bottom.mui-leave.mui-leave-active {
@@ -239,12 +290,15 @@
   opacity: 0; }
 
 .hinge-out-from-left.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: left;
           transform-origin: left;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .hinge-out-from-left.mui-leave.mui-leave-active {
@@ -253,12 +307,15 @@
   opacity: 0; }
 
 .hinge-out-from-middle-x.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: center;
           transform-origin: center;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .hinge-out-from-middle-x.mui-leave.mui-leave-active {
@@ -267,12 +324,15 @@
   opacity: 0; }
 
 .hinge-out-from-middle-y.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: center;
           transform-origin: center;
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .hinge-out-from-middle-y.mui-leave.mui-leave-active {
@@ -281,10 +341,13 @@
   opacity: 0; }
 
 .scale-in-up.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .scale-in-up.mui-enter.mui-enter-active {
@@ -293,10 +356,13 @@
   opacity: 1; }
 
 .scale-in-down.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .scale-in-down.mui-enter.mui-enter-active {
@@ -305,10 +371,13 @@
   opacity: 1; }
 
 .scale-out-up.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: scale(1);
           transform: scale(1);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .scale-out-up.mui-leave.mui-leave-active {
@@ -317,10 +386,13 @@
   opacity: 0; }
 
 .scale-out-down.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: scale(1);
           transform: scale(1);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .scale-out-down.mui-leave.mui-leave-active {
@@ -329,10 +401,13 @@
   opacity: 0; }
 
 .spin-in.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: rotate(-0.75turn);
           transform: rotate(-0.75turn);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .spin-in.mui-enter.mui-enter-active {
@@ -341,10 +416,13 @@
   opacity: 1; }
 
 .spin-out.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: rotate(0);
           transform: rotate(0);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .spin-out.mui-leave.mui-leave-active {
@@ -353,10 +431,13 @@
   opacity: 0; }
 
 .spin-in-ccw.mui-enter {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: rotate(0.75turn);
           transform: rotate(0.75turn);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 0; }
 
 .spin-in-ccw.mui-enter.mui-enter-active {
@@ -365,10 +446,13 @@
   opacity: 1; }
 
 .spin-out-ccw.mui-leave {
+  transition-duration: 500ms;
+  transition-timing-function: linear;
   -webkit-transform: rotate(0);
           transform: rotate(0);
-  transition-property: -webkit-transform, opacity;
+  transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
   opacity: 1; }
 
 .spin-out-ccw.mui-leave.mui-leave-active {
@@ -489,6 +573,13 @@
   0%, 30%, 70%, 100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
+
+.shake,
+.spin-cw,
+.spin-ccw,
+.wiggle {
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms; }
 
 .infinite {
   -webkit-animation-iteration-count: infinite;
