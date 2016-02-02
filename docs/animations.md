@@ -107,6 +107,10 @@ document.querySelector('.animation-wrapper').classList.add('is-animating');
 $('.animation-wrapper').addClass('is-animating');
 ```
 
+## Use with WOW.js
+
+Motion UI can be paired with WOW.js to animate elements in as the page scrolls. [Learn more about WOW.js integration.](wow.md);
+
 
 ## Mixins
 
