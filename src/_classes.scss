@@ -78,6 +78,13 @@
   .spin-ccw { @include mui-animation(spin(ccw)); }
   .wiggle   { @include mui-animation(wiggle); }
 
+  .shake,
+  .spin-cw,
+  .spin-ccw,
+  .wiggle {
+    animation-duration: map-get($motion-ui-speeds, default);
+  }
+
   // Animation Modifiers
   // - - - - - - - - - - - - - - -
   .infinite { animation-iteration-count: infinite; }
