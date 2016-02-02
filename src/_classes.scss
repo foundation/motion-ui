@@ -9,9 +9,9 @@
 // - - - - - - - - - - - - - - -
 @mixin motion-ui-transitions {
   // Slide
-  .slide-in-down    { @include mui-slide(in,  up); }
+  .slide-in-down    { @include mui-slide(in,  down); }
   .slide-in-left    { @include mui-slide(in,  right); }
-  .slide-in-up      { @include mui-slide(in,  down); }
+  .slide-in-up      { @include mui-slide(in,  up); }
   .slide-in-right   { @include mui-slide(in,  left); }
   .slide-out-down   { @include mui-slide(out, down); }
   .slide-out-right  { @include mui-slide(out, right); }
