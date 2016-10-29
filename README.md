@@ -1,5 +1,7 @@
 # Motion UI
 
+[![CDNJS](https://img.shields.io/cdnjs/v/motion-ui.svg)](https://cdnjs.com/libraries/motion-ui/)
+
 A Sass library for creating CSS transitions and animations from your friends at [ZURB](http://zurb.com). Originally integrated into [Foundation for Apps](http://foundation.zurb.com/apps), the code is now a standalone library, soon to be used by [Foundation for Sites](http://foundation.zurb.com/sites) and Foundation for Apps.
 
 ## Installation
