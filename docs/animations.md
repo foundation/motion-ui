@@ -115,9 +115,25 @@ Motion UI can be paired with WOW.js to animate elements in as the page scrolls. 
 ## Mixins
 
 
+### mui-animation-keyframes()
+
+Creates a keyframe from one or more effect functions, assigned to the appropriate name
+
+**Parameters:**
+
+- `effects...` (Function) - One or more effect functions to build the keyframe with.
+
+### mui-animation-reference()
+
+Looks up the appropriate name for an animation based on args and assigns it to the element by adding the `animation-name` property.
+
+**Parameters:**
+
+- `effects...` (Function) - One or more effect functions to build the keyframe with.
+
 ### mui-animation()
 
-Creates a keyframe from one or more effect functions and assigns it to the element by adding the `animation-name` property.
+Combines mui-animation-keyframes and mui-animation-reference. CAUTION: iOS 10+ ignores keyframes defined in this way and not defined at the top of the file, this is maintained for backwards compatibility
 
 **Parameters:**
 

@@ -26,9 +26,13 @@ The library includes two mixins which export all of the [default CSS](classes.md
 - Modifier classes for transition/animation speed, timing, and delay
 
 ```scss
-@include motion-ui-transitions;
 @include motion-ui-animations;
+@include motion-ui-transitions;
 ```
+
+### CAUTION
+
+Some browsers (iOS 10 Safari appears to be the primary culprit) appear to ignore keyframes not defined at the top of your CSS file. Make sure you `@include motion-ui-animations` before anything else that generates CSS.
 
 ## CSS Usage
 
