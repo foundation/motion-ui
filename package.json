@@ -1,6 +1,6 @@
 {
   "name": "motion-ui",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Sass library for creating transitions and animations.",
   "main": "dist/motion-ui.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "2.1.0-beta",
+    "gulp-sass": "3.1.0",
     "gulp-scss-lint": "^0.3.6",
     "gulp-uglify": "^1.4.1",
     "gulp-umd": "^0.2.0",
@@ -39,6 +39,6 @@
     "supercollider": "^1.0.0"
   },
   "dependencies": {
-    "jquery": "^2.2.0"
+    "jquery": ">=2.2.0"
   }
 }
