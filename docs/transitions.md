@@ -103,7 +103,7 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 
 - `state` (Keyword) - State to transition to. (**Default:** in)
 - `from` (Number) - Size to start at. (**Default:** 1.5)
-- `from` (Number) - Size to end at. (**Default:** 1)
+- `to` (Number) - Size to end at. (**Default:** 1)
 - `fade` (Boolean) - Set to `true` to fade the element in or out simultaneously. (**Default:** true)
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
