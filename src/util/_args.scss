@@ -5,7 +5,7 @@
     $arg: nth($args, 1);
 
     @if type-of($arg) == 'string' {
-      @return call($arg);
+      @return call(get-function($arg));
     } @else if type-of($arg) == 'map' {
       @return $arg;
     }
