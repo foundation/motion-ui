@@ -5,8 +5,10 @@
   $from: 0,
   $to: 1
 ) {
+  $fromName: $from * 100;
+  $toName:   $to   * 100;
   $keyframes: (
-    name: 'scale-#{$to}-to-#{$from}',
+    name: 'scale-#{$toName}-to-#{$fromName}',
     0: (transform: scale($from)),
     100: (transform: scale($to)),
   );
