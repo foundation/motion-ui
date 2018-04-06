@@ -19,11 +19,8 @@
     }
   }
 
-  $fromName: $from * 100;
-  $toName:   $to   * 100;
-
   $keyframes: (
-    name: 'fade-#{$fromName}-to-#{$toName}',
+    name: -mui-string-safe('fade-#{$from}-to-#{$to}'),
     0: (opacity: $from),
     100: (opacity: $to),
   );

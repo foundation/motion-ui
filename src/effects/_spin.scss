@@ -19,7 +19,7 @@
   }
 
   $keyframes: (
-    name: 'spin-#{$direction}-#{$amount}',
+    name: -mui-string-safe('spin-#{$direction}-#{$amount}'),
     0: (transform: rotate($start)),
     100: (transform: rotate($end)),
   );
