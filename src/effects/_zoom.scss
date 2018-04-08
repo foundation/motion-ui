@@ -6,7 +6,7 @@
   $to: 1
 ) {
   $keyframes: (
-    name: 'scale-#{$to}-to-#{$from}',
+    name: -mui-string-safe('scale-#{$to}-to-#{$from}'),
     0: (transform: scale($from)),
     100: (transform: scale($to)),
   );

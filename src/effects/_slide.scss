@@ -32,7 +32,7 @@
   }
 
   $keyframes: (
-    name: 'slide-#{$state}-#{$direction}-#{strip-unit($amount)}',
+    name: -mui-string-safe('slide-#{$state}-#{$direction}-#{$amount}'),
     0: (transform: '#{$func}(#{$from})'),
     100: (transform: '#{$func}(#{$to})'),
   );

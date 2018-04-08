@@ -56,7 +56,7 @@
   }
 
   $keyframes: (
-    name: 'hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}',
+    name: -mui-string-safe('hinge-#{$state}-#{$from}-#{$axis}-#{$turn-origin}'),
     0: (transform: $start, transform-origin: $origin),
     100: (transform: $end),
   );
