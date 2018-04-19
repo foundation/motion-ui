@@ -1,6 +1,6 @@
 /// Creates a sliding transition by translating the element horizontally or vertically.
 /// @param {Keyword} $state [in] - State to transition to.
-/// @param {Keyword} $direction [left] - Direction to slide to. Can be `up`, `right`, `down`, or `left`.
+/// @param {Keyword} $direction [null] - Direction to slide to. Can be `up`, `right`, `down`, or `left`. By default `left` and `right` for `in` and `out` states respectively.
 /// @param {Length} $amount [100%] - Length of the slide as a percentage value.
 /// @param {Boolean} $fade [false] - Set to `true` to fade the element in or out simultaneously.
 /// @param {Duration} $duration [null] - Length (speed) of the transition.
@@ -8,13 +8,14 @@
 /// @param {Duration} $delay [null] - Delay in seconds or milliseconds before the transition starts.
 @mixin mui-slide (
   $state: in,
-  $direction: left,
+  $direction: null,
   $amount: 100%,
   $fade: map-get($motion-ui-settings, slide-and-fade),
   $duration: null,
   $timing: null,
   $delay: null
 ) {
+  $direction: if($direction != null, $direction, if($state == in, left, right));
   $slide: slide($state, $direction, $amount);
 
   // CSS Output

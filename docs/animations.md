@@ -177,7 +177,7 @@ Creates a hinge effect by rotating the element.
 - `from` (Keyword) - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`. (**Default:** left)
 - `axis` (Keyword) - Axis of the element to rotate on. Can be `edge` or `center`. (**Default:** edge)
 - `perspective` (Number) - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced. (**Default:** 2000px)
-- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default:** from-back)
+- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default**: `from-back` and `from-front` for `in` and `out` states respectively).
 
 
 ### shake()
@@ -196,7 +196,7 @@ Creates a sliding animation.
 **Parameters:**
 
 - `state` (Keyword) - Whether to move to (`in`) or from (`out`) the element's default position. (**Default:** in)
-- `direction` (Keyword) - Direction to move. Can be `up`, `down`, `left`, or `right`. (**Default:** up)
+- `direction` (Keyword) - Direction to move. Can be `up`, `down`, `left`, or `right`. (**Default:** `left` and `right` for `in` and `out` states respectively)
 - `amount` (Number) - Distance to move. Can be any CSS length unit. (**Default:** 100%)
 
 
@@ -206,7 +206,7 @@ Creates a spinning animation.
 
 **Parameters:**
 
-- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** cw)
+- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** `cw` and `ccw` for `in` and `out` states respectively)
 - `amount` (Number) - Amount to spin. Can be any CSS angle unit. (**Default:** 360deg)
 
 
@@ -225,6 +225,6 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 
 **Parameters:**
 
-- `from` (Number) - Size to start at. (**Default:** 1.5)
+- `from` (Number) - Size to start at. (**Default:** 0)
 - `to` (Number) - Size to end at. (**Default:** 1)
 
