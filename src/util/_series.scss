@@ -1,10 +1,12 @@
 $-mui-queue: ();
 
-/// Pauses the animation on an element by default, and then plays it when an active class is added to a parent. Also sets the fill mode of the animation to `both`. This pauses the element at the first frame of the animation, and holds it in place at the end.
+/// Pauses the animation on an element by default, and then plays it when an active class is added to a parent.
+/// This is not supported by Safari. See https://git.io/motion-ui-97
+///
+/// @since v1.3.0
 /// @access private
-%animated-element {
+%paused-element {
   animation-play-state: paused;
-  animation-fill-mode: both;
 
   .#{map-get($motion-ui-settings, activate-queue-class)} & {
     animation-play-state: running;
@@ -56,7 +58,15 @@ $-mui-queue: ();
   animation-fill-mode: both;
 
   // By default, animation name is set to start the animation
-  .#{map-get($motion-ui-settings, activate-queue-class)} & {
+  .#{map-get($motion-ui-settings, activate-queue-class)} &,
+  // For pausable animation, animation name must be initialy set
+  .#{map-get($motion-ui-settings, pause-queue-class)} & {
     @include mui-animation($kf);
+  }
+
+  // Pausable animation.
+  // This was the behavior before v1.3.0. See https://git.io/motion-ui-97
+  .#{map-get($motion-ui-settings, pause-queue-class)} & {
+    @extend %paused-element;
   }
 }
