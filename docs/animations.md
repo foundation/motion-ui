@@ -111,7 +111,7 @@ $('.animation-wrapper').addClass('is-animating');
 
 From Motion UI v1.3.0, the animation is reset when `.is-animating` is removed from an animated or animating element. This is the only way we found to make animations working on macOS Safari.
 
-To rollback to the previous behavior and make the animation pause when `.is-animating` is removed, add `.mui-pause` to the parent container. This can be set on `body` to affect all animations.
+To rollback to the previous behavior and make the animation pause when `.is-animating` is removed, add `.mui-pause` to the parent container (or on `<body>` to affect all animations), but animations will not start on macOS Safari.
 
 ## Use with WOW.js
 
