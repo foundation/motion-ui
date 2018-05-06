@@ -46,4 +46,10 @@ $-mui-queue: ();
     animation-delay: $actual-delay;
     animation-duration: $duration;
   }
+
+  // Pause the animation
+  // This was the behavior before v1.3.0. See https://git.io/motion-ui-97
+  .#{map-get($motion-ui-settings, pause-queue-class)} & {
+    animation-play-state: paused;
+  }
 }
