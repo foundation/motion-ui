@@ -1,16 +1,5 @@
 $-mui-queue: ();
 
-/// Pauses the animation on an element by default, and then plays it when an active class is added to a parent. Also sets the fill mode of the animation to `both`. This pauses the element at the first frame of the animation, and holds it in place at the end.
-/// @access private
-%animated-element {
-  animation-play-state: paused;
-  animation-fill-mode: both;
-
-  .#{map-get($motion-ui-settings, activate-queue-class)} & {
-    animation-play-state: running;
-  }
-}
-
 /// Creates a new animation queue.
 /// @param {Duration} $delay [0s] - Delay in seconds or milliseconds to place at the front of the animation queue.
 @mixin mui-series($delay: 0s) {
@@ -46,9 +35,15 @@ $-mui-queue: ();
   $item: ($duration, $gap);
   $-mui-queue: append($-mui-queue, $item) !global;
 
-  // CSS output
-  @extend %animated-element;
-  @include mui-animation($kf);
-  animation-duration: $duration;
-  animation-delay: $actual-delay;
+  // --- CSS output ---
+  // Initial properties
+  @include -mui-keyframe-get($kf, 0);
+  animation-fill-mode: both;
+
+  // Start the animation
+  .#{map-get($motion-ui-settings, activate-queue-class)} & {
+    @include mui-animation($kf);
+    animation-delay: $actual-delay;
+    animation-duration: $duration;
+  }
 }
