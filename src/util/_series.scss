@@ -47,8 +47,10 @@ $-mui-queue: ();
     animation-duration: $duration;
   }
 
-  // Pause the animation
-  // This was the behavior before v1.3.0. See https://git.io/motion-ui-97
+  // Pause the animation.
+  // For macOS Safari to play it correctly, `animation-play-state`
+  // must not be `paused` before the animation start.
+  // See https://git.io/motion-ui-97
   .#{map-get($motion-ui-settings, pause-queue-class)} & {
     animation-play-state: paused;
   }

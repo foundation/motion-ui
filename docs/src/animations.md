@@ -104,7 +104,7 @@ To add a delay to the start of the queue, add the length in seconds to the `mui-
 }
 ```
 
-To trigger the queue, add the class `.is-animating` to the parent container. This can be done easily in JavaScript:
+**To play the queue**, add the class `.is-animating` to the parent container. This can be done easily in JavaScript:
 
 ```js
 // Plain JavaScript (IE10+)
@@ -113,6 +113,10 @@ document.querySelector('.animation-wrapper').classList.add('is-animating');
 // jQuery
 $('.animation-wrapper').addClass('is-animating');
 ```
+
+**To pause the queue**, add `.is-paused` to the parent container (without removing `.is-animating`). For macOS Safari to correctly play pause the animation, `.is-paused` must not be set by default but only after `.is-animating`. See https://git.io/motion-ui-97.
+
+**To reset the queue** to its initial state, remove `.is-animating` and `.is-paused` from the parent container. The queue can then be started again.
 
 ## Use with WOW.js
 
