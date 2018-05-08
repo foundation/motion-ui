@@ -85,11 +85,11 @@ Begin your series with the `mui-series()` mixin. Inside this mixin, attach anima
 ```scss
 @include mui-series {
   // 2 second shake
-  .shake    { @include mui-queue(2s, 0s, shake); }
+  .my-queue-shake     { @include mui-queue(2s, 0s, shake); }
   // 1 second spin with a 2 second pause
-  .spin     { @include mui-queue(1s, 2s, spin); }
+  .my-queue-spin      { @include mui-queue(1s, 2s, spin); }
   // 1 second zoom and fade
-  .fade-zoom { @include mui-queue(1s, 0s, fade, zoom); }
+  .my-queue-fade-zoom { @include mui-queue(1s, 0s, fade, zoom); }
 }
 ```
 
@@ -98,13 +98,13 @@ To add a delay to the start of the queue, add the length in seconds to the `mui-
 ```scss
 // 2 second delay before the first shake
 @include mui-series(2s) {
-  .shake  { @include mui-queue(2s, 0s, shake()); }
-  .spin   { @include mui-queue(1s, 2s, spin()); }
-  .wiggle { @include mui-queue(wiggle); }
+  .my-queue-shake     { @include mui-queue(2s, 0s, shake()); }
+  .my-queue-spin      { @include mui-queue(1s, 2s, spin()); }
+  .my-queue-wiggle    { @include mui-queue(wiggle); }
 }
 ```
 
-To trigger the queue, add the class `.is-animating` to the parent container. This can be done easily in JavaScript:
+**To play the queue**, add the class `.is-animating` to the parent container. This can be done easily in JavaScript:
 
 ```js
 // Plain JavaScript (IE10+)
@@ -113,6 +113,10 @@ document.querySelector('.animation-wrapper').classList.add('is-animating');
 // jQuery
 $('.animation-wrapper').addClass('is-animating');
 ```
+
+**To pause the queue**, add `.is-paused` to the parent container (without removing `.is-animating`). For macOS Safari to correctly play pause the animation, `.is-paused` must not be set by default but only after `.is-animating`. See https://git.io/motion-ui-97.
+
+**To reset the queue** to its initial state, remove `.is-animating` and `.is-paused` from the parent container. The queue can then be started again.
 
 ## Use with WOW.js
 
