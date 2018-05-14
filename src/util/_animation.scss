@@ -1,7 +1,17 @@
 /// Creates a keyframe from one or more effect functions and assigns it to the element by adding the `animation-name` property.
 /// @param {Function} $effects... - One or more effect functions to build the keyframe with.
-@mixin mui-animation($args...) {
+@mixin mui-animation-keyframes($args...) {
   $name: map-get(-mui-process-args($args...), name);
   @include mui-keyframes($name, $args...);
+}
+
+@mixin mui-animation-reference($args...) {
+  $name: map-get(-mui-process-args($args...), name);
   animation-name: unquote($name);
+}
+
+// Backwards compatibility
+@mixin mui-animation($args...) {
+  @include mui-animation-keyframes($args...);
+  @include mui-animation-reference($args...);
 }
