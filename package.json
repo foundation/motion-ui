@@ -22,10 +22,11 @@
   },
   "homepage": "http://zurb.com/playground/motion-ui",
   "devDependencies": {
+    "autoprefixer": "^8.5.0",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.2.1",
+    "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "3.1.0",
     "gulp-scss-lint": "^0.3.6",
