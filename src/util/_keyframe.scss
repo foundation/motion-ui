@@ -36,7 +36,7 @@ $-mui-custom: 0;
     }
   }
 
-  @return $output;
+  @return "#{$output}";
 }
 
 /// Prints the CSS properties from a specific key in a keyframes map. Used to borrow CSS from keyframe functions for use in transitions.
