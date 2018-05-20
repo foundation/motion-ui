@@ -1,5 +1,6 @@
 # Motion UI
 
+[![Build Status](https://travis-ci.org/zurb/motion-ui.svg?branch=develop)](https://travis-ci.org/zurb/motion-ui)
 [![CDNJS](https://img.shields.io/cdnjs/v/motion-ui.svg)](https://cdnjs.com/libraries/motion-ui/)
 [![dependencies Status](https://david-dm.org/zurb/motion-ui/status.svg)](https://david-dm.org/zurb/motion-ui)
 [![devDependencies Status](https://david-dm.org/zurb/motion-ui/dev-status.svg)](https://david-dm.org/zurb/motion-ui?type=dev)
