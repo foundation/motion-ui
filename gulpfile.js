@@ -8,7 +8,8 @@ var supercollider = require('supercollider');
 var COMPATIBILITY = [
   'last 2 versions',
   'ie >= 10',
-  'and_chr >= 2.3'
+  'android >= 4.4',
+  'ios >= 7'
 ];
 
 supercollider
