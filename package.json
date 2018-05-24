@@ -39,7 +39,7 @@
     "sass-true": "^4.0.0",
     "supercollider": "^1.0.0"
   },
-  "dependencies": {
+  "peerDependencies": {
     "jquery": ">=2.2.0"
   }
 }
