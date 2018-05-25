@@ -1,5 +1,144 @@
 # Changelog
 
+# 2.0.0 (25 May 2018)
+
+We're happy to release Motion UI 2.0 with a better support of macOS Safari, API improvements, some bug fixes and various maintanance stuff. Warning: this release includes breaking change, please read the migration notes below before upgrading.
+
+## 🚀  Forward/backward defaults for transitions & effects
+
+We changed the default direction of all transition and effect mixins so it depends on the `in` or `out` state. Calling the same mixin with `in` and `out` states now results in the same animation playing forward and backward.
+
+#### ⚠️ Breaking changes
+
+We changed the effects and transitions API the following way:
+* All direction-related options now have opposite values as defauls according to the `in` or `out` state.
+* The `slide` effect defaults are now `left` and `right` (according to `$state`) for consistency with the `slide` transition.
+* The `zoom` transition and effect defaults are now `0` and `1` (according to `$state`) for consistency with others transitions defaults.
+
+#### How to migrate
+
+For the `hinge`, `slide`, `spin`, `zoom` effect functions and `mui-fade`, `mui-hinge`, `mui-slide`, `mui-spin`, `mui-zoom` transition mixins: if `$state: out` is used and no direction parameters are given, manually pass the "forward" parameters to keep them playing forward.
+
+```scss
+// Before
+@include mui-fade($state: out);
+// After
+@include mui-fade($state: out, $from: 0, $to: 1);
+```
+
+For the `slide` effect function: if no `$direction` is given, manually pass `$direction: up` to keep the effect sliding to top instead of the new default `left`/`right`.
+
+```scss
+// Before
+$effect: slide();
+// After
+$effect: slide($direction: up);
+```
+
+For the `mui-zoom` transition mixin: if no `$from` or `$to` are given, manually pass `$from: 1.5` and `$to: 1` to keep the previous behavior.
+
+```scss
+// Before
+@include mui-zoom();
+// After
+@include mui-zoom($from: 1.5, $to: 1);
+```
+
+## 🚀  New pausing behavior for `mui-queue` for Safari support
+
+With the previous `mui-series` behavior, the serie was paused until the `.is-animating` class was added. Unfortately, the implementation behind this did not work on all macOS Safari versions and was even breaking the whole animation. In order to fully support macOS Safari, we changed the `mui-series` paused 
+behavior and introduced `.is-paused`.
+
+#### ⚠️ Breaking changes
+
+When `.is-animating` is removed from `.mui-series`, the queue is now reset instead of paused. Setting `.is-animating` back will start the queue from its begining.
+
+From now you can:
+* **Start** the queue by adding `.is-animating`
+* **Pause** the queue by adding `.is-paused`
+* **Continue** the queue by removing `.is-paused`
+* **Reset** the queue by removing `.is-animating`
+
+#### How to migrate
+
+If you need an animation to pause midway, add `.is-paused` instead of removing `.is-animating`. For example in jQuery:
+
+```js
+// Before
+function play($elem) {
+  $elem.addClass('is-animating');
+}
+function pause($elem) {
+  $elem.removeClass('is-animating');
+}
+
+// After
+function play($elem) {
+  $elem.addClass('is-animating').removeClass('is-paused');
+}
+function pause($elem) {
+  $elem.addClass('is-paused');
+}
+function reset($elem) {
+  $elem.removeClass('is-animating is-paused');
+}
+```
+
+As a side-effect of this, standard animations names are not supported anymore as `mui-series` queues names. Make sure you use unique names for your `mui-series` queues.
+
+```scss
+// Before
+@include mui-series {
+  .shake          { @include mui-queue(3s, 0s, shake); }
+  .spin           { @include mui-queue(3s, 0s, spin); }
+}
+
+// After
+@include mui-series {
+  .my-serie-shake { @include mui-queue(3s, 0s, shake); }
+  .my-serie-spin  { @include mui-queue(3s, 0s, spin); }
+}
+```
+
+## 🐛  Safer animation keyframes names for CSS
+
+Fixes a bug when using decimals values for the `zoom` effect and transition arguments would generate an invalid CSS Keyframes name and break the animation.
+
+We changed the way we validate arguments and generate keyframe in such a way that they will always have a valid CSS name for all effects, transitions and arguments passed in.
+
+## 📦  jQuery is now a peerDependency
+
+We think that like for most browser packages, you will want to only have one jQuery version installed and to choose its version by yourself. For this reason, jQuery cannot be considered as an _internal dependency_ (like implementation detail)and should be exposed to you as a _peerDependency_.
+
+We did not included jQuery in the Motion UI **Javascript** library before. If you use it, you should already have jQuery imported so Motion UI will work the same way as before.
+
+**Note for npm users**: you may now have a warning message asking you to install the `jquery` npm package if you did not have it already. Please do so with a jQuery version that we support: `jquery@>=2.2.0`.
+
+## 📄  All changes
+
+* 📖  #94  - Fix parameter name for zoom animation (@cmarchena)
+* 🐛  #100 - Fix deprecation warning for Sass 4.0 (@rediris, closes #99)
+* 🐛  #102 - Make animation keyframes names safe for CSS (@ncoden, closes #96)
+* 🚀  #103 - Make transitions/effects directions depending on in/out state (@ncoden, closes #83)
+* 🚀  #108 - Change mui-series paused behavior for better Safari support (@ncoden, closes #97)
+* 🐛  #109 - Ensure `-mui-keyframe-pct` returns a strintg instead of a list (@ncoden, closes #109)
+* 📦  #110 - Update development dependencies to latest versions (@ncoden)
+* 💻  #111 - Add Travis to run tests on `node-sass` 3/4/latest (@ncoden)
+* 💻  #112 - Ensure support of iOS Safari 7 and drop support for Android browser 2.3 (@ncoden)
+* 📖  #114 - Add a CHANGELOG file (@ncoden)
+* 📖  #115 - Improve README design and installation instructions (@ncoden)
+* 📦  #112 - Move jQuery to peerDependencies (@ncoden)
+
+
+## 👩‍💻  Contributors
+
+Thank you to the amazing people who contributed to this release:
+* Carlos Marchena (@cmarchena)
+* Kevin Ball (@kball)
+* Nicolas Coden (@ncoden)
+* Roman Edirisinghe (@rediris)
+* 
+
 # 1.2.3 (28 June 2017)
 > Released by Kevin Ball ([@kball](https://github.com/kball))
 
