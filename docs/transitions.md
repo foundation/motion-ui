@@ -41,8 +41,8 @@ Creates a fade transition by adjusting the opacity of the element.
 **Parameters:**
 
 - `state` (Keyword) - State to transition to. (**Default:** in)
-- `from` (Number) - Opacity to start at. Must be a number between 0 and 1. (**Default:** `0` and `1` for `in` and `out` states respectively)
-- `to` (Number) - Opacity to end on. (**Default:** `1` and `0` for `in` and `out` states respectively)
+- `from` (Number) - Opacity to start at. Must be a number between 0 and 1. By default `0` and `1` for `in` and `out` states respectively. (**Default:** null)
+- `to` (Number) - Opacity to end on. By default `1` and `0` for `in` and `out` states respectively. (**Default:** null)
 - `duration` (Keyword) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
 - `delay` (Duration) - Delay in seconds or milliseconds before the transition starts. (**Default:** null)
@@ -58,7 +58,7 @@ Creates a hinge transition by rotating the element.
 - `from` (Keyword) - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`. (**Default:** left)
 - `axis` (Keyword) - Axis of the element to rotate on. Can be `edge` or `center`. (**Default:** edge)
 - `perspective` (Length) - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced. (**Default:** 2000px)
-- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default:** `from-back` and `from-front` for `in` and `out` states respectively)
+- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. By default `from-back` and `from-front` for `in` and `out` states respectively. (**Default:** null)
 - `fade` (Boolean) - Set to `true` to fade the element in or out simultaneously. (**Default:** true)
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
@@ -72,7 +72,7 @@ Creates a sliding transition by translating the element horizontally or vertical
 **Parameters:**
 
 - `state` (Keyword) - State to transition to. (**Default:** in)
-- `direction` (Keyword) - Direction to slide to. Can be `up`, `right`, `down`, or `left`. (**Default:** `left` and `right` for `in` and `out` states respectively)
+- `direction` (Keyword) - Direction to slide to. Can be `up`, `right`, `down`, or `left`. By default `left` and `right` for `in` and `out` states respectively. (**Default:** null)
 - `amount` (Length) - Length of the slide as a percentage value. (**Default:** 100%)
 - `fade` (Boolean) - Set to `true` to fade the element in or out simultaneously. (**Default:** false)
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
@@ -87,7 +87,7 @@ Creates a spinning transition by rotating the element. The `turn` unit is used t
 **Parameters:**
 
 - `state` (Keyword) - State to transition to. (**Default:** in)
-- `direction` (Boolean) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** `cw` and `ccw` for `in` and `out` states respectively)
+- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). By default `cw` and `ccw` for `in` and `out` states respectively. (**Default:** null)
 - `amount` (Number) - Amount to element the element. (**Default:** 0.75turn)
 - `fade` (Boolean) - Set to `true` to fade the element in or out simultaneously. (**Default:** false)
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
@@ -102,8 +102,8 @@ Creates a scaling transition. A scale of `1` means the element is the same size.
 **Parameters:**
 
 - `state` (Keyword) - State to transition to. (**Default:** in)
-- `from` (Number) - Size to start at. (**Default:** `0` and `1` for `in` and `out` states respectively)
-- `to` (Number) - Size to end at. (**Default:** `1` and `0` for `in` and `out` states respectively)
+- `from` (Number) - Size to start at. By default `0` and `1` for `in` and `out` states respectively. (**Default:** null)
+- `to` (Number) - Size to end at. By default `1` and `0` for `in` and `out` states respectively. (**Default:** null)
 - `fade` (Boolean) - Set to `true` to fade the element in or out simultaneously. (**Default:** true)
 - `duration` (Duration) - Length (speed) of the transition. (**Default:** null)
 - `timing` (Keyword|Function) - Easing of the transition. (**Default:** null)
