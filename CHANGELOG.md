@@ -2,7 +2,7 @@
 
 # 2.0.0 (25 May 2018)
 
-We're happy to release Motion UI 2.0 with a better support of macOS Safari, API improvements, some bug fixes and various maintanance stuff. Warning: this release includes breaking change, please read the migration notes below before upgrading.
+We're happy to release Motion UI 2.0 with a better support of macOS Safari, API improvements, some bug fixes and various maintanance stuff. Warning: this release includes breaking changes, please read the migration notes below before upgrading.
 
 ## 🚀  Forward/backward defaults for transitions & effects
 
@@ -11,7 +11,7 @@ We changed the default direction of all transition and effect mixins so it depen
 #### ⚠️ Breaking changes
 
 We changed the effects and transitions API the following way:
-* All direction-related options now have opposite values as defauls according to the `in` or `out` state.
+* All direction-related options now have opposite values as defaults according to the `in` or `out` state.
 * The `slide` effect defaults are now `left` and `right` (according to `$state`) for consistency with the `slide` transition.
 * The `zoom` transition and effect defaults are now `0` and `1` (according to `$state`) for consistency with others transitions defaults.
 
@@ -84,7 +84,7 @@ function reset($elem) {
 }
 ```
 
-As a side-effect of this, standard animations names are not supported anymore as `mui-series` queues names. Make sure you use unique names for your `mui-series` queues.
+As a side-effect of this, standard animation names are not supported anymore as `mui-series` queue names. Make sure you use unique names for your `mui-series` queues.
 
 ```scss
 // Before
@@ -100,17 +100,17 @@ As a side-effect of this, standard animations names are not supported anymore as
 }
 ```
 
-## 🐛  Safer animation keyframes names for CSS
+## 🐛  Safer animation keyframe names for CSS
 
-Fixes a bug when using decimals values for the `zoom` effect and transition arguments would generate an invalid CSS Keyframes name and break the animation.
+Fixes a bug when using decimal values for the `zoom` effect and transition arguments would generate an invalid CSS Keyframes name and break the animation.
 
-We changed the way we validate arguments and generate keyframe in such a way that they will always have a valid CSS name for all effects, transitions and arguments passed in.
+We changed the way we validate arguments and generate keyframes in such a way that they will always have a valid CSS name for all effects, transitions and arguments passed in.
 
 ## 📦  jQuery is now a peerDependency
 
-We think that like for most browser packages, you will want to only have one jQuery version installed and to choose its version by yourself. For this reason, jQuery cannot be considered as an _internal dependency_ (like implementation detail)and should be exposed to you as a _peerDependency_.
+We think that like for most browser packages, you will want to only have one jQuery version installed and to choose its version by yourself. For this reason, jQuery cannot be considered as an _internal dependency_ (like implementation detail) and should be exposed to you as a _peerDependency_.
 
-We did not included jQuery in the Motion UI **Javascript** library before. If you use it, you should already have jQuery imported so Motion UI will work the same way as before.
+We did not include jQuery in the Motion UI **JavaScript** library before. If you use it, you should already have jQuery imported so Motion UI will work the same way as before.
 
 **Note for npm users**: you may now have a warning message asking you to install the `jquery` npm package if you did not have it already. Please do so with a jQuery version that we support: `jquery@>=2.2.0`.
 
@@ -122,12 +122,12 @@ We did not included jQuery in the Motion UI **Javascript** library before. If yo
 * 🚀  #103 - Make transitions/effects directions depending on in/out state (@ncoden, closes #83)
 * 🚀  #108 - Change mui-series paused behavior for better Safari support (@ncoden, closes #97)
 * 🐛  #109 - Ensure `-mui-keyframe-pct` returns a strintg instead of a list (@ncoden, closes #109)
-* 📦  #110 - Update development dependencies to latest versions (@ncoden)
+* 📦  #110 - Update development dependencies to latest versions (@ncoden)
 * 💻  #111 - Add Travis to run tests on `node-sass` 3/4/latest (@ncoden)
 * 💻  #112 - Ensure support of iOS Safari 7 and drop support for Android browser 2.3 (@ncoden)
 * 📖  #114 - Add a CHANGELOG file (@ncoden)
 * 📖  #115 - Improve README design and installation instructions (@ncoden)
-* 📦  #112 - Move jQuery to peerDependencies (@ncoden)
+* 📦  #112 - Move jQuery to peerDependencies (@ncoden)
 
 
 ## 👩‍💻  Contributors
@@ -137,7 +137,7 @@ Thank you to the amazing people who contributed to this release:
 * Kevin Ball (@kball)
 * Nicolas Coden (@ncoden)
 * Roman Edirisinghe (@rediris)
-* 
+
 
 # 1.2.3 (28 June 2017)
 > Released by Kevin Ball ([@kball](https://github.com/kball))
