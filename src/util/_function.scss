@@ -7,7 +7,7 @@
 /// @return {Boolean}
 ///
 @function -mui-is-function($value) {
-  @return (type-of($value) == 'function' or type-of($value) == 'string') and function-exists($value);
+  @return type-of($value) == 'function' or (type-of($value) == 'string' and function-exists($value));
 }
 
 ///
