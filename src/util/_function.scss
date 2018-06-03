@@ -1,0 +1,40 @@
+///
+/// Check if a given value is a function or a function name string and is callable.
+///
+/// @access private
+///
+/// @param {*} $value - Value to test
+/// @return {Boolean}
+///
+@function -mui-is-function($value) {
+  @return (type-of($value) == 'function' or type-of($value) == 'string') and function-exists($value);
+}
+
+///
+/// Polyfill for the `call` function supporting both functions and strings.
+///
+/// In order to improve modular namespacing, LibSass 4 only accepts first-class
+/// functions as argument so functions are called in their own context.
+/// In most case, `get-function()` must only be used by the user in its own
+/// context. It is used in this library to keep a maximum compatibility.
+/// End developer must be encouraged to use first-class functions.
+///
+/// @link http://oddbird.net/2017/03/30/safe-get
+/// @link http://sass.logdown.com/posts/809572-sass-35-release-candidate
+///
+/// @access private
+///
+/// @param {Function|String} $func - Function or name of the function to call
+/// @param {*} $args... - Arguments to call the function with
+///
+/// @return {*}
+///
+@function -mui-safe-call($func, $args...) {
+  @if (function-exists('get-function') and type-of($func) == 'string') {
+    @warn '#{$func} function name was passed for call(). It is recommended to use `get-function()` and first-class functions instead. See http://oddbird.net/2017/03/30/safe-get';
+    @return call(get-function($func),  $args...);
+  }
+  @else {
+    @return call($func, $args...);
+  }
+}

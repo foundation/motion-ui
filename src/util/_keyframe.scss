@@ -87,8 +87,8 @@ $-mui-custom: 0;
 
   // Iterate through each map passed in
   @each $map in $maps {
-    @if type-of($map) == 'string' {
-      $map: call(get-function($map));
+    @if -mui-is-function($map) {
+      $map: -mui-safe-call($map);
     }
 
     $map: -mui-keyframe-split($map);
