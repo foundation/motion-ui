@@ -42,7 +42,7 @@
 /// @return {Boolean}
 ///
 @function -mui-assert-function($value) {
-  @if -mui-is-callable($value) == true {
+  @if -mui-is-callable($value) {
     @return true;
   } @else if (type-of($value) == 'string' and function-exists('get-function') == true) {
     @error 'Assertion Error: function name string "#{$value}" cannot be found. You may need to use `get-function()` and first-class functions instead. See http://oddbird.net/2017/03/30/safe-get';
@@ -68,11 +68,12 @@
 ///                             the support of first-class functions.
 ///
 @function -mui-safe-get-function($func) {
-  $_: -mui-assert-function($func);
-  @if function-exists('get-function') and type-of($func) == 'string' {
-    @return get-function($func);
-  } @else {
-    @return $func;
+  @if -mui-assert-function($func) {
+    @if function-exists('get-function') and type-of($func) == 'string' {
+      @return get-function($func);
+    } @else {
+      @return $func;
+    }
   }
 }
 
@@ -87,6 +88,7 @@
 /// @return {*}
 ///
 @function -mui-safe-call($func, $args...) {
-  $_: -mui-assert-function($func);
-  @return call(-mui-safe-get-function($func), $args...);
+  @if -mui-assert-function($func) {
+    @return call(-mui-safe-get-function($func), $args...);
+  }
 }
