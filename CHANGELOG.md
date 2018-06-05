@@ -106,6 +106,14 @@ Fixes a bug when using decimal values for the `zoom` effect and transition argum
 
 We changed the way we validate arguments and generate keyframes in such a way that they will always have a valid CSS name for all effects, transitions and arguments passed in.
 
+## 🐛  Improved support for new Sass first-hand functions alongside function name strings
+
+In order to improve modular namespacing, Sass 4 will only accepts first-class functions as argument for call() so functions will be called in their own context. This allow developers to make their Sass packages more modular while still being able to call functions given by the user. As a first step, Sass 3.5 added `get-function()` to get a first-hand function from its name and throw a warning if a function name string is passed to call(). Developers are now encouraged to use `get-function()`, but this would make their package incompatible to older Sass versions.
+
+We added a set of helpers to support both first-hand function and function name strings in all our functions and mixins in all Sass versions. If you are using Motion UI with Sass >= 3.5, we recommend you to use pass your functions to Motion UI with `get-function(...)`. Otherwise, we may not be able to find them as their were defined in a context we not may have access to.
+
+For more informations, see [Making Function Calls Across Sass Versions](http://oddbird.net/2017/03/30/safe-get/) and [Making sense out of Sass 3.5 first-class functions](https://medium.com/@kaelig/sass-first-class-functions-6e718e2b5eb0).
+
 ## 📦  jQuery is now a peerDependency
 
 We think that like for most browser packages, you will want to only have one jQuery version installed and to choose its version by yourself. For this reason, jQuery cannot be considered as an _internal dependency_ (like implementation detail) and should be exposed to you as a _peerDependency_.
@@ -113,6 +121,7 @@ We think that like for most browser packages, you will want to only have one jQu
 We did not include jQuery in the Motion UI **JavaScript** library before. If you use it, you should already have jQuery imported so Motion UI will work the same way as before.
 
 **Note for npm users**: you may now have a warning message asking you to install the `jquery` npm package if you did not have it already. Please do so with a jQuery version that we support: `jquery@>=2.2.0`.
+
 
 ## 📄  All changes
 
@@ -128,6 +137,7 @@ We did not include jQuery in the Motion UI **JavaScript** library before. If you
 * 📖  #114 - Add a CHANGELOG file (@ncoden)
 * 📖  #115 - Improve README design and installation instructions (@ncoden)
 * 📦  #112 - Move jQuery to peerDependencies (@ncoden)
+* 🐛  #117 - Fix support for function name strings for Sass < 3.5 (@ncoden, introduced in #100)
 
 
 ## 👩‍💻  Contributors
