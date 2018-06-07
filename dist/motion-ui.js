@@ -111,7 +111,7 @@ var MotionUI = {
   animateOut: function(element, animation, cb) {
     animate(false, element, animation, cb);
   }
-}
+};
 
 return MotionUI;
 }));

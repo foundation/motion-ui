@@ -78,11 +78,11 @@ Begin your series with the `mui-series()` mixin. Inside this mixin, attach anima
 ```scss
 @include mui-series {
   // 2 second shake
-  .shake    { @include mui-queue(2s, 0s, shake); }
+  .my-queue-shake     { @include mui-queue(2s, 0s, shake); }
   // 1 second spin with a 2 second pause
-  .spin     { @include mui-queue(1s, 2s, spin); }
+  .my-queue-spin      { @include mui-queue(1s, 2s, spin); }
   // 1 second zoom and fade
-  .fade-zoom { @include mui-queue(1s, 0s, fade, zoom); }
+  .my-queue-fade-zoom { @include mui-queue(1s, 0s, fade, zoom); }
 }
 ```
 
@@ -91,9 +91,9 @@ To add a delay to the start of the queue, add the length in seconds to the `mui-
 ```scss
 // 2 second delay before the first shake
 @include mui-series(2s) {
-  .shake  { @include mui-queue(2s, 0s, shake()); }
-  .spin   { @include mui-queue(1s, 2s, spin()); }
-  .wiggle { @include mui-queue(wiggle); }
+  .my-queue-shake     { @include mui-queue(2s, 0s, shake()); }
+  .my-queue-spin      { @include mui-queue(1s, 2s, spin()); }
+  .my-queue-wiggle    { @include mui-queue(wiggle); }
 }
 ```
 
@@ -125,7 +125,7 @@ Creates a keyframe from one or more effect functions and assigns it to the eleme
 
 **Parameters:**
 
-- `effects...` (Function) - One or more effect functions to build the keyframe with.
+- `effects...` (Arglist) - One or more effect functions to build the keyframe with.
 
 
 ### mui-keyframes()
@@ -135,7 +135,7 @@ Creates a keyframe from one or more effect functions. Use this function instead 
 **Parameters:**
 
 - `name` (String) - Name of the keyframe.
-- `effects...` (Function) - One or more effect functions to build the keyframe with.
+- `effects...` (Arglist) - One or more effect functions to build the keyframe with.
 
 
 ### mui-series()
@@ -155,7 +155,7 @@ Adds an animation to an animation queue. Only use this mixin inside of `mui-seri
 
 - `duration` (Duration) - Length of the animation. (**Default:** 1s)
 - `gap` (Duration) - Amount of time to pause before playing the animation after this one. Use a negative value to make the next effect overlap with the current one. (**Default:** 0s)
-- `keyframes...` (Function) - One or more effect functions to build the keyframe with.
+- `keyframes...` (Arglist) - One or more effect functions to build the keyframe with.
 
 
 ## Functions
@@ -181,7 +181,7 @@ Creates a hinge effect by rotating the element.
 - `from` (Keyword) - Edge of the element to rotate from. Can be `top`, `right`, `bottom`, or `left`. (**Default:** left)
 - `axis` (Keyword) - Axis of the element to rotate on. Can be `edge` or `center`. (**Default:** edge)
 - `perspective` (Number) - Perceived distance between the viewer and the element. A higher number will make the rotation effect more pronounced. (**Default:** 2000px)
-- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. (**Default**: `from-back` and `from-front` for `in` and `out` states respectively).
+- `turn-origin` (Keyword) - Side of the element to start the rotation from. Can be `from-back` or `from-front`. By default `from-back` and `from-front` for `in` and `out` states respectively. (**Default:** null)
 
 
 ### shake()
@@ -200,7 +200,7 @@ Creates a sliding animation.
 **Parameters:**
 
 - `state` (Keyword) - Whether to move to (`in`) or from (`out`) the element's default position. (**Default:** in)
-- `direction` (Keyword) - Direction to move. Can be `up`, `down`, `left`, or `right`. (**Default:** `left` and `right` for `in` and `out` states respectively)
+- `direction` (Keyword) - Direction to move. Can be `up`, `right`, `down`, or `left`. By default `left` and `right` for `in` and `out` states respectively. (**Default:** null)
 - `amount` (Number) - Distance to move. Can be any CSS length unit. (**Default:** 100%)
 
 
@@ -210,7 +210,7 @@ Creates a spinning animation.
 
 **Parameters:**
 
-- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). (**Default:** `cw` and `ccw` for `in` and `out` states respectively)
+- `direction` (Keyword) - Direction to spin. Should be `cw` (clockwise) or `ccw` (counterclockwise). By default `cw` and `ccw` for `in` and `out` states respectively. (**Default:** null)
 - `amount` (Number) - Amount to spin. Can be any CSS angle unit. (**Default:** 360deg)
 
 

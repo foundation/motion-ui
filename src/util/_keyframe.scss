@@ -3,7 +3,7 @@ $-mui-custom: 0;
 
 /// Creates a keyframe from one or more effect functions. Use this function instead of `mui-animation` if you want to create a keyframe animation *without* automatically assigning it to the element.
 /// @param {String} $name - Name of the keyframe.
-/// @param {Function} $effects... - One or more effect functions to build the keyframe with.
+/// @param {Arglist} $effects... - One or more effect functions to build the keyframe with.
 @mixin mui-keyframes($name, $effects...) {
   $obj: -mui-process-args($effects...);
   $obj: map-remove($obj, name);
@@ -36,7 +36,7 @@ $-mui-custom: 0;
     }
   }
 
-  @return $output;
+  @return "#{$output}";
 }
 
 /// Prints the CSS properties from a specific key in a keyframes map. Used to borrow CSS from keyframe functions for use in transitions.
@@ -79,7 +79,7 @@ $-mui-custom: 0;
 }
 
 /// Combines a series of keyframe objects into one.
-/// @param {Map} $maps... - A series of maps to merge, as individual parameters.
+/// @param {Arglist} $maps... - A series of maps to merge, as individual parameters.
 /// @return {Map} A combined keyframe object.
 /// @access private
 @function -mui-keyframe-combine($maps...) {
@@ -87,8 +87,8 @@ $-mui-custom: 0;
 
   // Iterate through each map passed in
   @each $map in $maps {
-    @if type-of($map) == 'string' {
-      $map: call(get-function($map));
+    @if -mui-is-function($map) {
+      $map: -mui-safe-call($map);
     }
 
     $map: -mui-keyframe-split($map);

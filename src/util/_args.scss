@@ -4,8 +4,8 @@
   @if length($args) == 1 {
     $arg: nth($args, 1);
 
-    @if type-of($arg) == 'string' {
-      @return call(get-function($arg));
+    @if -mui-is-function($arg) {
+      @return -mui-safe-call($arg);
     } @else if type-of($arg) == 'map' {
       @return $arg;
     }
