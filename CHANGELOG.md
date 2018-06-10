@@ -1,5 +1,15 @@
 # Changelog
 
+# 2.0.1 (10 June 2018)
+
+This version fixes various issues with the Meteor `zurb:motion-ui` package. It is fully compatible with `v2.0.0` and do not introduce any API change.
+
+## 📄  Changes
+* 🐛  eaf0971 - Add missing source files to Meteor `package.js` (@ncoden)
+* 🐛  6059743 - Unpin Meteor fourseven for a better Meteor compatibility (@ncoden)
+* 💻  98a6f9c - Remove outdated Meteor lockfile (@ncoden)
+* 💻  9fdcbac - Update Lockfiles (@ncoden)
+
 # 2.0.0 (25 May 2018)
 
 We're happy to release Motion UI 2.0 with a better support of macOS Safari, API improvements, some bug fixes and various maintanance stuff. Warning: this release includes breaking changes, please read the migration notes below before upgrading.
