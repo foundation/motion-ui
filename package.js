@@ -8,16 +8,18 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  api.imply('fourseven:scss@3.4.1');
-  api.use(['ecmascript', 'jquery', 'fourseven:scss@3.4.1'], 'client');
+  api.imply('fourseven:scss');
+  api.use(['ecmascript', 'jquery', 'fourseven:scss'], 'client');
   api.addFiles('dist/motion-ui.js', 'client');
   api.addFiles([
     'src/_settings.scss',
     'src/util/_animation.scss',
     'src/util/_args.scss',
+    'src/util/_function.scss',
     'src/util/_keyframe.scss',
     'src/util/_selector.scss',
     'src/util/_series.scss',
+    'src/util/_string.scss',
     'src/util/_transition.scss',
     'src/util/_unit.scss',
     'src/effects/_fade.scss',
