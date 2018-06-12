@@ -43,7 +43,7 @@ Then to build with **Sass**
 
 > This will include all of the Motion UI transition and animation CSS classes. To build transitions, animations, series and more according to your needs, see the [Motion UI documentation](https://github.com/zurb/motion-ui/tree/master/docs).
 
-> Autoprefixer is required for the installation with Sass. We recommand you to install [juliancwirko:postcss](https://atmospherejs.com/juliancwirko/postcss) and [seba:minifiers-autoprefixer](https://atmospherejs.com/seba/minifiers-autoprefixer).
+> Autoprefixer is required for the installation with Sass. We recommend you to install [juliancwirko:postcss](https://atmospherejs.com/juliancwirko/postcss) and [seba:minifiers-autoprefixer](https://atmospherejs.com/seba/minifiers-autoprefixer).
 
 Or to use the equivalent pre-compiled **CSS**, copy or import the Motion UI standalone CSS file `dist/motion-ui.css` or `dist/motion-ui.min.css` in your application.
 
