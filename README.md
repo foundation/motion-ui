@@ -28,13 +28,13 @@
 
 Install Motion UI with npm or Bower.
 
-```
+```sh
 npm install motion-ui --save
 bower install motion-ui --save
 ```
 
 Then to build with **Sass** ([Autoprefixer](https://github.com/postcss/autoprefixer) is required):
-```
+```scss
 // Add the load path "[modules_folder]/motion-ui/src" to your Sass configuration
 @import 'motion-ui';
 
@@ -58,7 +58,7 @@ See full [installation instructions](docs/installation.md)
 
 ## Develop Locally
 
-```
+```sh
 git clone https://github.com/zurb/motion-ui
 cd motion-ui
 npm install

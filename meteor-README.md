@@ -61,7 +61,7 @@ See the [full installation instructions](https://github.com/zurb/motion-ui/tree/
 
 ## Develop Locally
 
-```
+```sh
 git clone https://github.com/zurb/motion-ui
 cd motion-ui
 npm install
