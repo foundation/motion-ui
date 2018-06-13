@@ -28,13 +28,13 @@
 
 Install Motion UI with npm or Bower.
 
-```
+```sh
 npm install motion-ui --save
 bower install motion-ui --save
 ```
 
 Then to build with **Sass** ([Autoprefixer](https://github.com/postcss/autoprefixer) is required):
-```
+```scss
 // Add the load path "[modules_folder]/motion-ui/src" to your Sass configuration
 @import 'motion-ui';
 
@@ -42,11 +42,13 @@ Then to build with **Sass** ([Autoprefixer](https://github.com/postcss/autoprefi
 @include motion-ui-animations;
 ```
 
-Or to get the equivalent pre-compiled classes, import the Motion UI standalone **CSS** file `dist/motion-ui.css` or `dist/motion-ui.min.css`.
+> Autoprefixer is required for the Sass installation as Motion UI uses unprefixed transition and animation properties. We recommend you to install [PostCSS and Autoprefixer](https://github.com/postcss/autoprefixer).
+
+Or to use the equivalent pre-compiled **CSS**, import the Motion UI standalone CSS file `dist/motion-ui.css` or `dist/motion-ui.min.css`.
 
 To easily transition elements in and out using Motion UI classes, import the Motion UI **JavaScript** library `dist/motion-ui.js` or `dist/motion-ui.min.js`.
 
-See full [installation instructions](docs/installation.md)
+See the [full installation instructions](https://github.com/zurb/motion-ui/tree/master/docs/installation.md)
 
 ## Demos
 
@@ -54,11 +56,11 @@ See full [installation instructions](docs/installation.md)
 
 ## Documentation
 
-[View the documentation here.](docs)
+[View the documentation here.](https://github.com/zurb/motion-ui/tree/master/docs)
 
 ## Develop Locally
 
-```
+```sh
 git clone https://github.com/zurb/motion-ui
 cd motion-ui
 npm install
