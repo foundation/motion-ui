@@ -1,6 +1,6 @@
 Package.describe({
   name: 'zurb:motion-ui',
-  version: '2.0.1',
+  version: '2.0.2',
   summary: 'Sass library for creating transitions and animations',
   git: 'https://github.com/zurb/motion-ui.git',
   documentation: 'meteor-README.md'
@@ -8,8 +8,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  api.imply('fourseven:scss');
-  api.use(['ecmascript', 'jquery', 'fourseven:scss'], 'client');
+  api.imply('fourseven:scss@3.4.1');
+  api.use(['ecmascript', 'jquery', 'fourseven:scss@3.4.1'], 'client');
   api.addFiles('dist/motion-ui.js', 'client');
   api.addFiles([
     'src/_settings.scss',

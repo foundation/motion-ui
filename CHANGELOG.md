@@ -1,5 +1,13 @@
 # Changelog
 
+# 2.0.2 (13 June 2018)
+
+This version fixes an issue introduced in `v2.0.1` preventing Meteor build and update Meteor installation documentation. It is fully compatible with `v2.0.1` and do not introduce any API change.
+
+## 📄  Changes
+* 🐛  #121 - Revert "6059743 Unpin Meteor fourseven for a better Meteor compatibility" (@ncoden)
+* 📖  #120 - Improve standard and Meteor documentation and update Meteor installation instructions (@ncoden)
+
 # 2.0.1 (10 June 2018)
 
 This version fixes various issues with the Meteor `zurb:motion-ui` package. It is fully compatible with `v2.0.0` and do not introduce any API change.
