@@ -1,5 +1,12 @@
 # Changelog
 
+# 2.0.3 (23 June 2018)
+
+This version makes Motion UI compatible with Meteor > 1.4.1 by allowing Meteor to use newer versions of the `fourseven:scss` dependency. Motion UI stays compatible with Meteor v1.2.1 and above.
+
+## 📄  Changes
+* 🐛  #125 - Revise Meteor `fourseven:scss` compatibility to support Meteor>1.4.1 support (@ncoden)
+
 # 2.0.2 (13 June 2018)
 
 This version fixes an issue introduced in `v2.0.1` preventing Meteor build and update Meteor installation documentation. It is fully compatible with `v2.0.1` and do not introduce any API change.
