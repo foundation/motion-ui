@@ -33,13 +33,11 @@
     "gulp-uglify": "^3.0.0",
     "gulp-umd": "^2.0.0",
     "handlebars": "^4.0.3",
+    "jquery": ">=2.2.0",
     "mocha": "^5.2.0",
     "rimraf": "^2.4.3",
     "run-sequence": "^2.2.1",
     "sass-true": "^4.0.0",
     "supercollider": "^1.0.0"
-  },
-  "peerDependencies": {
-    "jquery": ">=2.2.0"
   }
 }
