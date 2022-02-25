@@ -3,5 +3,5 @@
 /// @return {Number} The same number, sans unit.
 /// @access private
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return calc(#{$num} / (#{$num} * 0 + 1));
 }
