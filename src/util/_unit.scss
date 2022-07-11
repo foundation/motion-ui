@@ -2,6 +2,7 @@
 /// @param {Number} $num - Number to strip unit from.
 /// @return {Number} The same number, sans unit.
 /// @access private
+@use 'sass:math';
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, ($num * 0 + 1));
 }
