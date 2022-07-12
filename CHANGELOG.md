@@ -1,5 +1,10 @@
 # Changelog
 
+# 2.0.4 (11 July 2022)
+
+* Updated SCSS to remove deprecated slash division.
+* Updated the packages and got the build working again.
+
 # 2.0.3 (23 June 2018)
 
 This version makes Motion UI compatible with Meteor > 1.4.1 by allowing Meteor to use newer versions of the `fourseven:scss` dependency. Motion UI stays compatible with Meteor v1.2.1 and above.
@@ -71,7 +76,7 @@ For the `mui-zoom` transition mixin: if no `$from` or `$to` are given, manually 
 
 ## 🚀  New pausing behavior for `mui-queue` for Safari support
 
-With the previous `mui-series` behavior, the serie was paused until the `.is-animating` class was added. Unfortately, the implementation behind this did not work on all macOS Safari versions and was even breaking the whole animation. In order to fully support macOS Safari, we changed the `mui-series` paused 
+With the previous `mui-series` behavior, the serie was paused until the `.is-animating` class was added. Unfortately, the implementation behind this did not work on all macOS Safari versions and was even breaking the whole animation. In order to fully support macOS Safari, we changed the `mui-series` paused
 behavior and introduced `.is-paused`.
 
 #### ⚠️ Breaking changes
@@ -215,7 +220,7 @@ Also in this release, we removed `-ms-` prefixing from the pre-compiled CSS. IE9
 # 1.0.3 (22 October 2015)
 > Released by Geoff Kimball ([@gakimball](https://github.com/gakimball))
 
-Fixes an issue where transitions couldn't be created if `motion-ui-transitions` was not included. 
+Fixes an issue where transitions couldn't be created if `motion-ui-transitions` was not included.
 
 # 1.0.2 (20 October 2015)
 > Released by Geoff Kimball ([@gakimball](https://github.com/gakimball))
