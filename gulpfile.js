@@ -5,13 +5,6 @@ var rimraf        = require('rimraf').sync;
 var sequence      = require('run-sequence');
 var supercollider = require('supercollider');
 
-var COMPATIBILITY = [
-  'last 2 versions',
-  'ie >= 10',
-  'android >= 4.4',
-  'ios >= 7'
-];
-
 supercollider
   .config({
     template: './docs/src/_template.hbs',
@@ -36,9 +29,7 @@ gulp.task('docs', function() {
 gulp.task('sass', function() {
   return gulp.src('./motion-ui.scss')
     .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.postcss([
-      autoprefixer({ browsers: COMPATIBILITY })
-    ]))
+    .pipe($.postcss([autoprefixer()]))
     .pipe(gulp.dest('./_build'));
 });
 
@@ -58,23 +49,23 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('./_build'));
 });
 
-gulp.task('dist', ['dist:sass', 'dist:javascript']);
-
-gulp.task('dist:sass', ['sass'], function() {
+gulp.task('dist:sass', gulp.series('sass', function() {
   return gulp.src('./_build/motion-ui.css')
     .pipe(gulp.dest('./dist'))
     .pipe($.minifyCss())
     .pipe($.rename('motion-ui.min.css'))
     .pipe(gulp.dest('./dist'));
-});
+}));
 
-gulp.task('dist:javascript', ['javascript'], function() {
+gulp.task('dist:javascript', gulp.series('javascript', function() {
   return gulp.src('./_build/motion-ui.js')
     .pipe(gulp.dest('./dist'))
     .pipe($.uglify())
     .pipe($.rename('motion-ui.min.js'))
     .pipe(gulp.dest('./dist'));
-});
+}));
+
+gulp.task('dist', gulp.series('dist:sass', 'dist:javascript'));
 
 gulp.task('build', function(done) {
   sequence('clean', ['docs', 'sass', 'javascript'], done);
@@ -85,8 +76,8 @@ gulp.task('lint', function() {
     .pipe($.scssLint());
 })
 
-gulp.task('default', ['build'], function() {
+gulp.task('default', gulp.series('build', function() {
   gulp.watch(['./docs/src/*.md', './docs/src/_template.hbs'], ['docs']);
   gulp.watch(['./src/**/*.scss', './motion-ui.scss'], ['sass']);
   gulp.watch('./motion-ui.js', ['javascript']);
-});
+}));

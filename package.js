@@ -1,9 +1,9 @@
 Package.describe({
-  name: 'zurb:motion-ui',
-  version: '2.0.3',
+  name: 'foundation:motion-ui',
+  version: '2.0.4',
   summary: 'Sass library for creating transitions and animations',
-  git: 'https://github.com/zurb/motion-ui.git',
-  documentation: 'meteor-README.md'
+  git: 'https://github.com/foundation/motion-ui.git',
+  documentation: 'README.md'
 });
 
 Package.onUse(function(api) {
