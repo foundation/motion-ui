@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://zurb.com/playground/motion-ui">
+  <a href="https://get.foundation/sites/docs/motion-ui.html">
     <img src="https://user-images.githubusercontent.com/9939075/40385796-108879b6-5e08-11e8-8a12-3bbe7d0bc631.png" alt="Motion UI" width="448px" style="max-width:100%;"/>
   </a>
 </p>
@@ -8,21 +8,17 @@
 
 
 <p align="center">
-  <a href="https://github.com/zurb/motion-ui/blob/docs/installation.md"><b>Install</b></a>
-  | <a href="https://zurb.com/playground/motion-ui">Demo</a>
-  | <a href="https://github.com/zurb/motion-ui/blob/docs">Documentation</a>
-  | <a href="https://github.com/zurb/motion-ui/releases">Releases</a>
+  <a href="https://github.com/foundation/motion-ui/blob/docs/installation.md"><b>Install</b></a>
+  | <a href="https://get.foundation/sites/docs/motion-ui.html">Demo</a>
+  | <a href="https://github.com/foundation/motion-ui/blob/docs">Documentation</a>
+  | <a href="https://github.com/foundation/motion-ui/releases">Releases</a>
 </p>
 
 ---
 
-
-[![Build Status](https://travis-ci.org/zurb/motion-ui.svg?branch=develop)](https://travis-ci.org/zurb/motion-ui)
 [![CDNJS](https://img.shields.io/cdnjs/v/motion-ui.svg)](https://cdnjs.com/libraries/motion-ui/)
-[![dependencies Status](https://david-dm.org/zurb/motion-ui/status.svg)](https://david-dm.org/zurb/motion-ui)
-[![devDependencies Status](https://david-dm.org/zurb/motion-ui/dev-status.svg)](https://david-dm.org/zurb/motion-ui?type=dev)
 
-💎 The powerful Sass library for creating CSS transitions and animations. Originally integrated into [Foundation for Apps](http://foundation.zurb.com/apps), the code is now a standalone library, used by [Foundation for Sites](http://foundation.zurb.com/sites) and Foundation for Apps. Made by your friends at [ZURB](http://zurb.com).
+💎 The powerful Sass library for creating CSS transitions and animations. The code is a standalone library, used by [Foundation for Sites](https://get.foundation/sites/).
 
 ## Installation
 
@@ -48,20 +44,20 @@ Or to use the equivalent pre-compiled **CSS**, import the Motion UI standalone C
 
 To easily transition elements in and out using Motion UI classes, import the Motion UI **JavaScript** library `dist/motion-ui.js` or `dist/motion-ui.min.js`.
 
-See the [full installation instructions](https://github.com/zurb/motion-ui/tree/master/docs/installation.md)
+See the [full installation instructions](https://github.com/foundation/motion-ui/tree/master/docs/installation.md)
 
 ## Demos
 
-[View live demos on the ZURB Playground.](http://zurb.com/playground/motion-ui)
+[View live demo.](https://get.foundation/sites/docs/motion-ui.html)
 
 ## Documentation
 
-[View the documentation here.](https://github.com/zurb/motion-ui/tree/master/docs)
+[View the documentation here.](https://github.com/foundation/motion-ui/tree/master/docs)
 
 ## Develop Locally
 
 ```sh
-git clone https://github.com/zurb/motion-ui
+git clone https://github.com/foundation/motion-ui
 cd motion-ui
 npm install
 ```

@@ -4,6 +4,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -14,6 +15,7 @@
 
 .slide-in-down.mui-enter.mui-enter-active {
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0); }
 
 .slide-in-left.mui-enter {
@@ -22,6 +24,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -32,6 +35,7 @@
 
 .slide-in-left.mui-enter.mui-enter-active {
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0); }
 
 .slide-in-up.mui-enter {
@@ -40,6 +44,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -50,6 +55,7 @@
 
 .slide-in-up.mui-enter.mui-enter-active {
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0); }
 
 .slide-in-right.mui-enter {
@@ -58,6 +64,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -68,6 +75,7 @@
 
 .slide-in-right.mui-enter.mui-enter-active {
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0); }
 
 .slide-out-down.mui-leave {
@@ -76,6 +84,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -86,6 +95,7 @@
 
 .slide-out-down.mui-leave.mui-leave-active {
   -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
           transform: translateY(100%); }
 
 .slide-out-right.mui-leave {
@@ -94,6 +104,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -104,6 +115,7 @@
 
 .slide-out-right.mui-leave.mui-leave-active {
   -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
           transform: translateX(100%); }
 
 .slide-out-up.mui-leave {
@@ -112,6 +124,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -122,6 +135,7 @@
 
 .slide-out-up.mui-leave.mui-leave-active {
   -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
           transform: translateY(-100%); }
 
 .slide-out-left.mui-leave {
@@ -130,6 +144,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -140,6 +155,7 @@
 
 .slide-out-left.mui-leave.mui-leave-active {
   -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
           transform: translateX(-100%); }
 
 .fade-in.mui-enter {
@@ -174,6 +190,7 @@
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   -webkit-transform-origin: top;
+      -ms-transform-origin: top;
           transform-origin: top;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -194,6 +211,7 @@
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   -webkit-transform-origin: right;
+      -ms-transform-origin: right;
           transform-origin: right;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -214,6 +232,7 @@
   -webkit-transform: perspective(2000px) rotateX(90deg);
           transform: perspective(2000px) rotateX(90deg);
   -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
           transform-origin: bottom;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -234,6 +253,7 @@
   -webkit-transform: perspective(2000px) rotateY(90deg);
           transform: perspective(2000px) rotateY(90deg);
   -webkit-transform-origin: left;
+      -ms-transform-origin: left;
           transform-origin: left;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -254,6 +274,7 @@
   -webkit-transform: perspective(2000px) rotateX(-90deg);
           transform: perspective(2000px) rotateX(-90deg);
   -webkit-transform-origin: center;
+      -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -274,6 +295,7 @@
   -webkit-transform: perspective(2000px) rotateY(-90deg);
           transform: perspective(2000px) rotateY(-90deg);
   -webkit-transform-origin: center;
+      -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -294,6 +316,7 @@
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: top;
+      -ms-transform-origin: top;
           transform-origin: top;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -314,6 +337,7 @@
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: right;
+      -ms-transform-origin: right;
           transform-origin: right;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -334,6 +358,7 @@
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
           transform-origin: bottom;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -354,6 +379,7 @@
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: left;
+      -ms-transform-origin: left;
           transform-origin: left;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -374,6 +400,7 @@
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: center;
+      -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -394,6 +421,7 @@
   -webkit-transform: perspective(2000px) rotate(0deg);
           transform: perspective(2000px) rotate(0deg);
   -webkit-transform-origin: center;
+      -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -412,6 +440,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
           transform: scale(0.5);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -421,6 +450,7 @@
 
 .scale-in-up.mui-enter.mui-enter-active {
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
@@ -430,6 +460,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
           transform: scale(1.5);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -439,6 +470,7 @@
 
 .scale-in-down.mui-enter.mui-enter-active {
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   opacity: 1; }
 
@@ -448,6 +480,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -457,6 +490,7 @@
 
 .scale-out-up.mui-leave.mui-leave-active {
   -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
           transform: scale(1.5);
   opacity: 0; }
 
@@ -466,6 +500,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -475,6 +510,7 @@
 
 .scale-out-down.mui-leave.mui-leave-active {
   -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
           transform: scale(0.5);
   opacity: 0; }
 
@@ -484,6 +520,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: rotate(-0.75turn);
+      -ms-transform: rotate(-0.75turn);
           transform: rotate(-0.75turn);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -493,6 +530,7 @@
 
 .spin-in.mui-enter.mui-enter-active {
   -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
 
@@ -502,6 +540,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
           transform: rotate(0);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -511,6 +550,7 @@
 
 .spin-out.mui-leave.mui-leave-active {
   -webkit-transform: rotate(0.75turn);
+      -ms-transform: rotate(0.75turn);
           transform: rotate(0.75turn);
   opacity: 0; }
 
@@ -520,6 +560,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: rotate(0.75turn);
+      -ms-transform: rotate(0.75turn);
           transform: rotate(0.75turn);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -529,6 +570,7 @@
 
 .spin-in-ccw.mui-enter.mui-enter-active {
   -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
           transform: rotate(0);
   opacity: 1; }
 
@@ -538,6 +580,7 @@
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
           transform: rotate(0);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -547,6 +590,7 @@
 
 .spin-out-ccw.mui-leave.mui-leave-active {
   -webkit-transform: rotate(-0.75turn);
+      -ms-transform: rotate(-0.75turn);
           transform: rotate(-0.75turn);
   opacity: 0; }
 

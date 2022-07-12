@@ -1,25 +1,24 @@
 {
-  "name": "zurb/motion-ui",
+  "name": "foundation/motion-ui",
   "description": "Sass library for creating transitions and animations.",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "keywords": [
     "css",
     "sass",
     "motion",
     "animation"
   ],
-  "homepage": "http://foundation.zurb.com",
+  "homepage": "https://get.foundation/sites/docs/motion-ui.html",
   "authors": [
     {
-      "name": "ZURB, Inc.",
-      "homepage": "http://zurb.com",
-      "email": "foundation@zurb.com"
+      "name": "Foundation",
+      "homepage": "https://get.foundation/",
+      "email": "contact@get.foundation"
     }
   ],
   "support": {
-    "email": "foundation@zurb.com",
-    "issues": "https://github.com/zurb/motion-ui/issues",
-    "forum": "http://foundation.zurb.com/forum"
+    "email": "contact@get.foundation",
+    "issues": "https://github.com/foundation/motion-ui/issues"
   },
   "license": "MIT"
 }
