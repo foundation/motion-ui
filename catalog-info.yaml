@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: motion-ui
+  description: >
+    Forked Repo of Motion UI
+  tags:
+    - users-na
+    - camp-foundations
+    - data-none
+  annotations:
+    github.com/project-slug: cultureamp/motion-ui
+    github.com/team-slug: cultureamp/kaizen-design-system
+    buildkite.com/project-slug: culture-amp/motion-ui
+spec:
+  type: website
+  owner: kaizen-design-system
+  lifecycle: production
