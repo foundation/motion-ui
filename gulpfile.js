@@ -2,8 +2,14 @@ var $             = require('gulp-load-plugins')();
 var gulp          = require('gulp');
 var autoprefixer  = require('autoprefixer');
 var rimraf        = require('rimraf').sync;
-var sequence      = require('run-sequence');
+var sequence      = require('gulp4-run-sequence');
 var supercollider = require('supercollider');
+var sass          = require('gulp-sass')(require('sass'));
+var postcss       = require('gulp-postcss');
+var plumber       = require('gulp-plumber');
+var sourcemaps    = require('gulp-sourcemaps');
+var browser       = require('browser-sync');
+var port          = process.env.SERVER_PORT || 3000;
 
 supercollider
   .config({
@@ -28,8 +34,10 @@ gulp.task('docs', function() {
 
 gulp.task('sass', function() {
   return gulp.src('./motion-ui.scss')
-    .pipe($.sass().on('error', $.sass.logError))
-    .pipe($.postcss([autoprefixer()]))
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest('./_build'));
 });
 
@@ -76,8 +84,22 @@ gulp.task('lint', function() {
     .pipe($.scssLint());
 })
 
-gulp.task('default', gulp.series('build', function() {
-  gulp.watch(['./docs/src/*.md', './docs/src/_template.hbs'], ['docs']);
-  gulp.watch(['./src/**/*.scss', './motion-ui.scss'], ['sass']);
-  gulp.watch('./motion-ui.js', ['javascript']);
+function browserReloadSync(done) {
+    browser.reload();
+    done();
+}
+// Starts a BrowerSync instance
+gulp.task('serve', gulp.series('build', function(done){
+    browser.init({server: './_build', port: port});
+    done();
 }));
+
+gulp.task('watch', function() {
+    gulp.watch(['./docs/src/*.md', './docs/src/_template.hbs'], gulp.series('docs', browserReloadSync));
+    gulp.watch(['./src/**/*.scss', './motion-ui.scss'], gulp.series('sass', browserReloadSync));
+    gulp.watch('./motion-ui.js', gulp.series('javascript', browserReloadSync));
+});
+
+gulp.task('default', gulp.series('build', 'serve', 'watch'));
+
+// TODO: would be nice for serve and watch to display docs
