@@ -1,6 +1,6 @@
 {
   "name": "motion-ui",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Sass library for creating transitions and animations.",
   "main": "dist/motion-ui.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "homepage": "https://get.foundation/sites/docs/motion-ui.html",
   "devDependencies": {
     "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.0",
     "gulp-add-src": "^1.0.0",
     "gulp-babel": "^8.0.0",
@@ -37,24 +38,25 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-newer": "^1.1.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.1",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-lint": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-umd": "^2.0.0",
+    "gulp4-run-sequence": "^1.0.2",
     "handlebars": "^4.0.3",
     "highlight.js": "^11.5.1",
     "mocha": "^5.2.0",
-    "node-sass": "^7.0.0",
     "rimraf": "^2.4.3",
-    "run-sequence": "^2.2.1",
-    "sass-true": "^4.0.0",
+    "sass": "^1.65.1",
+    "sass-true": "^7.0.0",
     "supercollider": "latest"
   },
   "peerDependencies": {
-    "jquery": ">=2.2.0"
-  }
+    "jquery": ">=3.6.0"
+  },
+  "dependencies": {}
 }
