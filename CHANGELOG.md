@@ -1,5 +1,11 @@
 # Changelog
 
+# 2.0.5 (17 August 2023)
+
+* Removed node-sass in favor of DartSass and resolved deprecations
+* Updated the packages and got the build working again.
+* Build works under Node 18.17.1.
+
 # 2.0.4 (11 July 2022)
 
 * Updated SCSS to remove deprecated slash division.
