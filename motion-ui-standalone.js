@@ -48,12 +48,17 @@ const endEvent = (function() {
 })();
 
 function animate(isIn, element, animation, cb) {
-  element = $(element).eq(0);
-
-  if (!element.length) return;
+  if ('string' === typeof element) {
+    element = document.querySelector(element);
+  } else if (element instanceof NodeList) {
+    element = element.item(0);
+  } else if (!element instanceof HTMLElement) {
+    throw new Error('The argument to "animate" function must be one of: CSS selector, HTMLElement.')
+  }
 
   if (endEvent === null) {
-    isIn ? element.show() : element.hide();
+    // @todo polyfill show()
+    element.hidden = !isIn; // isIn ? element.show() : element.hide();
     cb();
     return;
   }
@@ -63,34 +68,36 @@ function animate(isIn, element, animation, cb) {
 
   // Set up the animation
   reset();
-  element.addClass(animation);
-  element.css('transition', 'none');
-  requestAnimationFrame(function() {
-    element.addClass(initClass);
-    if (isIn) element.show();
+  element.classList.add(animation);
+  element.style.transition = 'none';
+  requestAnimationFrame(function () {
+    element.classList.add(initClass);
+    // @todo polyfill show()
+    if (isIn) element.hidden = false; // if (isIn) element.show();
   });
 
   // Start the animation
   requestAnimationFrame(function() {
-    element[0].offsetWidth;
-    element.css('transition', '');
-    element.addClass(activeClass);
+    element.offsetWidth;
+    element.style.transition = '';
+    element.classList.add(activeClass);
   });
 
   // Clean up the animation when it finishes
-  element.one('transitionend', finish);
+  element.addEventListener('transitionend', finish, { once: true });
 
   // Hides the element (for out animations), resets the element, and runs a callback
   function finish() {
-    if (!isIn) element.hide();
+    // @todo
+    if (!isIn) element.hidden = true; // element.hide();
     reset();
     if (cb) cb.apply(element);
   }
 
   // Resets transitions and removes motion-specific classes
   function reset() {
-    element[0].style.transitionDuration = 0;
-    element.removeClass(initClass + ' ' + activeClass + ' ' + animation);
+    element.style.transitionDuration = 'initial';
+    element.classList.remove(initClass, activeClass, animation);
   }
 }
 
