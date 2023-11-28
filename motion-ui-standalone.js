@@ -5,19 +5,19 @@
   if (!Date.now)
     Date.now = function() { return new Date().getTime(); };
 
-  var vendors = ['webkit', 'moz'];
-  for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
-      var vp = vendors[i];
+  const vendors = ['webkit', 'moz'];
+  for (let i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
+      const vp = vendors[i];
       window.requestAnimationFrame = window[vp+'RequestAnimationFrame'];
       window.cancelAnimationFrame = (window[vp+'CancelAnimationFrame']
                                  || window[vp+'CancelRequestAnimationFrame']);
   }
   if (/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent)
     || !window.requestAnimationFrame || !window.cancelAnimationFrame) {
-    var lastTime = 0;
+    let lastTime = 0;
     window.requestAnimationFrame = function(callback) {
-        var now = Date.now();
-        var nextTime = Math.max(lastTime + 16, now);
+        const now = Date.now();
+        const nextTime = Math.max(lastTime + 16, now);
         return setTimeout(function() { callback(lastTime = nextTime); },
                           nextTime - now);
     };
@@ -25,20 +25,20 @@
   }
 })();
 
-var initClasses   = ['mui-enter', 'mui-leave'];
-var activeClasses = ['mui-enter-active', 'mui-leave-active'];
+const initClasses   = ['mui-enter', 'mui-leave'];
+const activeClasses = ['mui-enter-active', 'mui-leave-active'];
 
 // Find the right "transitionend" event for this browser
-var endEvent = (function() {
-  var transitions = {
+const endEvent = (function() {
+  const transitions = {
     'transition': 'transitionend',
     'WebkitTransition': 'webkitTransitionEnd',
     'MozTransition': 'transitionend',
     'OTransition': 'otransitionend'
   }
-  var elem = window.document.createElement('div');
+  const elem = window.document.createElement('div');
 
-  for (var t in transitions) {
+  for (const t in transitions) {
     if (typeof elem.style[t] !== 'undefined') {
       return transitions[t];
     }
@@ -58,8 +58,8 @@ function animate(isIn, element, animation, cb) {
     return;
   }
 
-  var initClass = isIn ? initClasses[0] : initClasses[1];
-  var activeClass = isIn ? activeClasses[0] : activeClasses[1];
+  const initClass = isIn ? initClasses[0] : initClasses[1];
+  const activeClass = isIn ? activeClasses[0] : activeClasses[1];
 
   // Set up the animation
   reset();
@@ -94,7 +94,7 @@ function animate(isIn, element, animation, cb) {
   }
 }
 
-var MotionUI = {
+const MotionUI = {
   animateIn: function(element, animation, cb) {
     animate(true, element, animation, cb);
   },
