@@ -66,10 +66,12 @@ gulp.task('dist:sass', gulp.series('sass', function() {
 }));
 
 gulp.task('dist:javascript', gulp.series('javascript', function() {
-  return gulp.src('./_build/motion-ui.js')
+  return gulp.src(['./_build/motion-ui.js', './_build/motion-ui-standalone.js'])
     .pipe(gulp.dest('./dist'))
     .pipe($.uglify())
-    .pipe($.rename('motion-ui.min.js'))
+    .pipe($.rename(function (path) {
+      path.basename += '.min';
+    }))
     .pipe(gulp.dest('./dist'));
 }));
 
