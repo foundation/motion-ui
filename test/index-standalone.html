@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motion UI Test (standalone)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../_build/motion-ui.css" />
+    <style>
+      #yeti {
+        display: block;
+        max-width: 400px;
+        margin: 2rem auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="column row">
+      <h1>Motion UI Test</h1>
+
+      <hr>
+
+      <div class="row column collapse medium-6" style="margin: 0 auto;">
+        <div class="small-8 columns">
+          <select id="transitionList">
+            <optgroup label="Slide">
+              <option value="slide-in-up">slide-in-up</option>
+              <option value="slide-in-right">slide-in-right</option>
+              <option value="slide-in-down">slide-in-down</option>
+              <option value="slide-in-left">slide-in-left</option>
+              <option value="slide-out-up">slide-out-up</option>
+              <option value="slide-out-right">slide-out-right</option>
+              <option value="slide-out-down">slide-out-down</option>
+              <option value="slide-out-left">slide-out-left</option>
+            </optgroup>
+            <optgroup label="Fade">
+              <option value="fade-in">fade-in</option>
+              <option value="fade-out">fade-out</option>
+            </optgroup>
+            <optgroup label="Spin">
+              <option value="spin-in">spin-in</option>
+              <option value="spin-in-ccw">spin-in-ccw</option>
+              <option value="spin-out">spin-out</option>
+              <option value="spin-out-ccw">spin-out-ccw</option>
+            </optgroup>
+            <optgroup label="Scale">
+              <option value="scale-in-up">scale-in-up</option>
+              <option value="scale-in-down">scale-in-down</option>
+              <option value="scale-out-up">scale-out-up</option>
+              <option value="scale-out-down">scale-out-down</option>
+            </optgroup>
+            <optgroup label="Hinge">
+              <option value="hinge-in-from-top">hinge-in-from-top</option>
+              <option value="hinge-in-from-right">hinge-in-from-right</option>
+              <option value="hinge-in-from-bottom">hinge-in-from-bottom</option>
+              <option value="hinge-in-from-left">hinge-in-from-left</option>
+              <option value="hinge-in-from-middle-x">hinge-in-from-middle-x</option>
+              <option value="hinge-in-from-middle-y">hinge-in-from-middle-y</option>
+              <option value="hinge-out-from-top">hinge-out-from-top</option>
+              <option value="hinge-out-from-right">hinge-out-from-right</option>
+              <option value="hinge-out-from-bottom">hinge-out-from-bottom</option>
+              <option value="hinge-out-from-left">hinge-out-from-left</option>
+              <option value="hinge-out-from-middle-x">hinge-out-from-middle-x</option>
+              <option value="hinge-out-from-middle-y">hinge-out-from-middle-y</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="small-4 columns">
+          <button class="expanded button" id="transitioner">Transition!</button>
+        </div>
+      </div>
+
+      <img id="yeti" src="yeti.svg">
+    </div>
+
+    <script src="../_build/motion-ui-standalone.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const yeti = document.querySelector('#yeti');
+        const transitionList = document.querySelector('#transitionList');
+
+        document.querySelector('#transitioner').addEventListener('click', function() {
+          const value = transitionList.value;
+
+          if (value.match(/-in/)) {
+            MotionUI.animateIn(yeti, value);
+          }
+          else {
+            MotionUI.animateOut(yeti, value, function() {
+              // yeti.show(); TODO: implement polyfill
+              yeti.style.display = 'block';
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
