@@ -25,6 +25,51 @@
   }
 })();
 
+// Polyfill for jQuery.show()|.hide()
+const defaultDisplayMap = {};
+
+function getDefaultDisplay(element) {
+  const doc = element.ownerDocument,
+    nodeName = element.nodeName;
+
+  let display = defaultDisplayMap[nodeName];
+
+  if (display) {
+    return display;
+  }
+
+  const temp = doc.body.appendChild(doc.createElement(nodeName));
+
+  display = temp.style.display;
+  temp.parentNode.removeChild(temp);
+
+  if (display === 'none') {
+    display = 'block';
+  }
+
+  defaultDisplayMap[nodeName] = display;
+
+  return display;
+}
+
+function hide(element) {
+  const display = element.style.display;
+
+  if (display !== 'none') {
+    element._muiDisplay = display; // Remember what we're overwriting
+    element.style.display = 'none';
+  }
+}
+
+function show(element) {
+  const display = element.style.display;
+
+  if (display === 'none') {
+    element.style.display = element._muiDisplay || getDefaultDisplay(element);
+    delete element._muiDisplay;
+  }
+}
+
 const initClasses   = ['mui-enter', 'mui-leave'];
 const activeClasses = ['mui-enter-active', 'mui-leave-active'];
 
@@ -57,8 +102,7 @@ function animate(isIn, element, animation, cb) {
   }
 
   if (endEvent === null) {
-    // @todo polyfill show()
-    element.hidden = !isIn; // isIn ? element.show() : element.hide();
+    isIn ? show(element) : hide(element);
     cb();
     return;
   }
@@ -72,8 +116,7 @@ function animate(isIn, element, animation, cb) {
   element.style.transition = 'none';
   requestAnimationFrame(function () {
     element.classList.add(initClass);
-    // @todo polyfill show()
-    if (isIn) element.hidden = false; // if (isIn) element.show();
+    if (isIn) show(element);
   });
 
   // Start the animation
@@ -88,8 +131,7 @@ function animate(isIn, element, animation, cb) {
 
   // Hides the element (for out animations), resets the element, and runs a callback
   function finish() {
-    // @todo
-    if (!isIn) element.hidden = true; // element.hide();
+    if (!isIn) hide(element);
     reset();
     if (cb) cb.apply(element);
   }
