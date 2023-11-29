@@ -42,10 +42,10 @@ gulp.task('sass', function() {
 });
 
 gulp.task('javascript', function() {
-  return gulp.src('./motion-ui.js')
+  return gulp.src(['./motion-ui.js', './motion-ui-standalone.js'])
     .pipe($.umd({
       dependencies: function(file) {
-        return [{ name: 'jquery', amd: 'jquery', cjs: 'jquery', global: 'jQuery', param: '$' }];
+        return /standalone/.test(file.path) ? [] : [{ name: 'jquery', amd: 'jquery', cjs: 'jquery', global: 'jQuery', param: '$' }];
       },
       exports: function(file) {
         return 'MotionUI';
@@ -66,10 +66,12 @@ gulp.task('dist:sass', gulp.series('sass', function() {
 }));
 
 gulp.task('dist:javascript', gulp.series('javascript', function() {
-  return gulp.src('./_build/motion-ui.js')
+  return gulp.src(['./_build/motion-ui.js', './_build/motion-ui-standalone.js'])
     .pipe(gulp.dest('./dist'))
     .pipe($.uglify())
-    .pipe($.rename('motion-ui.min.js'))
+    .pipe($.rename(function (path) {
+      path.basename += '.min';
+    }))
     .pipe(gulp.dest('./dist'));
 }));
 

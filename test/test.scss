@@ -59,7 +59,7 @@
     @at-root {
       .sel {
         @include assert-equal(-mui-build-selector('enter'), '.sel-mui-enter', 'Creates a standalone setup state selector');
-        @include assert-equal(-mui-build-selector('enter', true), '.sel-mui-enter-active', 'Creates a standalone setup state selector');
+        @include assert-equal(-mui-build-selector('enter', true), '.sel-mui-enter.sel-mui-enter-active', 'Creates a standalone active state selector');
       }
     }
   }

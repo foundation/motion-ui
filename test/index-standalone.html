@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Motion UI Test</title>
+    <title>Motion UI Test (standalone)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="../_build/motion-ui.css" />
     <style>
@@ -74,22 +74,21 @@
       <img id="yeti" src="yeti.svg">
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="../_build/motion-ui-standalone.js"></script>
     <script>
-      $(function() {
-        var $yeti = $('#yeti');
-        var $transitionList = $('#transitionList');
+      document.addEventListener('DOMContentLoaded', function() {
+        const yeti = document.querySelector('#yeti');
+        const transitionList = document.querySelector('#transitionList');
 
-        $('#transitioner').click(function() {
-          var value = $transitionList.val();
+        document.querySelector('#transitioner').addEventListener('click', function() {
+          const value = transitionList.value;
 
           if (value.match(/-in/)) {
-            Foundation.Motion.animateIn($yeti, value);
+            MotionUI.animateIn(yeti, value);
           }
           else {
-            Foundation.Motion.animateOut($yeti, value, function() {
-              $yeti.show();
+            MotionUI.animateOut(yeti, value, function() {
+              yeti.style.display = 'block';
             });
           }
         });
