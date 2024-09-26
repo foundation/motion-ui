@@ -42,9 +42,9 @@ $-mui-queue: ();
 
   // Start the animation
   .#{map-get($motion-ui-settings, activate-queue-class)} & {
-    @include mui-animation($kf);
     animation-delay: $actual-delay;
     animation-duration: $duration;
+    @include mui-animation($kf);
   }
 
   // Pause the animation.
