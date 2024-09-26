@@ -1,5 +1,9 @@
 # Changelog
 
+# 2.0.8 (26 Sept 2024)
+
+* More more sass warning fix
+
 # 2.0.7 (26 Sept 2024)
 
 * Updated dist file from 2.0.6 release
