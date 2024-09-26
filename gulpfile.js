@@ -4,7 +4,7 @@ var autoprefixer  = require('autoprefixer');
 var rimraf        = require('rimraf').sync;
 var sequence      = require('gulp4-run-sequence');
 var supercollider = require('supercollider');
-var sass          = require('gulp-sass')(require('sass'));
+var sass          = require('gulp-sass')(require('sass-embedded'));
 var postcss       = require('gulp-postcss');
 var plumber       = require('gulp-plumber');
 var sourcemaps    = require('gulp-sourcemaps');
@@ -37,7 +37,7 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([autoprefixer()]))
+    // .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest('./_build'));
 });
 

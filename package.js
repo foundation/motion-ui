@@ -1,6 +1,6 @@
 Package.describe({
   name: 'foundation:motion-ui',
-  version: '2.0.5',
+  version: '2.0.6',
   summary: 'Sass library for creating transitions and animations',
   git: 'https://github.com/foundation/motion-ui.git',
   documentation: 'README.md'

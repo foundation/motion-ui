@@ -2,6 +2,6 @@
 /// @param {Arglist} $effects... - One or more effect functions to build the keyframe with.
 @mixin mui-animation($args...) {
   $name: map-get(-mui-process-args($args...), name);
-  @include mui-keyframes($name, $args...);
   animation-name: unquote($name);
+  @include mui-keyframes($name, $args...);
 }
