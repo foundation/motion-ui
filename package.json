@@ -1,6 +1,6 @@
 {
   "name": "motion-ui",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Sass library for creating transitions and animations.",
   "main": "dist/motion-ui.js",
   "scripts": {
