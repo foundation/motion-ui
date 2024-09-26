@@ -1,5 +1,9 @@
 # Changelog
 
+# 2.0.7 (26 Sept 2024)
+
+* Updated dist file from 2.0.6 release
+
 # 2.0.6 (26 Sept 2024)
 
 * Move to sass-embedded for faster builds
