@@ -1,5 +1,10 @@
 # Changelog
 
+# 2.0.6 (26 Sept 2024)
+
+* Move to sass-embedded for faster builds
+* Fixed some Sass deprecation warnings
+
 # 2.0.5 (17 August 2023)
 
 * Removed node-sass in favor of DartSass and resolved deprecations
