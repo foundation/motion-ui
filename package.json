@@ -51,12 +51,13 @@
     "highlight.js": "^11.5.1",
     "mocha": "^5.2.0",
     "rimraf": "^2.4.3",
-    "sass": "^1.65.1",
     "sass-true": "^7.0.0",
     "supercollider": "latest"
   },
   "peerDependencies": {
     "jquery": ">=3.6.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sass-embedded": "^1.79.3"
+  }
 }
